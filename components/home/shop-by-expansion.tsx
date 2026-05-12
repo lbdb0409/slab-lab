@@ -36,7 +36,7 @@ export function ShopByExpansion({ products }: { products: ProductForCard[] }) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-5">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:gap-5">
           {setsWithCount.map((set) => {
             const accent = SET_ACCENT[set.slug] ?? "#ff6a00";
             return (
@@ -45,28 +45,28 @@ export function ShopByExpansion({ products }: { products: ProductForCard[] }) {
                 href={`/sets/${set.slug}`}
                 className="group relative flex aspect-[5/4] flex-col overflow-hidden border-2 border-text bg-white transition-transform duration-300 hover:-translate-y-1"
               >
-                <div className="relative flex flex-1 items-center justify-center p-8 md:p-10">
+                <div className="relative flex flex-1 items-center justify-center p-5 md:p-7">
                   {set.logo ? (
                     <Image
                       src={set.logo}
                       alt={set.name}
-                      width={300}
-                      height={150}
-                      className="h-auto max-h-[110px] w-auto max-w-[80%] object-contain transition-transform duration-300 group-hover:scale-105 md:max-h-[140px]"
+                      width={260}
+                      height={130}
+                      className="h-auto max-h-[72px] w-auto max-w-[82%] object-contain transition-transform duration-300 group-hover:scale-105 md:max-h-[104px]"
                     />
                   ) : (
-                    <h3 className="font-display text-3xl uppercase">{set.name}</h3>
+                    <h3 className="font-display text-xl uppercase md:text-2xl">{set.name}</h3>
                   )}
                 </div>
                 <div
-                  className="flex items-center justify-between border-t-2 border-text px-4 py-3 text-white"
+                  className="flex items-center justify-between border-t-2 border-text px-3 py-2 text-white md:px-4 md:py-2.5"
                   style={{ background: accent }}
                 >
-                  <span className="text-[11px] font-bold uppercase tracking-wider">
+                  <span className="text-[10px] font-bold uppercase tracking-wider md:text-[11px]">
                     {String(set.count).padStart(2, "0")} kit
                     {set.count === 1 ? "" : "s"}
                   </span>
-                  <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider md:text-[11px]">
                     Shop
                     <ArrowRight
                       className="size-3 transition-transform duration-200 group-hover:translate-x-1"
