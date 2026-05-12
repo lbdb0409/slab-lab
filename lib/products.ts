@@ -15,6 +15,8 @@ export type ProductForCard = {
   badge: string;
   detail: string;
   priceCents: number;
+  stock: number;
+  editionTotal: number;
 };
 
 function toCardShape(p: Product): ProductForCard {
@@ -28,6 +30,8 @@ function toCardShape(p: Product): ProductForCard {
     badge: p.badge,
     detail: p.detail,
     priceCents: p.priceCents,
+    stock: p.stock ?? 0,
+    editionTotal: p.editionTotal ?? 0,
   };
 }
 

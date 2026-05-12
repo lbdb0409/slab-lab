@@ -8,6 +8,8 @@ type SearchParams = { set?: string; status?: string; sort?: string };
 const SORTS = [
   { value: "newest", label: "Newest" },
   { value: "oldest", label: "Oldest" },
+  { value: "price-low", label: "Price: low to high" },
+  { value: "price-high", label: "Price: high to low" },
   { value: "live-first", label: "In stock first" },
 ];
 
@@ -28,7 +30,9 @@ export function SortMenu({ searchParams }: { searchParams: SearchParams }) {
 
   return (
     <label className="inline-flex items-center gap-2">
-      <span className="text-xs font-bold uppercase tracking-wider text-muted">Sort</span>
+      <span className="text-xs font-bold uppercase tracking-wider text-muted">
+        Sort
+      </span>
       <select
         value={current}
         onChange={onChange}

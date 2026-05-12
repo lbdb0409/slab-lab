@@ -1,38 +1,55 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { Heart } from "lucide-react";
-import { useState, type MouseEvent } from "react";
 
 import { cn } from "@/lib/utils";
+import { formatCents } from "@/lib/format";
 import type { ProductForCard } from "@/lib/products";
 
 const SET_TINTS: Record<string, string> = {
   "mega-evolutions": "bg-lavender",
   "scarlet-violet": "bg-pink-tint",
   "sword-and-shield": "bg-sky-tint",
+  "black-star-promos": "bg-gold",
 };
 
 const SET_ACCENT: Record<string, string> = {
   "mega-evolutions": "text-purple",
   "scarlet-violet": "text-red",
   "sword-and-shield": "text-cyan",
+  "black-star-promos": "text-yellow-deep",
 };
 
-export function KitCard({ kit, dense = false }: { kit: ProductForCard; dense?: boolean }) {
-  const isLive = kit.status === "live";
-  const [wished, setWished] = useState(false);
+const LOW_STOCK_THRESHOLD = 5;
 
-  const onWish = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setWished((w) => !w);
-  };
+export function KitCard({
+  kit,
+  dense = false,
+}: {
+  kit: ProductForCard;
+  dense?: boolean;
+}) {
+  const isLive = kit.status === "live";
+  const stock = kit.stock ?? 0;
+  const inStock = isLive && stock > 0;
+  const lowStock = inStock && stock <= LOW_STOCK_THRESHOLD;
+  const soldOut = isLive && stock === 0;
 
   const tint = SET_TINTS[kit.setSlug] ?? "bg-tint";
   const accent = SET_ACCENT[kit.setSlug] ?? "text-text-soft";
-  const priceLabel = `$${(kit.priceCents / 100).toFixed(0)}`;
+
+  const stockLabel = (() => {
+    if (!isLive) return "Coming soon";
+    if (soldOut) return "Sold out";
+    if (lowStock) return `Only ${stock} left`;
+    return "In stock";
+  })();
+
+  const stockTone = (() => {
+    if (soldOut) return "text-muted";
+    if (lowStock) return "text-magenta";
+    if (inStock) return "text-success";
+    return "text-muted";
+  })();
 
   return (
     <Link
@@ -48,10 +65,15 @@ export function KitCard({ kit, dense = false }: { kit: ProductForCard; dense?: b
         )}
       >
         <div className="absolute left-2.5 top-2.5 z-10 flex flex-wrap gap-1.5">
-          {isLive && kit.badge === "Almost gone" && (
+          {soldOut && (
+            <span className="pill rounded-full bg-text text-white">
+              Sold out
+            </span>
+          )}
+          {lowStock && !soldOut && (
             <span className="pill rounded-full bg-magenta text-white">
               <span className="size-1 rounded-full bg-white" />
-              {kit.badge}
+              Almost gone
             </span>
           )}
           {!isLive && (
@@ -59,29 +81,19 @@ export function KitCard({ kit, dense = false }: { kit: ProductForCard; dense?: b
               Coming soon
             </span>
           )}
-          {isLive && kit.badge !== "Almost gone" && (
+          {inStock && !lowStock && (
             <span className="pill rounded-full bg-yellow text-text">
-              {kit.badge}
+              {kit.badge || "Available"}
             </span>
           )}
         </div>
 
-        {isLive && (
-          <button
-            type="button"
-            onClick={onWish}
-            aria-label={wished ? "Remove from wishlist" : "Add to wishlist"}
-            aria-pressed={wished}
-            className="absolute right-2.5 top-2.5 z-10 inline-flex size-9 items-center justify-center rounded-full bg-white text-text shadow-sm transition-all hover:scale-110 hover:text-magenta"
-          >
-            <Heart
-              className={cn("size-4 transition-all", wished && "fill-magenta text-magenta")}
-              strokeWidth={2.4}
-            />
-          </button>
-        )}
-
-        <span className={cn("absolute bottom-2.5 left-2.5 z-10 inline-flex rounded-full bg-white/95 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider", accent)}>
+        <span
+          className={cn(
+            "absolute bottom-2.5 left-2.5 z-10 inline-flex rounded-full bg-white/95 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider",
+            accent,
+          )}
+        >
           {kit.set}
         </span>
 
@@ -94,7 +106,7 @@ export function KitCard({ kit, dense = false }: { kit: ProductForCard; dense?: b
             className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
           />
         ) : (
-          <PlaceholderTile accent={accent} />
+          <PlaceholderTile accent={accent} setName={kit.set} />
         )}
 
         <span className="pointer-events-none absolute -bottom-4 -right-4 font-display text-7xl leading-none text-white/60 mix-blend-overlay">
@@ -118,26 +130,32 @@ export function KitCard({ kit, dense = false }: { kit: ProductForCard; dense?: b
               isLive ? "text-text" : "text-muted",
             )}
           >
-            {isLive ? priceLabel : "–"}
+            {isLive ? formatCents(kit.priceCents) : "–"}
           </span>
         </div>
         <div className="flex items-center justify-between gap-2 text-[11px] uppercase tracking-wider text-muted">
-          <span>Slab only · card not included</span>
-          {isLive ? (
-            <span className="font-bold text-success">In stock</span>
-          ) : (
-            <span>Coming soon</span>
-          )}
+          <span>Slab only</span>
+          <span className={cn("font-bold", stockTone)}>{stockLabel}</span>
         </div>
       </div>
     </Link>
   );
 }
 
-function PlaceholderTile({ accent }: { accent: string }) {
+function PlaceholderTile({
+  accent,
+  setName,
+}: {
+  accent: string;
+  setName: string;
+}) {
   return (
-    <div className="absolute inset-0 flex items-center justify-center">
-      <svg viewBox="0 0 100 100" className={cn("size-20 opacity-50", accent)} aria-hidden>
+    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-4 text-center">
+      <svg
+        viewBox="0 0 100 100"
+        className={cn("size-16 opacity-50", accent)}
+        aria-hidden
+      >
         <polygon
           points="29.3,0 70.7,0 100,29.3 100,70.7 70.7,100 29.3,100 0,70.7 0,29.3"
           fill="none"
@@ -145,6 +163,14 @@ function PlaceholderTile({ accent }: { accent: string }) {
           strokeWidth="1.6"
         />
       </svg>
+      <span
+        className={cn(
+          "font-display text-xs uppercase leading-tight tracking-wider opacity-70",
+          accent,
+        )}
+      >
+        {setName}
+      </span>
     </div>
   );
 }
