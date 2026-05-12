@@ -1,37 +1,29 @@
 "use client";
 
-import { ArrowRight, Check, Sparkles } from "lucide-react";
-import { useState, type FormEvent } from "react";
+import { useActionState } from "react";
+import { ArrowRight, Check, Crosshair } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
+import {
+  requestCard,
+  type RequestCardState,
+} from "@/lib/actions/request-card";
+
+const INITIAL: RequestCardState = { ok: false, message: "" };
 
 export function RequestACard() {
-  const [sent, setSent] = useState(false);
-
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSent(true);
-  };
+  const [state, action, pending] = useActionState(requestCard, INITIAL);
 
   return (
     <section className="relative overflow-hidden border-b border-line bg-purple text-white">
-      {/* Decorative octagons */}
       <Octagon className="pointer-events-none absolute -left-12 -top-12 size-44 rotate-12 text-white/10 md:size-56" />
       <Octagon className="pointer-events-none absolute -right-14 -bottom-14 size-48 -rotate-12 text-white/10 md:size-64" />
-
-      {/* Confetti */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <span className="confetti-dot left-[10%] top-[18%] size-1.5 bg-yellow" />
-        <span className="confetti-dot left-[20%] top-[78%] size-2 bg-cyan" />
-        <span className="confetti-dot right-[14%] top-[22%] size-2 bg-yellow" />
-        <span className="confetti-dot right-[6%] top-[72%] size-1.5 bg-magenta" />
-      </div>
 
       <Container className="relative grid items-start gap-10 py-16 md:grid-cols-[1.15fr_1fr] md:gap-16 md:py-24">
         {/* LEFT — explainer */}
         <div className="flex flex-col gap-6">
           <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-yellow backdrop-blur-sm">
-            <Sparkles className="size-3.5" strokeWidth={2.6} />
+            <Crosshair className="size-3.5" strokeWidth={2.6} />
             Custom requests
           </span>
 
@@ -69,7 +61,7 @@ export function RequestACard() {
 
         {/* RIGHT — form */}
         <div className="rounded-2xl border-2 border-white bg-text p-6 shadow-[8px_8px_0_rgba(0,0,0,0.25)] md:p-8">
-          {sent ? (
+          {state.ok ? (
             <div className="flex flex-col items-center gap-4 py-6 text-center">
               <span className="inline-flex size-14 items-center justify-center rounded-full bg-yellow text-text">
                 <Check className="size-7" strokeWidth={3} />
@@ -78,18 +70,11 @@ export function RequestACard() {
                 Request received.
               </h3>
               <p className="max-w-xs text-sm text-white/70">
-                Thanks. We&apos;ll be in touch with next steps soon.
+                {state.message}
               </p>
-              <button
-                type="button"
-                onClick={() => setSent(false)}
-                className="mt-2 text-xs font-bold uppercase tracking-wider text-yellow hover:underline"
-              >
-                Submit another →
-              </button>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="flex flex-col gap-4">
+            <form action={action} className="flex flex-col gap-4">
               <div className="flex items-baseline justify-between">
                 <h3 className="font-display text-2xl uppercase tracking-tight">
                   Request a slab
@@ -132,11 +117,17 @@ export function RequestACard() {
 
               <button
                 type="submit"
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-yellow px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-text transition-all hover:bg-yellow-deep hover:-translate-y-0.5"
+                disabled={pending}
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-yellow px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-text transition-all hover:bg-yellow-deep hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
               >
-                Send request
-                <ArrowRight className="size-3.5" strokeWidth={2.6} />
+                {pending ? "Sending…" : "Send request"}
+                {!pending && <ArrowRight className="size-3.5" strokeWidth={2.6} />}
               </button>
+              {state.message && !state.ok && (
+                <p role="alert" className="rounded-full bg-magenta/20 px-4 py-2 text-xs font-bold uppercase tracking-wider text-magenta">
+                  {state.message}
+                </p>
+              )}
               <p className="text-xs text-white/40">
                 By submitting, you agree to be contacted about your request.
               </p>

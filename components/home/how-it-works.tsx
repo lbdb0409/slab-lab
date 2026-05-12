@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, Search, Box, Sparkles } from "lucide-react";
+import { ArrowRight, Search, Box, Sparkles, Workflow } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
-import { Octagon, ConfettiField } from "@/components/ui/decorations";
+import { Octagon } from "@/components/ui/decorations";
 
 const STEPS = [
   {
@@ -52,12 +52,11 @@ export function HowItWorks() {
       />
       <Octagon className="absolute -right-10 -top-8 size-40 rotate-12 text-purple/25 md:size-52" />
       <Octagon className="absolute -left-12 -bottom-6 size-36 -rotate-12 text-cyan/25 md:size-44" />
-      <ConfettiField />
 
       <Container className="relative py-14 md:py-20">
         <div className="mb-10 flex flex-col items-start gap-2 md:mb-14">
           <span className="eyebrow inline-flex items-center gap-1.5 text-purple">
-            <Sparkles className="size-3.5" strokeWidth={2.6} />
+            <Workflow className="size-3.5" strokeWidth={2.6} />
             How it works
           </span>
           <h2 className="section-h2 max-w-2xl">

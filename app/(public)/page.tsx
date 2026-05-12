@@ -1,15 +1,16 @@
 import { Hero } from "@/components/home/hero";
 import { BrandBand } from "@/components/home/brand-band";
 import { Marquee } from "@/components/home/marquee";
-import { Mantra } from "@/components/home/mantra";
-import { ShopByExpansion } from "@/components/home/shop-by-expansion";
-import { JustDropped } from "@/components/home/just-dropped";
-import { EditorialBanner } from "@/components/home/editorial-banner";
+import { SpecsStrip } from "@/components/home/specs-strip";
 import { HowItWorks } from "@/components/home/how-it-works";
+import { ShopByExpansion } from "@/components/home/shop-by-expansion";
 import { BestSellers } from "@/components/home/best-sellers";
+import { EditorialBanner } from "@/components/home/editorial-banner";
+import { CardNotIncluded } from "@/components/home/card-not-included";
+import { Testimonials } from "@/components/home/testimonials";
+import { FAQ } from "@/components/home/faq";
 import { RequestACard } from "@/components/home/request-a-card";
 import { TCGRoadmap } from "@/components/home/tcg-roadmap";
-import { SpecsStrip } from "@/components/home/specs-strip";
 import { TwoUpEditorial } from "@/components/home/two-up-editorial";
 import { Newsletter } from "@/components/home/newsletter";
 import { getAllProducts } from "@/lib/products";
@@ -21,9 +22,10 @@ export default async function Home() {
       <Hero />
       <BrandBand />
       <Marquee bg="text" text="white" />
-      <Mantra />
+      <SpecsStrip />
+      <HowItWorks />
       <ShopByExpansion products={products} />
-      <JustDropped products={products} />
+      <BestSellers products={products} />
       <EditorialBanner
         eyebrow="Built to display"
         eyebrowColor="magenta"
@@ -35,12 +37,11 @@ export default async function Home() {
         imageAlt="Slab with expanded artwork extending past the card"
         bg="pink"
       />
-      <HowItWorks />
-      <Marquee bg="magenta" text="white" />
-      <BestSellers products={products} />
+      <CardNotIncluded />
+      <Testimonials />
+      <FAQ />
       <RequestACard />
       <TCGRoadmap />
-      <SpecsStrip />
       <TwoUpEditorial />
       <Newsletter />
     </>

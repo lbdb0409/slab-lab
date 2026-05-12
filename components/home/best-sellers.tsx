@@ -3,7 +3,7 @@ import { ArrowRight, Star } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
 import { Carousel, CarouselItem } from "@/components/ui/carousel";
-import { Octagon, ConfettiField } from "@/components/ui/decorations";
+import { Octagon } from "@/components/ui/decorations";
 import { KitCard } from "@/components/kits/kit-card";
 import type { ProductForCard } from "@/lib/products";
 
@@ -35,7 +35,6 @@ export function BestSellers({ products }: { products: ProductForCard[] }) {
       />
       <Octagon className="absolute -left-12 -top-6 size-44 rotate-12 text-lime/30 md:size-56" />
       <Octagon className="absolute -right-14 bottom-6 size-36 -rotate-12 text-cyan/30 md:size-48" />
-      <ConfettiField />
 
       <Container className="relative py-14 md:py-20">
         <div className="section-head">

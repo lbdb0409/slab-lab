@@ -1,7 +1,7 @@
 import { Truck, Brush, Hand, Shield } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
-import { Octagon, ConfettiField } from "@/components/ui/decorations";
+import { Octagon } from "@/components/ui/decorations";
 
 const FEATURES = [
   {
@@ -47,7 +47,6 @@ export function SpecsStrip() {
       />
       <Octagon className="absolute -left-10 -top-6 size-36 rotate-12 text-orange/30 md:size-44" />
       <Octagon className="absolute -right-12 -bottom-6 size-36 -rotate-12 text-magenta/25 md:size-44" />
-      <ConfettiField />
 
       <Container className="relative grid gap-x-6 gap-y-8 py-14 sm:grid-cols-2 lg:grid-cols-4 md:py-16">
         {FEATURES.map((f) => (

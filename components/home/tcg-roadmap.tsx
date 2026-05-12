@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import { Map } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
-import { Octagon, ConfettiField } from "@/components/ui/decorations";
+import { Octagon } from "@/components/ui/decorations";
 import { cn } from "@/lib/utils";
 
 type TCG = {
@@ -66,13 +66,12 @@ export function TCGRoadmap() {
       />
       <Octagon className="absolute -right-12 top-12 size-44 rotate-12 text-cyan/30 md:size-56" />
       <Octagon className="absolute -left-14 -bottom-6 size-40 -rotate-12 text-purple/25 md:size-52" />
-      <ConfettiField />
 
       <Container className="relative py-14 md:py-20">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4 md:mb-12">
           <div className="flex flex-col gap-2">
             <span className="eyebrow inline-flex items-center gap-1.5 text-cyan-deep">
-              <Sparkles className="size-3.5" strokeWidth={2.6} />
+              <Map className="size-3.5" strokeWidth={2.6} />
               What&apos;s next
             </span>
             <h2 className="section-h2">
