@@ -11,20 +11,29 @@ import { getAllOrders, getOrderStatusCounts } from "@/lib/orders";
 import { formatCents, formatRelative } from "@/lib/format";
 import type { OrderStatus } from "@/lib/schema";
 
-type Props = { searchParams: Promise<{ status?: string }> };
+type Props = { searchParams: Promise<{ status?: string; q?: string }> };
 
 export default async function OrdersPage({ searchParams }: Props) {
   const params = await searchParams;
   const filterStatus = params.status as OrderStatus | undefined;
+  const q = (params.q ?? "").trim().toLowerCase();
 
   const [allOrders, counts] = await Promise.all([
     getAllOrders(),
     getOrderStatusCounts(),
   ]);
 
-  const filtered = filterStatus
-    ? allOrders.filter((o) => o.status === filterStatus)
-    : allOrders;
+  const filtered = allOrders.filter((o) => {
+    if (filterStatus && o.status !== filterStatus) return false;
+    if (q) {
+      const haystack = [o.number, o.customerName, o.customerEmail]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+      if (!haystack.includes(q)) return false;
+    }
+    return true;
+  });
 
   const filters: { value?: OrderStatus; label: string; count: number }[] = [
     { label: "All", count: allOrders.length },
@@ -45,22 +54,47 @@ export default async function OrdersPage({ searchParams }: Props) {
       />
 
       <AdminContent className="flex flex-col gap-4">
-        <div className="flex flex-wrap items-center gap-3 rounded-md border border-line bg-white p-3">
+        <form
+          method="get"
+          className="flex flex-wrap items-center gap-3 rounded-md border border-line bg-white p-3"
+        >
+          {filterStatus && (
+            <input type="hidden" name="status" value={filterStatus} />
+          )}
           <div className="flex flex-1 items-center gap-2 rounded-md border border-line bg-bg-soft px-3 py-1.5">
             <Search className="size-4 text-muted" strokeWidth={2.4} />
             <input
               type="search"
+              name="q"
+              defaultValue={q}
               placeholder="Search by order #, customer, email…"
               className="w-full bg-transparent text-sm placeholder:text-muted focus:outline-none"
             />
           </div>
-        </div>
+          <button
+            type="submit"
+            className="rounded-md bg-text px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-white hover:bg-orange"
+          >
+            Search
+          </button>
+          {q && (
+            <Link
+              href={filterStatus ? `/admin/orders?status=${filterStatus}` : "/admin/orders"}
+              className="text-[11px] font-bold uppercase tracking-wider text-muted hover:text-orange"
+            >
+              Clear
+            </Link>
+          )}
+        </form>
 
         <div className="flex flex-wrap gap-2">
           {filters.map((f) => {
             const active = (filterStatus ?? "") === (f.value ?? "");
-            const href = f.value
-              ? `/admin/orders?status=${f.value}`
+            const qs = new URLSearchParams();
+            if (f.value) qs.set("status", f.value);
+            if (q) qs.set("q", q);
+            const href = qs.toString()
+              ? `/admin/orders?${qs.toString()}`
               : "/admin/orders";
             return (
               <Link

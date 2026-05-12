@@ -11,19 +11,55 @@ import { EXPANSIONS } from "@/data/kits";
 import { getAllProductsAdmin } from "@/lib/products";
 import { formatCents } from "@/lib/format";
 
-export default async function AdminProductsPage() {
-  const products = await getAllProductsAdmin();
-  const liveCount = products.filter((p) => p.status === "live" && !p.archived)
-    .length;
-  const soonCount = products.filter((p) => p.status === "soon" && !p.archived)
-    .length;
+type Props = {
+  searchParams: Promise<{
+    q?: string;
+    set?: string;
+    status?: string;
+  }>;
+};
+
+export default async function AdminProductsPage({ searchParams }: Props) {
+  const params = await searchParams;
+  const q = (params.q ?? "").trim().toLowerCase();
+  const setFilter = params.set ?? "";
+  const statusFilter = params.status ?? "";
+
+  const all = await getAllProductsAdmin();
+  const products = all.filter((p) => {
+    if (setFilter && p.setSlug !== setFilter) return false;
+    if (statusFilter === "live" && !(p.status === "live" && !p.archived))
+      return false;
+    if (statusFilter === "soon" && !(p.status === "soon" && !p.archived))
+      return false;
+    if (statusFilter === "archived" && !p.archived) return false;
+    if (q) {
+      const haystack = [
+        p.card,
+        p.slug,
+        p.setName,
+        p.number,
+        `SL-${p.number}`,
+      ]
+        .join(" ")
+        .toLowerCase();
+      if (!haystack.includes(q)) return false;
+    }
+    return true;
+  });
+
+  const liveCount = all.filter((p) => p.status === "live" && !p.archived).length;
+  const soonCount = all.filter((p) => p.status === "soon" && !p.archived).length;
+  const archivedCount = all.filter((p) => p.archived).length;
 
   return (
     <>
       <AdminPageHeader
         eyebrow="Catalog"
         title="Products"
-        body={`${products.length} kits · ${liveCount} live · ${soonCount} coming soon`}
+        body={`${all.length} kits · ${liveCount} live · ${soonCount} coming soon${
+          archivedCount > 0 ? ` · ${archivedCount} archived` : ""
+        }`}
         actions={
           <Link
             href="/admin/products/new"
@@ -36,36 +72,60 @@ export default async function AdminProductsPage() {
       />
 
       <AdminContent className="flex flex-col gap-4">
-        <div className="flex flex-wrap items-center gap-3 rounded-md border border-line bg-white p-3">
+        <form
+          method="get"
+          className="flex flex-wrap items-center gap-3 rounded-md border border-line bg-white p-3"
+        >
           <div className="flex flex-1 items-center gap-2 rounded-md border border-line bg-bg-soft px-3 py-1.5">
             <Search className="size-4 text-muted" strokeWidth={2.4} />
             <input
               type="search"
-              placeholder="Search by name, set, or SKU…"
+              name="q"
+              defaultValue={q}
+              placeholder="Search by name, slug, set, or SKU…"
               className="w-full bg-transparent text-sm placeholder:text-muted focus:outline-none"
             />
           </div>
           <select
-            defaultValue=""
+            name="set"
+            defaultValue={setFilter}
             className="rounded-md border border-line bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wider"
           >
             <option value="">All sets</option>
             {EXPANSIONS.map((e) => (
-              <option key={e.slug}>{e.name}</option>
+              <option key={e.slug} value={e.slug}>
+                {e.name}
+              </option>
             ))}
           </select>
           <select
-            defaultValue=""
+            name="status"
+            defaultValue={statusFilter}
             className="rounded-md border border-line bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wider"
           >
             <option value="">All statuses</option>
-            <option>Live</option>
-            <option>Coming soon</option>
+            <option value="live">Live</option>
+            <option value="soon">Coming soon</option>
+            <option value="archived">Archived</option>
           </select>
-        </div>
+          <button
+            type="submit"
+            className="rounded-md bg-text px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-white hover:bg-orange"
+          >
+            Filter
+          </button>
+          {(q || setFilter || statusFilter) && (
+            <Link
+              href="/admin/products"
+              className="text-[11px] font-bold uppercase tracking-wider text-muted hover:text-orange"
+            >
+              Clear
+            </Link>
+          )}
+        </form>
 
         <AdminCard className="overflow-hidden">
-          {products.length === 0 ? (
+          {all.length === 0 ? (
             <div className="flex flex-col items-center justify-center gap-3 px-6 py-20 text-center">
               <h2 className="font-display text-2xl uppercase">
                 No products yet
@@ -79,6 +139,18 @@ export default async function AdminProductsPage() {
               >
                 <Plus className="size-3.5" strokeWidth={2.6} />
                 Add product
+              </Link>
+            </div>
+          ) : products.length === 0 ? (
+            <div className="flex flex-col items-center justify-center gap-3 px-6 py-20 text-center">
+              <h2 className="font-display text-2xl uppercase">
+                Nothing matches
+              </h2>
+              <Link
+                href="/admin/products"
+                className="text-[11px] font-bold uppercase tracking-wider text-orange hover:underline"
+              >
+                Clear filters
               </Link>
             </div>
           ) : (

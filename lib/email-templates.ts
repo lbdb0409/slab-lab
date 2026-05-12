@@ -405,6 +405,74 @@ function siteOrigin(): string {
   return process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 }
 
+// ---------- Shipping confirmation ----------
+
+export function shippingConfirmationEmail(args: {
+  customerName: string;
+  orderNumber: string;
+  carrierLabel: string;
+  trackingNumber: string;
+  trackingUrl: string;
+}): { subject: string; html: string } {
+  const subject = `Your Slablabs order ${args.orderNumber} is on the way`;
+  const heroBlock = `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+      <tr>
+        <td style="padding:40px 28px 22px;text-align:center;background:linear-gradient(180deg,rgba(0,184,224,0.16) 0%,rgba(0,184,224,0) 75%);">
+          ${displayHeading({ lead: "ON THE", accent: "WAY.", size: 72 })}
+          <p style="margin:18px auto 0;max-width:440px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.85);">
+            Hey ${escape(args.customerName)} — your Slablabs kit just left the workshop. Tracking is live below.
+          </p>
+        </td>
+      </tr>
+    </table>
+  `;
+  const trackingBlock = `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+      <tr>
+        <td style="padding:6px 22px 28px;">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-spacing:0;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;">
+            <tr>
+              <td style="padding:18px 20px 6px;">
+                <p style="margin:0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:900;letter-spacing:0.22em;text-transform:uppercase;color:${MUTED};">Order</p>
+                <p style="margin:4px 0 14px;font-family:'Anton','Arial Narrow',Impact,Arial,sans-serif;font-weight:400;font-size:22px;letter-spacing:-0.005em;text-transform:uppercase;color:${WHITE};line-height:1.05;">${escape(args.orderNumber)}</p>
+                <p style="margin:0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:900;letter-spacing:0.22em;text-transform:uppercase;color:${MUTED};">Carrier</p>
+                <p style="margin:4px 0 14px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;color:${WHITE};">${escape(args.carrierLabel)}</p>
+                <p style="margin:0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:900;letter-spacing:0.22em;text-transform:uppercase;color:${MUTED};">Tracking number</p>
+                <p style="margin:4px 0 18px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;color:${WHITE};word-break:break-all;">${escape(args.trackingNumber)}</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:0 20px 20px;">
+                <a href="${args.trackingUrl}" style="display:inline-block;padding:12px 20px;background:${ORANGE};color:${DARK};font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border-radius:999px;">Track shipment →</a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  `;
+  const reminderBlock = `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+      <tr>
+        <td style="padding:6px 28px 28px;text-align:center;border-top:1px solid rgba(255,255,255,0.08);">
+          <p style="margin:18px 0 0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:1.55;color:rgba(255,255,255,0.78);">
+            When it lands, slot in your card, snap the case shut, put it on the shelf. Need a hand?
+            <a href="${siteOrigin()}/build-guide" style="color:${YELLOW};text-decoration:underline;">Read the build guide</a>.
+          </p>
+        </td>
+      </tr>
+    </table>
+  `;
+  return {
+    subject,
+    html: shell({
+      preheader: `Your Slablabs order ${args.orderNumber} just shipped — tracking inside.`,
+      body: heroBlock + trackingBlock + reminderBlock,
+    }),
+  };
+}
+
 function escape(s: string): string {
   return s
     .replace(/&/g, "&amp;")

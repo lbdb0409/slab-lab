@@ -9,8 +9,17 @@ import {
 import { getAllCustomers } from "@/lib/customers";
 import { formatCents, formatRelative } from "@/lib/format";
 
-export default async function AdminCustomersPage() {
-  const customers = await getAllCustomers();
+type Props = { searchParams: Promise<{ q?: string }> };
+
+export default async function AdminCustomersPage({ searchParams }: Props) {
+  const params = await searchParams;
+  const q = (params.q ?? "").trim().toLowerCase();
+  const all = await getAllCustomers();
+  const customers = q
+    ? all.filter((c) =>
+        `${c.name} ${c.email}`.toLowerCase().includes(q),
+      )
+    : all;
 
   return (
     <>
@@ -21,16 +30,35 @@ export default async function AdminCustomersPage() {
       />
 
       <AdminContent className="flex flex-col gap-4">
-        <div className="flex flex-wrap items-center gap-3 rounded-md border border-line bg-white p-3">
+        <form
+          method="get"
+          className="flex flex-wrap items-center gap-3 rounded-md border border-line bg-white p-3"
+        >
           <div className="flex flex-1 items-center gap-2 rounded-md border border-line bg-bg-soft px-3 py-1.5">
             <Search className="size-4 text-muted" strokeWidth={2.4} />
             <input
               type="search"
+              name="q"
+              defaultValue={q}
               placeholder="Search by name or email…"
               className="w-full bg-transparent text-sm placeholder:text-muted focus:outline-none"
             />
           </div>
-        </div>
+          <button
+            type="submit"
+            className="rounded-md bg-text px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-white hover:bg-orange"
+          >
+            Search
+          </button>
+          {q && (
+            <Link
+              href="/admin/customers"
+              className="text-[11px] font-bold uppercase tracking-wider text-muted hover:text-orange"
+            >
+              Clear
+            </Link>
+          )}
+        </form>
 
         <AdminCard className="overflow-hidden">
           {customers.length === 0 ? (

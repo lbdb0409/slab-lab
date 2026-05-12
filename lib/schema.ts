@@ -71,6 +71,10 @@ export const orders = pgTable("orders", {
   shippingCity: text("shipping_city"),
   shippingState: text("shipping_state"),
   notes: text("notes"),
+  trackingCarrier: text("tracking_carrier"),
+  trackingNumber: text("tracking_number"),
+  trackingUrl: text("tracking_url"),
+  labelUrl: text("label_url"),
   createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()
     .defaultNow(),
@@ -117,6 +121,26 @@ export const orderItemsRelations = relations(orderItems, ({ one }) => ({
   }),
 }));
 
+export const cardRequests = pgTable("card_requests", {
+  id: serial("id").primaryKey(),
+  card: text("card").notNull(),
+  setName: text("set_name"),
+  email: text("email").notNull(),
+  notes: text("notes"),
+  status: text("status", {
+    enum: ["open", "contacted", "produced", "declined"],
+  })
+    .notNull()
+    .default("open"),
+  internalNotes: text("internal_notes"),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
 export const launchSubscribers = pgTable("launch_subscribers", {
   id: serial("id").primaryKey(),
   email: text("email").notNull().unique(),
@@ -131,5 +155,7 @@ export type Order = typeof orders.$inferSelect;
 export type OrderItem = typeof orderItems.$inferSelect;
 export type Customer = typeof customers.$inferSelect;
 export type LaunchSubscriber = typeof launchSubscribers.$inferSelect;
+export type CardRequest = typeof cardRequests.$inferSelect;
 
 export type OrderStatus = NonNullable<Order["status"]>;
+export type CardRequestStatus = NonNullable<CardRequest["status"]>;
