@@ -10,6 +10,7 @@ const SET_ACCENT: Record<string, string> = {
   "mega-evolutions": "#8b3eff",
   "scarlet-violet": "#ff2d3e",
   "sword-and-shield": "#00b8e0",
+  "black-star-promos": "#ffcb00",
 };
 
 export function ShopByExpansion({ products }: { products: ProductForCard[] }) {

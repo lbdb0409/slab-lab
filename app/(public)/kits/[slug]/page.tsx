@@ -33,24 +33,28 @@ const SET_TINT_BG: Record<string, string> = {
   "mega-evolutions": "bg-lavender",
   "scarlet-violet": "bg-pink-tint",
   "sword-and-shield": "bg-sky-tint",
+  "black-star-promos": "bg-gold",
 };
 
 const SET_ACCENT_TEXT: Record<string, string> = {
   "mega-evolutions": "text-purple",
   "scarlet-violet": "text-red",
   "sword-and-shield": "text-cyan-deep",
+  "black-star-promos": "text-yellow-deep",
 };
 
 const SET_GLOW: Record<string, string> = {
   "mega-evolutions": "rgba(139,62,255,0.45)",
   "scarlet-violet": "rgba(255,45,62,0.45)",
   "sword-and-shield": "rgba(0,184,224,0.4)",
+  "black-star-promos": "rgba(255,203,0,0.45)",
 };
 
 const SET_OCTAGON_TINT: Record<string, string> = {
   "mega-evolutions": "text-purple/25",
   "scarlet-violet": "text-red/25",
   "sword-and-shield": "text-cyan/25",
+  "black-star-promos": "text-yellow/25",
 };
 
 export async function generateStaticParams() {

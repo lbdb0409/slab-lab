@@ -71,4 +71,24 @@ export const SET_CONTENT: Record<string, SetContent> = {
     accentBgClass: "bg-sky-tint",
     pageHeaderBg: "sky",
   },
+  "black-star-promos": {
+    slug: "black-star-promos",
+    tagline:
+      "The promo line — event drops, movie tie-ins, and cards you can't pull from a pack.",
+    intro:
+      "Black Star Promos are the cards that live outside the main sets — movie giveaways, McDonald's collabs, Pokémon Center exclusives, prerelease drops. The cards collectors hunt for years because they only existed in a moment.",
+    about: [
+      "The promo line has run since the WOTC era — the Ancient Mew movie giveaway, the Pikachu Illustrator (still the most expensive Pokémon card ever printed), the entire history of cards that bypassed the booster format.",
+      "What unites them is exclusivity. A Black Star Promo wasn't pulled from a pack — it was earned, won, gifted, or chased. Which is exactly why they tend to be the cards collectors want displayed loudest.",
+      "Surrounds for this line lean into the gold-on-black promo aesthetic — the star symbol, the foil border, the prerelease stamps — extended outward so the slab carries the same energy as the card.",
+    ],
+    era: "Promo line",
+    year: "2002 – now",
+    signature: "Ancient Mew",
+    bg: "#0a0a0a",
+    accent: "#ffcb00",
+    accentText: "text-yellow-deep",
+    accentBgClass: "bg-gold",
+    pageHeaderBg: "gold",
+  },
 };
