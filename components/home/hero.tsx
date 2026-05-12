@@ -47,12 +47,21 @@ export function Hero() {
             Custom slab kits · Pokémon TCG
           </span>
 
-          <h1 className="font-display text-[clamp(3rem,9vw,7rem)] leading-[0.88] tracking-tight">
-            <span className="block">Display</span>
-            <span className="block text-yellow">every card</span>
+          <h1 className="font-display text-[clamp(2.75rem,8.5vw,6.75rem)] uppercase leading-[0.9] tracking-tight">
+            <span className="block">Not every card</span>
             <span className="block">
-              <span className="text-orange">in your</span>{" "}
-              <span className="text-magenta">collection.</span>
+              needs a{" "}
+              <span className="relative inline-block align-baseline">
+                <span aria-hidden className="absolute inset-0 -skew-x-6 bg-magenta" />
+                <span className="relative inline-block px-3 py-0.5 text-white">10</span>
+              </span>
+            </span>
+            <span className="block">to deserve the</span>
+            <span
+              className="block text-yellow"
+              style={{ textShadow: "0 0 48px rgba(255,203,0,0.55)" }}
+            >
+              spotlight.
             </span>
           </h1>
 

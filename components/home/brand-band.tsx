@@ -24,18 +24,6 @@ export function BrandBand() {
           <p className="font-display text-[clamp(2.5rem,6vw,5rem)] uppercase leading-[0.9] tracking-tight">
             Encase the art.
           </p>
-
-          {/* Mantra — integrated as a callout instead of its own section */}
-          <blockquote className="mt-1 flex items-start gap-3 border-l-4 border-yellow pl-4">
-            <p className="font-display text-base uppercase leading-snug tracking-wide text-white md:text-lg">
-              &ldquo;Not every card needs a{" "}
-              <span className="inline-block bg-yellow px-1.5 py-0.5 text-text">10</span>{" "}
-              to deserve the spotlight.&rdquo;
-            </p>
-          </blockquote>
-          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/70">
-            — the Slablabs mantra
-          </span>
         </div>
 
         <div className="flex flex-col gap-5">
