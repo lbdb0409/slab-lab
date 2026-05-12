@@ -1,17 +1,24 @@
-import { relations, sql } from "drizzle-orm";
-import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { relations } from "drizzle-orm";
+import {
+  boolean,
+  integer,
+  pgTable,
+  serial,
+  text,
+  timestamp,
+} from "drizzle-orm/pg-core";
 
-export const sets = sqliteTable("sets", {
+export const sets = pgTable("sets", {
   slug: text("slug").primaryKey(),
   name: text("name").notNull(),
   logo: text("logo"),
   position: integer("position").notNull().default(0),
-  createdAt: integer("created_at", { mode: "timestamp" })
+  createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()
-    .default(sql`(unixepoch())`),
+    .defaultNow(),
 });
 
-export const products = sqliteTable("products", {
+export const products = pgTable("products", {
   slug: text("slug").primaryKey(),
   card: text("card").notNull(),
   setName: text("set_name").notNull(),
@@ -29,27 +36,27 @@ export const products = sqliteTable("products", {
   editionTotal: integer("edition_total").default(100),
   description: text("description").default(""),
   imageUrl: text("image_url").default("/brand/slab-mockup.png"),
-  archived: integer("archived", { mode: "boolean" }).notNull().default(false),
-  createdAt: integer("created_at", { mode: "timestamp" })
+  archived: boolean("archived").notNull().default(false),
+  createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()
-    .default(sql`(unixepoch())`),
-  updatedAt: integer("updated_at", { mode: "timestamp" })
+    .defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
     .notNull()
-    .default(sql`(unixepoch())`),
+    .defaultNow(),
 });
 
-export const customers = sqliteTable("customers", {
+export const customers = pgTable("customers", {
   id: text("id").primaryKey(),
   email: text("email").notNull().unique(),
   name: text("name").notNull(),
   city: text("city"),
   state: text("state"),
-  createdAt: integer("created_at", { mode: "timestamp" })
+  createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()
-    .default(sql`(unixepoch())`),
+    .defaultNow(),
 });
 
-export const orders = sqliteTable("orders", {
+export const orders = pgTable("orders", {
   id: text("id").primaryKey(),
   number: text("number").notNull().unique(),
   customerId: text("customer_id")
@@ -64,14 +71,14 @@ export const orders = sqliteTable("orders", {
   shippingCity: text("shipping_city"),
   shippingState: text("shipping_state"),
   notes: text("notes"),
-  createdAt: integer("created_at", { mode: "timestamp" })
+  createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()
-    .default(sql`(unixepoch())`),
-  fulfilledAt: integer("fulfilled_at", { mode: "timestamp" }),
+    .defaultNow(),
+  fulfilledAt: timestamp("fulfilled_at", { withTimezone: true }),
 });
 
-export const orderItems = sqliteTable("order_items", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const orderItems = pgTable("order_items", {
+  id: serial("id").primaryKey(),
   orderId: text("order_id")
     .notNull()
     .references(() => orders.id, { onDelete: "cascade" }),
@@ -110,12 +117,12 @@ export const orderItemsRelations = relations(orderItems, ({ one }) => ({
   }),
 }));
 
-export const launchSubscribers = sqliteTable("launch_subscribers", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const launchSubscribers = pgTable("launch_subscribers", {
+  id: serial("id").primaryKey(),
   email: text("email").notNull().unique(),
-  createdAt: integer("created_at", { mode: "timestamp" })
+  createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()
-    .default(sql`(unixepoch())`),
+    .defaultNow(),
 });
 
 export type Product = typeof products.$inferSelect;
