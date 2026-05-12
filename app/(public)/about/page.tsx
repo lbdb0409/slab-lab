@@ -34,14 +34,14 @@ const COMMITMENTS = [
   {
     Icon: Heart,
     title: "Made for the spotlight.",
-    body: "Not every card scores a 10. Sentiment, set art, played-condition vintage — all of it deserves to be shown.",
+    body: "Not every card scores a 10. Sentiment, set art, played-condition vintage. All of it deserves to be shown.",
     color: "text-purple",
     bg: "bg-lavender",
   },
   {
     Icon: Printer,
     title: "Printed, not produced.",
-    body: "Each slab surround is custom-printed for one specific card. It isn't generic stock — it's made for the card you own.",
+    body: "Each slab surround is custom-printed for one specific card. It isn't generic stock. It's made for the card you own.",
     color: "text-cyan-deep",
     bg: "bg-sky-tint",
   },
@@ -152,7 +152,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* MANTRA — single elegant line, not a giant duplicate of the home */}
+      {/* MANTRA. Single elegant line, not a giant duplicate of the home */}
       <section className="relative overflow-hidden border-b border-line bg-cream">
         <Octagon className="absolute -left-12 top-6 size-40 rotate-12 text-orange/25 md:size-52" />
         <Octagon className="absolute -right-14 bottom-4 size-36 -rotate-12 text-magenta/25 md:size-48" />
@@ -173,7 +173,7 @@ export default function AboutPage() {
               to deserve the <span className="text-orange">spotlight</span>.&rdquo;
             </blockquote>
             <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-muted">
-              — Slablabs
+Slablabs
             </span>
           </div>
         </Container>

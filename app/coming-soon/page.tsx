@@ -19,13 +19,13 @@ const TCGS = [
 ] as const;
 
 export const metadata: Metadata = {
-  title: "Slablabs — coming soon. Encase the art.",
+  title: "Slablabs. Coming soon. Encase the art.",
   description:
-    "Custom-printed display slabs for Pokémon trading cards. Print-and-assemble — your card never leaves your hands. Join the launch list.",
+    "Custom-printed display slabs for Pokémon trading cards. Print-and-assemble. Your card never leaves your hands. Join the launch list.",
   alternates: { canonical: "/coming-soon" },
   openGraph: {
     type: "website",
-    title: "Slablabs — coming soon.",
+    title: "Slablabs. Coming soon.",
     description:
       "Custom-printed display slabs for Pokémon trading cards. Join the launch list to be first in.",
     url: `${SITE_URL}/coming-soon`,
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
         url: "/brand/slab-mockup.png",
         width: 1200,
         height: 630,
-        alt: "Slablabs display slab — coming soon",
+        alt: "Slablabs display slab. Coming soon",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Slablabs — coming soon.",
+    title: "Slablabs. Coming soon.",
     description:
       "Custom-printed display slabs for Pokémon trading cards. Join the launch list to be first in.",
     images: ["/brand/slab-mockup.png"],
@@ -128,7 +128,7 @@ export default async function ComingSoonPage({
 
             <p className="max-w-xl text-base leading-relaxed text-white/85 md:text-lg">
               Slablabs makes print-and-assemble display slabs for trading cards.
-              Custom-printed surrounds that extend the artwork past the card —
+              Custom-printed surrounds that extend the artwork past the card.
               your card never leaves your hands.
             </p>
 
@@ -152,7 +152,7 @@ export default async function ComingSoonPage({
             </a>
           </div>
 
-          {/* Hero visual — brand glyph lockup */}
+          {/* Hero visual. Brand glyph lockup */}
           <div className="relative mx-auto w-full max-w-[520px]">
             <div
               aria-hidden
@@ -177,7 +177,7 @@ export default async function ComingSoonPage({
               <span className="absolute right-[22%] top-[6%] size-1.5 rounded-full bg-white/80" />
               <span className="absolute left-[24%] bottom-[6%] size-1.5 rounded-full bg-white/80" />
 
-              {/* Centerpiece — filled octagonal chip with wordmark */}
+              {/* Centerpiece. Filled octagonal chip with wordmark */}
               <div
                 className="relative aspect-square w-[58%]"
                 style={{ filter: "drop-shadow(10px 10px 0 rgba(255,106,0,0.55))" }}
@@ -238,7 +238,7 @@ export default async function ComingSoonPage({
           <Pillar
             n="00"
             title="Card not included"
-            body="Slablabs doesn't handle your card — you keep it from your collection. Display product, not graded."
+            body="Slablabs doesn't handle your card. You keep it from your collection. Display product, not graded."
             accent="text-orange"
             highlight
           />

@@ -47,13 +47,13 @@ export default function PrivacyPage() {
           <p>When you visit, sign up, or buy from us we collect:</p>
           <LegalList
             items={[
-              "Your name and email — needed to confirm orders and send a magic-link sign-in",
-              "Your shipping address — needed to ship the kit",
-              "Your phone number — used by couriers for delivery questions",
-              "Payment details — handled entirely by Stripe; we never see your card number",
-              "Order history — what you bought and when",
-              "Wishlist — kits you've saved (if you're signed in)",
-              "Basic technical data — browser, device type, IP address, page views",
+              "Your name and email. Needed to confirm orders and send a magic-link sign-in",
+              "Your shipping address. Needed to ship the kit",
+              "Your phone number. Used by couriers for delivery questions",
+              "Payment details. Handled entirely by Stripe; we never see your card number",
+              "Order history. What you bought and when",
+              "Wishlist. Kits you've saved (if you're signed in)",
+              "Basic technical data. Browser, device type, IP address, page views",
             ]}
           />
         </LegalSection>
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
               "Process and ship your order",
               "Send order updates, tracking, and shipping notifications",
               "Reply to your support emails and custom requests",
-              "Send marketing emails — only if you opted in, unsubscribe in any email",
+              "Send marketing emails. Only if you opted in, unsubscribe in any email",
               "Improve the Site (anonymous, aggregate analytics)",
               "Detect and prevent fraudulent orders",
               "Comply with Australian tax and consumer-protection law",
@@ -84,11 +84,11 @@ export default function PrivacyPage() {
           </p>
           <LegalList
             items={[
-              "Stripe — to process payments",
-              "Australia Post / courier partners — to ship your order",
-              "Our email provider — to send transactional and (opted-in) marketing emails",
-              "Our customer support tool — only when you email us",
-              "Cloud hosting (Vercel / Neon) — where the Site and database run",
+              "Stripe. To process payments",
+              "Australia Post / courier partners. To ship your order",
+              "Our email provider. To send transactional and (opted-in) marketing emails",
+              "Our customer support tool. Only when you email us",
+              "Cloud hosting (Vercel / Neon). Where the Site and database run",
             ]}
           />
           <p>
@@ -105,7 +105,7 @@ export default function PrivacyPage() {
         <LegalSection n="05" title="Cookies &amp; tracking">
           <p>
             We use a small set of cookies and similar storage (like
-            localStorage) for essential things — keeping your bag, your
+            localStorage) for essential things. Keeping your bag, your
             sign-in state, and our pack-opening intro flag.
           </p>
           <p>
@@ -144,7 +144,7 @@ export default function PrivacyPage() {
               "Access the personal information we hold about you",
               "Correct anything inaccurate",
               "Ask us to delete your account and associated data",
-              "Object to receiving marketing emails (just unsubscribe — instant)",
+              "Object to receiving marketing emails (just unsubscribe. Instant)",
               "Complain to the Office of the Australian Information Commissioner if you think we've mishandled your data",
             ]}
           />
@@ -164,7 +164,7 @@ export default function PrivacyPage() {
           <p>
             We use industry-standard encryption (HTTPS site-wide, encrypted
             databases) and rely on Stripe for payments so card numbers never
-            hit our servers. No system is 100% secure — if we ever have a data
+            hit our servers. No system is 100% secure. If we ever have a data
             incident affecting your information, we&apos;ll tell you within
             72 hours.
           </p>

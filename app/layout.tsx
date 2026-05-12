@@ -23,11 +23,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Slablabs — Encase the art.",
+    default: "Slablabs. Encase the art.",
     template: "%s · Slablabs",
   },
   description:
-    "Custom-printed display slabs for Pokémon trading cards. Print-and-assemble — your card never leaves your hands. Made for the cards that won't grade.",
+    "Custom-printed display slabs for Pokémon trading cards. Print-and-assemble. Your card never leaves your hands. Made for the cards that won't grade.",
   keywords: [
     "Pokémon TCG",
     "display slab",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Slablabs",
-    title: "Slablabs — Encase the art.",
+    title: "Slablabs. Encase the art.",
     description:
       "Custom-printed display slabs for Pokémon trading cards. Your card never leaves your hands.",
     url: SITE_URL,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Slablabs — Encase the art.",
+    title: "Slablabs. Encase the art.",
     description:
       "Custom-printed display slabs for Pokémon trading cards. Your card never leaves your hands.",
     images: ["/brand/slab-mockup.png"],

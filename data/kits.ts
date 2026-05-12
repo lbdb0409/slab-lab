@@ -17,7 +17,7 @@ export type Expansion = {
   logo?: string;
 };
 
-// Static expansion list — also seeded into the `sets` table in the DB for FK references.
+// Static expansion list. Also seeded into the `sets` table in the DB for FK references.
 // Edit set names/order/logos here AND re-seed the DB if they change.
 export const EXPANSIONS: Expansion[] = [
   {

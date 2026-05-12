@@ -118,7 +118,7 @@ export function KitCard({ kit, dense = false }: { kit: ProductForCard; dense?: b
               isLive ? "text-text" : "text-muted",
             )}
           >
-            {isLive ? priceLabel : "—"}
+            {isLive ? priceLabel : "–"}
           </span>
         </div>
         <div className="flex items-center justify-between gap-2 text-[11px] uppercase tracking-wider text-muted">

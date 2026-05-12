@@ -23,7 +23,7 @@ export function RequestACard() {
       <Octagon className="pointer-events-none absolute -right-14 -bottom-14 size-48 -rotate-12 text-white/10 md:size-64" />
 
       <Container className="relative grid items-start gap-10 py-16 md:grid-cols-[1.15fr_1fr] md:gap-16 md:py-24">
-        {/* LEFT — explainer */}
+        {/* LEFT. Explainer */}
         <div className="flex flex-col gap-6">
           <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-yellow backdrop-blur-sm">
             <Crosshair className="size-3.5" strokeWidth={2.6} />
@@ -62,7 +62,7 @@ export function RequestACard() {
           </ul>
         </div>
 
-        {/* RIGHT — form */}
+        {/* RIGHT. Form */}
         <div className="rounded-2xl border-2 border-white bg-text p-6 shadow-[8px_8px_0_rgba(0,0,0,0.25)] md:p-8">
           {state.ok ? (
             <div className="flex flex-col items-center gap-4 py-6 text-center">

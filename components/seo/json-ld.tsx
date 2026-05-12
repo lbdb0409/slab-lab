@@ -17,7 +17,7 @@ export const ORGANIZATION_JSONLD = {
   url: SITE_URL,
   logo: `${SITE_URL}/brand/logo.png`,
   description:
-    "Custom-printed display slabs for Pokémon trading cards. Print-and-assemble — your card never leaves your hands.",
+    "Custom-printed display slabs for Pokémon trading cards. Print-and-assemble. Your card never leaves your hands.",
   address: {
     "@type": "PostalAddress",
     addressCountry: "AU",

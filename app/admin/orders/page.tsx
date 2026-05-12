@@ -200,7 +200,7 @@ export default async function OrdersPage({ searchParams }: Props) {
                         </div>
                       </td>
                       <td className="px-5 py-3 text-text-soft">
-                        {order.shippingCity ?? "—"}
+                        {order.shippingCity ?? "–"}
                         {order.shippingState ? `, ${order.shippingState}` : ""}
                       </td>
                       <td className="px-5 py-3 text-text-soft">

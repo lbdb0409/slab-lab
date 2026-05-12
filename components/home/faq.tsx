@@ -9,7 +9,7 @@ type QA = { q: string; a: string };
 const FAQS: QA[] = [
   {
     q: "Does my card come in the kit?",
-    a: "No. Slablabs ships the surround and case only — you supply the card from your own collection and slot it in at home. We never handle your card.",
+    a: "No. Slablabs ships the surround and case only. You supply the card from your own collection and slot it in at home. We never handle your card.",
   },
   {
     q: "What card sizes fit?",
@@ -21,7 +21,7 @@ const FAQS: QA[] = [
   },
   {
     q: "How long does assembly take?",
-    a: "Around 60 seconds. The surround clicks into the case, your card slides into the surround, the case snaps shut. Step-by-step instructions ship in every kit — there's also a build guide on the site.",
+    a: "Around 60 seconds. The surround clicks into the case, your card slides into the surround, the case snaps shut. Step-by-step instructions ship in every kit. There's also a build guide on the site.",
   },
   {
     q: "Will the case damage or scratch my card?",
@@ -29,7 +29,7 @@ const FAQS: QA[] = [
   },
   {
     q: "What if I damage the kit during assembly?",
-    a: "Email us and we'll send a replacement surround at cost. We've designed the snap to be forgiving — most first-time builds go fine.",
+    a: "Email us and we'll send a replacement surround at cost. We've designed the snap to be forgiving. Most first-time builds go fine.",
   },
   {
     q: "Are you affiliated with The Pokémon Company / Nintendo?",
@@ -37,7 +37,7 @@ const FAQS: QA[] = [
   },
   {
     q: "Where do you ship?",
-    a: "Australia only for now. Free standard shipping on orders over $99 — 3–5 business days nationwide. International shipping is on the roadmap.",
+    a: "Australia only for now. Free standard shipping on orders over $99. 3–5 business days nationwide. International shipping is on the roadmap.",
   },
 ];
 

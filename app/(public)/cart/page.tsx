@@ -74,7 +74,7 @@ export default function CartPage() {
               Your bag is empty.
             </h2>
             <p className="max-w-sm text-base text-muted">
-              Find a slab kit for a card you own and add it to your bag — your
+              Find a slab kit for a card you own and add it to your bag. Your
               card never leaves your hands.
             </p>
             <Link href="/shop" className="btn-orange mt-2">
@@ -103,7 +103,7 @@ export default function CartPage() {
               ))}
               <p className="mt-4 text-xs text-muted">
                 Slab kits include the surround + case only.{" "}
-                <strong>Your card is not included</strong> — you supply it from
+                <strong>Your card is not included</strong>. You supply it from
                 your own collection.
               </p>
             </div>

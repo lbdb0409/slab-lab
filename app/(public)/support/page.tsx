@@ -18,7 +18,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 export const metadata: Metadata = {
   title: "Support",
   description:
-    "Get help with your Slablabs slab kit — orders, shipping, builds, and returns. FAQs and direct contact.",
+    "Get help with your Slablabs slab kit. Orders, shipping, builds, and returns. FAQs and direct contact.",
   alternates: { canonical: "/support" },
 };
 
@@ -72,7 +72,7 @@ const FAQ = [
   },
   {
     q: "Can I return a kit?",
-    a: "Yes — unassembled kits can be returned within 30 days for a full refund. Once you've built it, we offer replacements only for defects.",
+    a: "Yes. Unassembled kits can be returned within 30 days for a full refund. Once you've built it, we offer replacements only for defects.",
   },
   {
     q: "What if my card doesn't fit?",
@@ -80,7 +80,7 @@ const FAQ = [
   },
   {
     q: "Do you ship outside Australia?",
-    a: "Not yet — we ship within Australia only for now. International shipping is on the roadmap.",
+    a: "Not yet. We ship within Australia only for now. International shipping is on the roadmap.",
   },
   {
     q: "When will more TCGs go live?",
@@ -88,7 +88,7 @@ const FAQ = [
   },
   {
     q: "Can I request a specific card?",
-    a: "Yes — use the Request a Card form on the home page. Tell us the card and set, and we'll source the artwork and design a kit.",
+    a: "Yes. Use the Request a Card form on the home page. Tell us the card and set, and we'll source the artwork and design a kit.",
   },
 ];
 
@@ -217,7 +217,7 @@ export default function SupportPage() {
               Email a <span className="text-yellow">human.</span>
             </h2>
             <p className="max-w-md text-base leading-relaxed text-white/80 md:text-lg">
-              We&apos;re a small Australian team — every email is read by
+              We&apos;re a small Australian team. Every email is read by
               someone, not a bot. Expect a reply within a working day.
             </p>
           </div>

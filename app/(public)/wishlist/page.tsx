@@ -23,7 +23,7 @@ export default function WishlistPage() {
             Your <span className="text-magenta">wishlist.</span>
           </>
         }
-        body="Slabs you've tapped the heart on — saved here so you can come back when you're ready."
+        body="Slabs you've tapped the heart on. Saved here so you can come back when you're ready."
         bg="pink"
       />
 

@@ -25,7 +25,7 @@ function row(
 }
 
 function display(row: EnvRow): string {
-  if (row.value == null || row.value === "") return "— not set —";
+  if (row.value == null || row.value === "") return "not set";
   if (row.redact) {
     const v = row.value;
     if (v.length <= 8) return "•".repeat(v.length);
@@ -105,7 +105,7 @@ export default function AdminSettingsPage() {
                 <ExternalLink className="size-3" strokeWidth={2.4} />
               </a>
               {" "}→ Environment Variables, then redeploy. A real settings UI
-              (with form-based persistence) comes later — not worth half-baking
+              (with form-based persistence) comes later. Not worth half-baking
               it now.
             </p>
           </div>

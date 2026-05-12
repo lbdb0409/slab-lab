@@ -243,8 +243,8 @@ export default async function AdminProductsPage({ searchParams }: Props) {
                         </td>
                         <td className="px-5 py-3 text-right font-bold tabular-nums">
                           {isLive
-                            ? `${p.stock ?? 0} / ${p.editionTotal ?? "—"}`
-                            : "—"}
+                            ? `${p.stock ?? 0} / ${p.editionTotal ?? "–"}`
+                            : "–"}
                         </td>
                       </tr>
                     );

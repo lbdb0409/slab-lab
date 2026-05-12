@@ -67,7 +67,7 @@ export function Hero() {
 
           <p className="max-w-lg text-base leading-relaxed text-white/80 md:text-lg">
             Custom-printed slab kits for Pokémon trading cards. Pick your card,
-            we print, you snap it together at home — no grading queue, no
+            we print, you snap it together at home. No grading queue, no
             shipping your card off.
           </p>
 

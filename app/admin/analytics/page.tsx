@@ -101,14 +101,14 @@ export default async function AdminAnalyticsPage() {
             value={formatCents(stats.aovCents)}
             Icon={ShoppingBag}
             accent="magenta"
-            sub={empty ? "—" : `across ${stats.orderCount} orders`}
+            sub={empty ? "–" : `across ${stats.orderCount} orders`}
           />
           <StatCard
             label="Customers"
             value={String(customerCount)}
             Icon={Users}
             accent="purple"
-            sub={empty ? "—" : "unique buyers"}
+            sub={empty ? "–" : "unique buyers"}
           />
         </div>
 

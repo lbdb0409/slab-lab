@@ -31,7 +31,7 @@ export const fedex: CarrierAdapter = {
     if (!HAS_KEYS) {
       if (!trackingNumber) {
         throw new Error(
-          "FedEx API not configured — enter the tracking number manually.",
+          "FedEx API not configured. Enter the tracking number manually.",
         );
       }
       return {
@@ -42,7 +42,7 @@ export const fedex: CarrierAdapter = {
     }
 
     throw new Error(
-      "FedEx integration not implemented yet — wire createShipment in lib/shipping/fedex.ts.",
+      "FedEx integration not implemented yet. Wire createShipment in lib/shipping/fedex.ts.",
     );
   },
 };

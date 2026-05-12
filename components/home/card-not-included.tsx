@@ -24,12 +24,12 @@ export function CardNotIncluded() {
             leaves your hands.
           </p>
           <p className="max-w-xl text-sm leading-relaxed text-muted">
-            We&apos;re a display-product studio — not a grading company. No card
+            We&apos;re a display-product studio. Not a grading company. No card
             shipped to us. No grading queue. No third-party handling.
           </p>
         </div>
 
-        {/* RIGHT — what's in the box */}
+        {/* RIGHT. What's in the box */}
         <div className="relative">
           <div className="grid grid-cols-2 gap-3 md:gap-4">
             <Box

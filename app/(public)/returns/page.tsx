@@ -21,7 +21,7 @@ import { PageHeader } from "@/components/ui/page-header";
 export const metadata: Metadata = {
   title: "Returns Policy",
   description:
-    "Slablabs kits are custom-printed and final sale. Here's what we still cover — defects, courier damage, and wrong items — and how to claim.",
+    "Slablabs kits are custom-printed and final sale. Here's what we still cover. Defects, courier damage, and wrong items. And how to claim.",
   alternates: { canonical: "/returns" },
 };
 
@@ -29,7 +29,7 @@ const NO_RETURN_REASONS = [
   {
     Icon: Printer,
     title: "Each kit is printed to order",
-    body: "When you place an order we print a surround specifically for the card you chose — your kit is on a press within hours. Once printed it can't be unprinted or re-sold to another collector.",
+    body: "When you place an order we print a surround specifically for the card you chose. Your kit is on a press within hours. Once printed it can't be unprinted or re-sold to another collector.",
   },
   {
     Icon: Sparkles,
@@ -52,7 +52,7 @@ const WE_DO_COVER = [
   {
     Icon: CheckCircle2,
     title: "Print defect",
-    body: "Misaligned art, ink bleed, smudges, missing layers — anything that's our fault on the press. Free replacement, no return required.",
+    body: "Misaligned art, ink bleed, smudges, missing layers. Anything that's our fault on the press. Free replacement, no return required.",
     accent: "text-success",
     border: "border-success",
   },
@@ -84,13 +84,13 @@ const CLAIM_STEPS = [
     n: "01",
     Icon: Mail,
     title: "Email us within 7 days",
-    body: "hello@slablabs.com.au with your order number in the subject line. Earlier is better — couriers have tight claim windows.",
+    body: "hello@slablabs.com.au with your order number in the subject line. Earlier is better. Couriers have tight claim windows.",
   },
   {
     n: "02",
     Icon: Camera,
     title: "Send a photo (or two)",
-    body: "We need to see the issue. Phone photos are fine — clearly show the defect, damage, or wrong item. No card needed in the shot.",
+    body: "We need to see the issue. Phone photos are fine. Clearly show the defect, damage, or wrong item. No card needed in the shot.",
   },
   {
     n: "03",
@@ -116,7 +116,7 @@ export default function ReturnsPage() {
             Custom-printed. <span className="text-orange">Final sale.</span>
           </>
         }
-        body="Slablabs kits are printed to order, so we can't take change-of-mind returns. We still cover defects, damage, and anything we get wrong on our end — free replacements, no return required."
+        body="Slablabs kits are printed to order, so we can't take change-of-mind returns. We still cover defects, damage, and anything we get wrong on our end. Free replacements, no return required."
         bg="cream"
       />
 
@@ -137,7 +137,7 @@ export default function ReturnsPage() {
               colour wasn&apos;t for you.
             </p>
             <p className="mt-3 text-base leading-relaxed text-text-soft">
-              Pick carefully — every kit page lists the exact card the
+              Pick carefully. Every kit page lists the exact card the
               surround is keyed to.
             </p>
           </div>
@@ -150,7 +150,7 @@ export default function ReturnsPage() {
               We still cover our own mistakes
             </h2>
             <p className="mt-3 text-base leading-relaxed text-text-soft">
-              Defective prints, damaged-in-transit kits, wrong items shipped —
+              Defective prints, damaged-in-transit kits, wrong items shipped.
               all replaced free of charge. No restocking fee, no return
               shipping cost, no quibbling.
             </p>
@@ -342,7 +342,7 @@ export default function ReturnsPage() {
                   card you own.
                 </li>
                 <li>
-                  Slab kits are sized for standard 63 × 88mm TCG cards — email
+                  Slab kits are sized for standard 63 × 88mm TCG cards. Email
                   us before ordering if your card is a different size.
                 </li>
                 <li>
@@ -359,7 +359,7 @@ export default function ReturnsPage() {
                 Nothing in this policy limits your rights under the{" "}
                 <strong>Australian Consumer Law</strong>. You&apos;re entitled
                 to a remedy if a product is faulty, doesn&apos;t do what we said
-                it would, or wasn&apos;t delivered within a reasonable time —
+                it would, or wasn&apos;t delivered within a reasonable time.
                 regardless of what&apos;s on this page.
               </p>
             </div>

@@ -57,7 +57,7 @@ export async function requestCard(
     console.error("[request-card] db insert failed", err);
     return {
       ok: false,
-      message: "Couldn't save your request — try again in a moment.",
+      message: "Couldn't save your request. Try again in a moment.",
     };
   }
 
@@ -66,9 +66,9 @@ export async function requestCard(
     <h2 style="font-family:system-ui,sans-serif;">New card request</h2>
     <table style="font-family:system-ui,sans-serif;font-size:14px;border-collapse:collapse;">
       <tr><td style="padding:6px 14px 6px 0;color:#666;">Card</td><td style="padding:6px 0;"><strong>${escape(card)}</strong></td></tr>
-      <tr><td style="padding:6px 14px 6px 0;color:#666;">Set</td><td style="padding:6px 0;">${escape(set ?? "—")}</td></tr>
+      <tr><td style="padding:6px 14px 6px 0;color:#666;">Set</td><td style="padding:6px 0;">${escape(set ?? "–")}</td></tr>
       <tr><td style="padding:6px 14px 6px 0;color:#666;">From</td><td style="padding:6px 0;">${escape(email)}</td></tr>
-      <tr><td style="padding:6px 14px 6px 0;color:#666;vertical-align:top;">Notes</td><td style="padding:6px 0;white-space:pre-wrap;">${escape(notes ?? "—")}</td></tr>
+      <tr><td style="padding:6px 14px 6px 0;color:#666;vertical-align:top;">Notes</td><td style="padding:6px 0;white-space:pre-wrap;">${escape(notes ?? "–")}</td></tr>
     </table>
     <p style="font-family:system-ui,sans-serif;font-size:12px;color:#888;margin-top:18px;">
       Open this and the rest of the inbox in the admin: <a href="${process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"}/admin/requests">/admin/requests</a>

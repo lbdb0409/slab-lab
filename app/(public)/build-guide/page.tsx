@@ -17,7 +17,7 @@ import { PageHeader } from "@/components/ui/page-header";
 export const metadata: Metadata = {
   title: "Build guide",
   description:
-    "Step-by-step assembly guide for Slablabs slab kits — 60 seconds, no tools, your card never leaves your hands.",
+    "Step-by-step assembly guide for Slablabs slab kits. 60 seconds, no tools, your card never leaves your hands.",
 };
 
 const STEPS = [
@@ -33,7 +33,7 @@ const STEPS = [
     n: "02",
     Icon: Hand,
     title: "Pull your card",
-    body: "Take the card out of the sleeve. Hold it by the edges — fingerprints on the face will sit under PET for a long time. If it's an old card, do a quick wipe with the microfibre.",
+    body: "Take the card out of the sleeve. Hold it by the edges. Fingerprints on the face will sit under PET for a long time. If it's an old card, do a quick wipe with the microfibre.",
     color: "text-cyan-deep",
     bg: "bg-sky-tint",
   },
@@ -41,7 +41,7 @@ const STEPS = [
     n: "03",
     Icon: Layers,
     title: "Slot it in",
-    body: "Place the card face-up into the surround recess. The artwork on the surround should continue the card art outward — that's how you know it's the right orientation.",
+    body: "Place the card face-up into the surround recess. The artwork on the surround should continue the card art outward. That's how you know it's the right orientation.",
     color: "text-purple",
     bg: "bg-lavender",
   },
@@ -49,7 +49,7 @@ const STEPS = [
     n: "04",
     Icon: Lock,
     title: "Snap it shut",
-    body: "Press the slab case down over the surround. You'll feel four corner clicks. That's it — it's sealed, but not destroyed: you can pop it apart later if you ever want the card back.",
+    body: "Press the slab case down over the surround. You'll feel four corner clicks. That's it. It's sealed, but not destroyed: you can pop it apart later if you ever want the card back.",
     color: "text-lime-deep",
     bg: "bg-mint-tint",
   },
@@ -127,7 +127,7 @@ export default function BuildGuidePage() {
               </span>
               <h3 className="mt-3 font-display text-2xl uppercase">Your kit</h3>
               <p className="mt-2 text-sm leading-relaxed text-text-soft">
-                The Slablabs slab kit keyed to your card — printed surround +
+                The Slablabs slab kit keyed to your card. Printed surround +
                 snap-seal case + microfibre wipe.
               </p>
             </div>
@@ -251,7 +251,7 @@ export default function BuildGuidePage() {
             {[
               {
                 q: "I see a bubble between the card and the PET.",
-                a: "Pop a corner open, lift the PET slightly, and press down again from one corner across to the opposite — like applying a screen protector. The bubble pushes out.",
+                a: "Pop a corner open, lift the PET slightly, and press down again from one corner across to the opposite. Like applying a screen protector. The bubble pushes out.",
               },
               {
                 q: "The art on the surround doesn't line up.",
@@ -259,7 +259,7 @@ export default function BuildGuidePage() {
               },
               {
                 q: "I damaged the case.",
-                a: "Email support — we replace defective cases free, and replace customer-damaged cases at cost. Your card stays at home either way.",
+                a: "Email support. We replace defective cases free, and replace customer-damaged cases at cost. Your card stays at home either way.",
               },
               {
                 q: "I want to remove the card later.",

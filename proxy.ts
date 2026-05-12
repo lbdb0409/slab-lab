@@ -31,7 +31,7 @@ export function proxy(req: NextRequest) {
     return NextResponse.redirect(loginUrl);
   }
 
-  // Pre-launch gate — ON by default. Set COMING_SOON=0 to open the full site.
+  // Pre-launch gate. ON by default. Set COMING_SOON=0 to open the full site.
   if (process.env.COMING_SOON !== "0") {
     if (COMING_SOON_ALLOWLIST.has(pathname)) return NextResponse.next();
     const bypass = req.cookies.get(BYPASS_COOKIE)?.value;

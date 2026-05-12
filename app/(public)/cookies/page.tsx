@@ -82,7 +82,7 @@ export default function CookiesPage() {
 
         <LegalSection n="02" title="What we use">
           <p>
-            We keep it minimal. Three categories — and we use zero advertising
+            We keep it minimal. Three categories. And we use zero advertising
             or social-tracking cookies on this site.
           </p>
           <div className="my-4 overflow-x-auto">
@@ -119,7 +119,7 @@ export default function CookiesPage() {
 
         <LegalSection n="03" title="Essential cookies">
           <p>
-            Essential cookies are required for the Site to work — keeping your
+            Essential cookies are required for the Site to work. Keeping your
             bag during a session, keeping you signed in, and (for Stripe&apos;s
             cookies) preventing fraud at checkout. These can&apos;t be
             disabled while still using the Site normally.
@@ -128,7 +128,7 @@ export default function CookiesPage() {
 
         <LegalSection n="04" title="Functional storage">
           <p>
-            The pack-opening intro flag is one piece of functional storage —
+            The pack-opening intro flag is one piece of functional storage.
             we use it to remember whether you&apos;ve seen the intro so it
             doesn&apos;t replay every visit. You can clear this manually any
             time:
@@ -154,7 +154,7 @@ export default function CookiesPage() {
             the Site will continue to work.
           </p>
           <p>
-            Stripe&apos;s checkout cookies are set by Stripe directly — see
+            Stripe&apos;s checkout cookies are set by Stripe directly. See
             their{" "}
             <Link
               href="https://stripe.com/cookie-settings"

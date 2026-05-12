@@ -45,7 +45,7 @@ function offsetCard(innerHtml: string): string {
   `;
 }
 
-// Top header bar — logo chip + status pill
+// Top header bar. Logo chip + status pill
 function header(): string {
   return `
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
@@ -79,7 +79,7 @@ function displayHeading(args: { lead: string; accent: string; size?: number }): 
   `;
 }
 
-// Confetti dots row — a horizontal strip of brand colored dots
+// Confetti dots row. A horizontal strip of brand colored dots
 function confettiStrip(): string {
   const dots = [YELLOW, MAGENTA, CYAN, LIME, ORANGE, YELLOW, MAGENTA, CYAN];
   return `
@@ -108,7 +108,7 @@ function footer(): string {
             <strong style="color:${WHITE};letter-spacing:0.06em;">SLABLABS</strong> · Independent Australian display-slab studio · Encase the art.
           </p>
           <p style="margin:0 0 6px;">
-            Slab kits include the surround &amp; case only. <strong style="color:${WHITE};">Your card is not included</strong> — you supply it from your own collection. Display product, not graded.
+            Slab kits include the surround &amp; case only. <strong style="color:${WHITE};">Your card is not included</strong>. You supply it from your own collection. Display product, not graded.
           </p>
           <p style="margin:0;">
             Not affiliated with The Pokémon Company, Nintendo, Bandai, Wizards of the Coast, or Disney/Ravensburger. All trademarks property of their respective owners.
@@ -119,7 +119,7 @@ function footer(): string {
   `;
 }
 
-// Outer shell — ambient dark page, centered card, generous gutters
+// Outer shell. Ambient dark page, centered card, generous gutters
 function shell(args: { preheader: string; body: string }): string {
   return `<!doctype html>
 <html lang="en">
@@ -175,7 +175,7 @@ export function welcomeEmail(email: string): { subject: string; html: string } {
           </tr></table>
           ${displayHeading({ lead: "YOU'RE", accent: "IN.", size: 84 })}
           <p style="margin:18px auto 0;max-width:420px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.85);">
-            Welcome to the launch list. We'll send <strong style="color:${WHITE};">one email</strong> the moment Slablabs goes live — first dibs on every custom-printed slab kit we drop.
+            Welcome to the launch list. We'll send <strong style="color:${WHITE};">one email</strong> the moment Slablabs goes live. First dibs on every custom-printed slab kit we drop.
           </p>
           <div style="padding-top:24px;">${confettiStrip()}</div>
         </td>
@@ -210,7 +210,7 @@ export function welcomeEmail(email: string): { subject: string; html: string } {
             "Not every card needs a <span style="color:${ORANGE};">10</span> to deserve the spotlight."
           </p>
           <p style="margin:14px 0 0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:900;letter-spacing:0.22em;text-transform:uppercase;color:${MUTED};">
-            — Slablabs · Encase the art.
+Slablabs · Encase the art.
           </p>
         </td>
       </tr>
@@ -244,7 +244,7 @@ export function welcomeEmail(email: string): { subject: string; html: string } {
           <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-left:3px solid ${ORANGE};border-radius:8px;">
             <tr>
               <td style="padding:14px 18px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:1.55;color:${MUTED};">
-                You signed up with <strong style="color:${WHITE};">${escape(email)}</strong>. If this wasn't you, ignore this email — we won't message you again unless we launch.
+                You signed up with <strong style="color:${WHITE};">${escape(email)}</strong>. If this wasn't you, ignore this email. We won't message you again unless we launch.
               </td>
             </tr>
           </table>
@@ -259,7 +259,7 @@ export function welcomeEmail(email: string): { subject: string; html: string } {
     subject,
     html: shell({
       preheader:
-        "You're on the launch list. One email when Slablabs goes live — first dibs on every kit.",
+        "You're on the launch list. One email when Slablabs goes live. First dibs on every kit.",
       body,
     }),
   };
@@ -421,7 +421,7 @@ export function shippingConfirmationEmail(args: {
         <td style="padding:40px 28px 22px;text-align:center;background:linear-gradient(180deg,rgba(0,184,224,0.16) 0%,rgba(0,184,224,0) 75%);">
           ${displayHeading({ lead: "ON THE", accent: "WAY.", size: 72 })}
           <p style="margin:18px auto 0;max-width:440px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.85);">
-            Hey ${escape(args.customerName)} — your Slablabs kit just left the workshop. Tracking is live below.
+            Hey ${escape(args.customerName)}. Your Slablabs kit just left the workshop. Tracking is live below.
           </p>
         </td>
       </tr>
@@ -467,7 +467,7 @@ export function shippingConfirmationEmail(args: {
   return {
     subject,
     html: shell({
-      preheader: `Your Slablabs order ${args.orderNumber} just shipped — tracking inside.`,
+      preheader: `Your Slablabs order ${args.orderNumber} just shipped. Tracking inside.`,
       body: heroBlock + trackingBlock + reminderBlock,
     }),
   };

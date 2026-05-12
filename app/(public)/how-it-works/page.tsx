@@ -18,7 +18,7 @@ import { PageHeader } from "@/components/ui/page-header";
 export const metadata: Metadata = {
   title: "How it works",
   description:
-    "Three steps from finding a slab to displaying your card — and Slablabs never touches your card.",
+    "Three steps from finding a slab to displaying your card. And Slablabs never touches your card.",
 };
 
 const STEPS = [
@@ -26,7 +26,7 @@ const STEPS = [
     n: "01",
     Icon: Search,
     title: "Find your slab",
-    body: "Browse the catalog by Pokémon set or card. Each slab kit is keyed to a specific card — the printed surround extends that card's artwork past the border, so you pick the one that matches a card you already own.",
+    body: "Browse the catalog by Pokémon set or card. Each slab kit is keyed to a specific card. The printed surround extends that card's artwork past the border, so you pick the one that matches a card you already own.",
     color: "text-magenta",
     bg: "bg-pink-tint",
   },
@@ -34,7 +34,7 @@ const STEPS = [
     n: "02",
     Icon: Box,
     title: "Your kit ships",
-    body: "Custom-printed surround + slab case, packed flat, free AU shipping over $99. Arrives in 3–5 days. Nothing inside the case — the box ships empty so your card can fill it.",
+    body: "Custom-printed surround + slab case, packed flat, free AU shipping over $99. Arrives in 3–5 days. Nothing inside the case. The box ships empty so your card can fill it.",
     color: "text-cyan-deep",
     bg: "bg-sky-tint",
   },
@@ -42,7 +42,7 @@ const STEPS = [
     n: "03",
     Icon: Sparkles,
     title: "Slab it yourself",
-    body: "Slide your card into the printed surround so the artwork aligns. Snap the case shut. Done. Card stays in your hands the whole time — no mailing, no middlemen, no grading queue.",
+    body: "Slide your card into the printed surround so the artwork aligns. Snap the case shut. Done. Card stays in your hands the whole time. No mailing, no middlemen, no grading queue.",
     color: "text-lime-deep",
     bg: "bg-mint-tint",
   },
@@ -134,7 +134,7 @@ export default function HowItWorksPage() {
         </Container>
       </section>
 
-      {/* THE MOAT — dark */}
+      {/* THE MOAT. Dark */}
       <section className="relative overflow-hidden border-b border-line bg-text text-white">
         <div
           aria-hidden
@@ -168,7 +168,7 @@ export default function HowItWorksPage() {
             <div className="flex flex-col gap-5 text-base leading-relaxed text-white/85 md:text-lg">
               <p>
                 Most TCG display options ask you to mail your card off to be
-                graded — months in transit, fees stacked on fees, and your card
+                graded. Months in transit, fees stacked on fees, and your card
                 in someone else's hands. Even when it comes back, a 7 or an 8
                 often gets buried in a binder because it &quot;didn&apos;t
                 grade well enough.&quot;
@@ -219,7 +219,7 @@ export default function HowItWorksPage() {
             {[
               {
                 q: "Does the kit come with a card?",
-                a: "No — slab kits include the printed surround and the slab case only. You supply the trading card from your own collection.",
+                a: "No. Slab kits include the printed surround and the slab case only. You supply the trading card from your own collection.",
               },
               {
                 q: "Does this grade my card?",
@@ -231,7 +231,7 @@ export default function HowItWorksPage() {
               },
               {
                 q: "Can I open it later if I want my card back?",
-                a: "Yes — the case is sealed but not destroyed by opening. You can pop your card back out whenever you want.",
+                a: "Yes. The case is sealed but not destroyed by opening. You can pop your card back out whenever you want.",
               },
             ].map((item) => (
               <div

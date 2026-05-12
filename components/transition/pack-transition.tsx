@@ -214,7 +214,7 @@ export function PackTransition() {
                 />
               </svg>
 
-              {/* HOLOGRAPHIC SHINE — sweeps across while closed */}
+              {/* HOLOGRAPHIC SHINE. Sweeps across while closed */}
               {stage === "closed" && (
                 <motion.div
                   initial={{ x: "-110%" }}

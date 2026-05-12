@@ -75,7 +75,7 @@ export function Newsletter() {
               </p>
             ) : (
               <p className="text-xs text-white/80">
-                No spam — just new drops, restocks, and set previews. Unsubscribe anytime.
+                No spam. Just new drops, restocks, and set previews. Unsubscribe anytime.
               </p>
             )}
           </form>

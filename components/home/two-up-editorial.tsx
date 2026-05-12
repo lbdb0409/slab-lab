@@ -39,7 +39,7 @@ export function TwoUpEditorial() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 md:gap-5">
-          {/* Build guide — diagrammatic / typographic */}
+          {/* Build guide. Diagrammatic / typographic */}
           <Link
             href="/build-guide"
             className="group relative flex aspect-[4/3] flex-col justify-between overflow-hidden border-2 border-cyan/40 bg-text p-7 transition-transform duration-300 hover:-translate-y-1 md:p-9"
@@ -74,7 +74,7 @@ export function TwoUpEditorial() {
             </div>
           </Link>
 
-          {/* Gallery — photo card */}
+          {/* Gallery. Photo card */}
           <Link
             href="/gallery"
             className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden border-2 border-white/20 p-6 text-white md:p-8"
@@ -108,7 +108,7 @@ export function TwoUpEditorial() {
                 See how collectors display them.
               </h3>
               <p className="max-w-md text-sm leading-relaxed text-white/90 md:text-base">
-                Real builds from real shelves — submit yours and get featured.
+                Real builds from real shelves. Submit yours and get featured.
               </p>
               <span className="inline-flex items-center gap-1.5 pt-1 text-xs font-bold uppercase tracking-wider text-white">
                 Browse the gallery

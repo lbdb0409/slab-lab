@@ -10,7 +10,7 @@ import { PageHeader } from "@/components/ui/page-header";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Customer builds and shelf shots — see how collectors display their Slablabs kits.",
+    "Customer builds and shelf shots. See how collectors display their Slablabs kits.",
 };
 
 const TILE_TINTS = [
@@ -39,7 +39,7 @@ export default function GalleryPage() {
         bg="pink"
       />
 
-      {/* GALLERY GRID — placeholder while we collect real submissions */}
+      {/* GALLERY GRID. Placeholder while we collect real submissions */}
       <section className="border-b border-line bg-white">
         <Container className="py-14 md:py-20">
           <div className="mb-8 flex items-end justify-between gap-4 md:mb-10">
@@ -82,7 +82,7 @@ export default function GalleryPage() {
 
           <div className="mt-8 flex items-center justify-center">
             <p className="rounded-full border border-line bg-bg-soft px-4 py-2 text-[11px] font-bold uppercase tracking-wider text-muted">
-              Sample builds — real submissions coming soon
+              Sample builds. Real submissions coming soon
             </p>
           </div>
         </Container>
@@ -122,7 +122,7 @@ export default function GalleryPage() {
             </h2>
             <p className="max-w-md text-base leading-relaxed text-white/80 md:text-lg">
               Slabbed something you&apos;re proud of? Tag{" "}
-              <strong>@slablabs</strong> on Instagram, TikTok, or YouTube — or
+              <strong>@slablabs</strong> on Instagram, TikTok, or YouTube. Or
               send us a photo directly. We feature builds here every month.
             </p>
             <div className="flex flex-wrap items-center gap-3 pt-2">

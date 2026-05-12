@@ -18,7 +18,7 @@ export default function AccountOverviewPage() {
             <span className="text-magenta">collection HQ.</span>
           </>
         }
-        body="Customer accounts are coming with Stripe Checkout. For now, every kit ships from the bag — no account required."
+        body="Customer accounts are coming with Stripe Checkout. For now, every kit ships from the bag. No account required."
         bg="pink"
       />
 

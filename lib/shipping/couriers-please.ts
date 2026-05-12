@@ -4,12 +4,12 @@
 //   1. Sign up: https://www.couriersplease.com.au/
 //   2. Request API access from your account manager.
 //   3. Set env vars:
-//        COURIERS_PLEASE_API_KEY  — your API key
-//        COURIERS_PLEASE_ACCOUNT  — your account code
+//        COURIERS_PLEASE_API_KEY  : your API key
+//        COURIERS_PLEASE_ACCOUNT  : your account code
 //   4. Replace `createShipment` with a real call to their consignment API.
 //      Docs (request from CP account team): typically POST /v1/consignments
 //
-// Until then, behaves identically to the AusPost stub — uses the manually
+// Until then, behaves identically to the AusPost stub. Uses the manually
 // entered tracking number and generates the public tracking URL.
 
 import type { CarrierAdapter } from "./index";
@@ -28,7 +28,7 @@ export const couriersPlease: CarrierAdapter = {
     if (!HAS_KEYS) {
       if (!trackingNumber) {
         throw new Error(
-          "Couriers Please API not configured — enter the tracking number manually.",
+          "Couriers Please API not configured. Enter the tracking number manually.",
         );
       }
       return {
@@ -39,7 +39,7 @@ export const couriersPlease: CarrierAdapter = {
     }
 
     throw new Error(
-      "Couriers Please integration not implemented yet — wire createShipment in lib/shipping/couriers-please.ts.",
+      "Couriers Please integration not implemented yet. Wire createShipment in lib/shipping/couriers-please.ts.",
     );
   },
 };

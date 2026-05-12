@@ -31,7 +31,7 @@ export function BroadcastForm({ subscriberCount }: { subscriberCount: number }) 
                 type="text"
                 name="subject"
                 required
-                placeholder="Slablabs is live — first kits drop today"
+                placeholder="Slablabs is live. First kits drop today"
                 className="rounded-md border border-line bg-white px-3 py-2 text-sm focus:border-text focus:outline-none"
               />
             </label>
@@ -47,7 +47,7 @@ export function BroadcastForm({ subscriberCount }: { subscriberCount: number }) 
                 className="rounded-md border border-line bg-white px-3 py-2.5 font-mono text-xs leading-relaxed placeholder:text-muted focus:border-text focus:outline-none"
               />
               <span className="text-[11px] text-muted">
-                Inline HTML. Use inline styles — most email clients strip{" "}
+                Inline HTML. Use inline styles. Most email clients strip{" "}
                 <code className="rounded bg-bg-soft px-1 py-0.5 font-mono">&lt;style&gt;</code>{" "}
                 tags. Plain paragraphs and links work fine.
               </span>
@@ -117,7 +117,7 @@ export function BroadcastForm({ subscriberCount }: { subscriberCount: number }) 
           <AdminCardHeader title="Sending notes" />
           <ul className="flex flex-col gap-2 p-5 text-xs leading-relaxed text-text-soft">
             <li>
-              · Sends one at a time to keep things tidy — slow for large lists,
+              · Sends one at a time to keep things tidy. Slow for large lists,
               fine for the launch announcement.
             </li>
             <li>
@@ -129,7 +129,7 @@ export function BroadcastForm({ subscriberCount }: { subscriberCount: number }) 
               non-test addresses.
             </li>
             <li>
-              · No unsubscribe link is injected automatically yet — add one to
+              · No unsubscribe link is injected automatically yet. Add one to
               the body manually for now.
             </li>
           </ul>

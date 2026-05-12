@@ -62,13 +62,13 @@ export default function TermsPage() {
 
         <LegalSection n="03" title="Your account">
           <p>
-            You can browse the Site without an account. Some features —
-            wishlist, order history, magic-link sign-in — require one.
+            You can browse the Site without an account. Some features.
+            wishlist, order history, magic-link sign-in. Require one.
           </p>
           <LegalList
             items={[
               "Provide accurate information when signing up",
-              "Keep your sign-in details confidential — you're responsible for activity under your account",
+              "Keep your sign-in details confidential. You're responsible for activity under your account",
               "Tell us promptly if you suspect unauthorised access",
               "Don't share, sell, or transfer your account",
             ]}
@@ -82,13 +82,13 @@ export default function TermsPage() {
           </p>
           <p>
             Placing an order is an offer to buy a kit. We may accept or
-            decline that offer — common reasons we decline include incorrect
+            decline that offer. Common reasons we decline include incorrect
             pricing on the Site, unavailable stock, or a suspected fraudulent
             order. If we decline, we won&apos;t charge you.
           </p>
           <p>
             Once we accept your order we&apos;ll send you a confirmation
-            email. Acceptance is when we say so — not when you click
+            email. Acceptance is when we say so. Not when you click
             &quot;Place order&quot;.
           </p>
         </LegalSection>
@@ -97,7 +97,7 @@ export default function TermsPage() {
           <p>
             <strong>Slab kits include the printed surround and the
             slab case only.</strong> Your trading card is{" "}
-            <strong>not included</strong> — you supply it from your own
+            <strong>not included</strong>. You supply it from your own
             collection.
           </p>
           <p>
@@ -147,8 +147,8 @@ export default function TermsPage() {
 
         <LegalSection n="08" title="Intellectual property">
           <p>
-            All Site content — design, code, illustrations, photography,
-            copywriting, the Slablabs brand mark — is owned by Slablabs or
+            All Site content. Design, code, illustrations, photography,
+            copywriting, the Slablabs brand mark. Is owned by Slablabs or
             licensed to us. Don&apos;t copy, reproduce, or use it without
             written permission.
           </p>

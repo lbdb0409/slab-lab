@@ -93,7 +93,7 @@ export default async function AdminCustomerDetailPage({ params }: Props) {
             {(customer.city || customer.state) && (
               <span className="inline-flex items-center gap-1.5 text-sm text-text-soft">
                 <MapPin className="size-3.5" strokeWidth={2.4} />
-                {customer.city ?? "—"}
+                {customer.city ?? "–"}
                 {customer.state ? `, ${customer.state}` : ""}, Australia
               </span>
             )}
@@ -103,7 +103,7 @@ export default async function AdminCustomerDetailPage({ params }: Props) {
               Customer since
             </span>
             <span className="font-display text-lg">
-              {firstOrder ? formatDate(firstOrder) : "—"}
+              {firstOrder ? formatDate(firstOrder) : "–"}
             </span>
             {lastOrder && (
               <span className="text-xs text-muted">
@@ -134,7 +134,7 @@ export default async function AdminCustomerDetailPage({ params }: Props) {
           />
           <StatCard
             label="First order"
-            value={firstOrder ? formatRelative(firstOrder) : "—"}
+            value={firstOrder ? formatRelative(firstOrder) : "–"}
             Icon={ShoppingBag}
             accent="purple"
           />

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const content = SET_CONTENT[slug];
   if (!set || !content) return { title: "Set not found" };
   const title = `${set.name} slab kits`;
-  const description = `${content.tagline} Browse Slablabs ${set.name} slab kits — custom-printed surrounds for the best cards from the ${content.era}.`;
+  const description = `${content.tagline} Browse Slablabs ${set.name} slab kits. Custom-printed surrounds for the best cards from the ${content.era}.`;
   return {
     title,
     description,
@@ -218,7 +218,7 @@ export default async function SetLandingPage({ params }: Props) {
                 No kits in this set yet.
               </p>
               <p className="mt-2 text-sm text-muted">
-                The first {set.name} kits are on the way — check back soon.
+                The first {set.name} kits are on the way. Check back soon.
               </p>
             </div>
           ) : (

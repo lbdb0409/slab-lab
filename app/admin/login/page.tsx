@@ -84,7 +84,7 @@ export default async function AdminLoginPage({
 
             {error && (
               <p className="rounded-md border border-danger/40 bg-danger/5 px-3 py-2 text-xs font-bold uppercase tracking-wider text-danger">
-                Wrong password — try again
+                Wrong password. Try again
               </p>
             )}
 

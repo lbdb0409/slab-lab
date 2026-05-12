@@ -85,7 +85,7 @@ export function KitActions({
       </div>
       <p className="text-xs text-muted">
         {isLive
-          ? "Slab + case only — your card not included"
+          ? "Slab + case only. Your card not included"
           : "Get an email the moment this kit ships"}
       </p>
     </div>

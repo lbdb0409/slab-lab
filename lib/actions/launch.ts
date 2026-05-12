@@ -46,7 +46,7 @@ export async function subscribe(
   }
 
   // Fire emails only for genuinely new signups. Failures here must not
-  // unwind the DB insert — the subscriber is already on the list.
+  // unwind the DB insert. The subscriber is already on the list.
   if (inserted) {
     const total = await countSubscribers().catch(() => 0);
 
@@ -72,7 +72,7 @@ export async function subscribe(
   return {
     ok: true,
     message: inserted
-      ? "You're on the list. Check your inbox — we just sent a confirmation."
+      ? "You're on the list. Check your inbox. We just sent a confirmation."
       : "You're already on the list. We'll email you at launch.",
   };
 }

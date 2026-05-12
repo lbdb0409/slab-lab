@@ -30,7 +30,7 @@ export default async function Home() {
         eyebrow="Built to display"
         eyebrowColor="magenta"
         title="The art doesn't stop at the card."
-        body="Each Slablabs surround is custom-printed to extend your card's artwork outward — so the slab itself becomes part of the piece."
+        body="Each Slablabs surround is custom-printed to extend your card's artwork outward. So the slab itself becomes part of the piece."
         ctaLabel="See the process"
         ctaHref="/how-it-works"
         imageSrc="/brand/slab-mockup.png"

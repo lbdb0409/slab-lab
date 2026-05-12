@@ -7,7 +7,7 @@
   --color-tint: #f5f5f7;
   --color-tint-2: #ebebed;
 
-  /* Section tints — soft, playful */
+  /* Section tints. Soft, playful */
   --color-cream: #fff7e3;
   --color-pink-tint: #ffe1ee;
   --color-mint-tint: #d8f6e6;
@@ -123,7 +123,7 @@
   50% { opacity: 1; transform: translateY(-3px); }
 }
 
-/* Eyebrow — accepts color via inline */
+/* Eyebrow. Accepts color via inline */
 @utility eyebrow {
   display: inline-block;
   font-family: var(--font-sans);
@@ -247,7 +247,7 @@
   margin-bottom: 1.5rem;
 }
 
-/* Confetti dot — small decorative element */
+/* Confetti dot. Small decorative element */
 @utility confetti-dot {
   position: absolute;
   display: inline-block;

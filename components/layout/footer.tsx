@@ -42,7 +42,7 @@ export function Footer() {
           </div>
           <p className="max-w-xs text-sm leading-relaxed text-text-soft">
             Custom-printed display slabs for Pokémon trading cards. We print the
-            surround — you slot the card and snap it shut.
+            surround. You slot the card and snap it shut.
           </p>
           <div className="mt-2 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-success">
             <span className="size-2 rounded-full bg-success" />
@@ -100,7 +100,7 @@ export function Footer() {
             <p className="text-xs leading-relaxed text-text-soft">
               Slablabs slab kits include the <strong>custom-printed surround
               and slab case only</strong>. Your trading card is{" "}
-              <strong>not included</strong> — you supply your own card from
+              <strong>not included</strong>. You supply your own card from
               your collection. Slab kits are display products, not graded
               authentications.
             </p>

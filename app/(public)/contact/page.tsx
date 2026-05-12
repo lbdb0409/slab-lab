@@ -31,7 +31,7 @@ export default function ContactPage() {
             Say <span className="text-orange">hello.</span>
           </>
         }
-        body="Question about a kit, a build, an order, a custom request — drop it below and we'll get back to you."
+        body="Question about a kit, a build, an order, a custom request. Drop it below and we'll get back to you."
         bg="cream"
       />
 
@@ -48,7 +48,7 @@ export default function ContactPage() {
                   Message sent.
                 </h2>
                 <p className="max-w-xs text-sm text-text-soft">
-                  Thanks — we read every one. Expect a reply within a working
+                  Thanks. We read every one. Expect a reply within a working
                   day.
                 </p>
                 <button
@@ -214,7 +214,7 @@ export default function ContactPage() {
                 >
                   Request a Card
                 </Link>{" "}
-                form on the homepage — faster than email for new kits.
+                form on the homepage. Faster than email for new kits.
               </p>
             </div>
           </aside>

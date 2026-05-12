@@ -171,7 +171,7 @@ export function FilterRail({
       </Accordion>
 
       <Accordion title="Price" defaultOpen={false}>
-        <p className="text-sm text-muted">All kits $149 — $189</p>
+        <p className="text-sm text-muted">All kits $149. $189</p>
       </Accordion>
 
       <Accordion title="Slab style" defaultOpen={false}>

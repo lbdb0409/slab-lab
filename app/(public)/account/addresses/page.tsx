@@ -39,7 +39,7 @@ export default function AccountAddressesPage() {
               </p>
               <p className="max-w-sm text-sm text-muted">
                 Save shipping addresses to reuse them at checkout. Sign in
-                first — addresses are tied to your account.
+                first. Addresses are tied to your account.
               </p>
               <button
                 type="button"

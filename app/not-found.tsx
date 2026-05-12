@@ -47,7 +47,7 @@ export default function NotFound() {
         </h1>
 
         <p className="max-w-md text-base leading-relaxed text-white/80 md:text-lg">
-          We looked everywhere on the shelf — that page doesn&apos;t exist
+          We looked everywhere on the shelf. That page doesn&apos;t exist
           (anymore, or yet). Try one of these instead.
         </p>
 

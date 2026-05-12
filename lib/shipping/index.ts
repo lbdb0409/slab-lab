@@ -1,7 +1,7 @@
 // Shipping carrier abstraction.
 //
 // Three carriers are scaffolded: AusPost MyPost Business, Couriers Please, and
-// FedEx. None of them call real APIs yet — each carrier's `createShipment`
+// FedEx. None of them call real APIs yet. Each carrier's `createShipment`
 // returns the manually-entered tracking number plus a generated tracking URL.
 // Wire up real label generation by replacing the stub functions in each
 // adapter (see ./auspost.ts, etc.) once you have merchant credentials.

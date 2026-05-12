@@ -27,7 +27,7 @@ const REVIEWS: Review[] = [
   },
   {
     body:
-      "The custom surround art is the thing — the slab looks like part of the card. Nothing else on the market does this. My binder cards finally have a real display option.",
+      "The custom surround art is the thing. The slab looks like part of the card. Nothing else on the market does this. My binder cards finally have a real display option.",
     author: "Mia",
     handle: "@hardcellophane",
     location: "Melbourne, VIC",
@@ -35,7 +35,7 @@ const REVIEWS: Review[] = [
   },
   {
     body:
-      "Bought three. Build quality is genuinely good — the case is clear, no warping, the print on the surround is crisp. For the price I'd expected worse.",
+      "Bought three. Build quality is genuinely good. The case is clear, no warping, the print on the surround is crisp. For the price I'd expected worse.",
     author: "James",
     handle: "@jpullsem",
     location: "Sydney, NSW",

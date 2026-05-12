@@ -18,10 +18,10 @@ export const SET_CONTENT: Record<string, SetContent> = {
     slug: "mega-evolutions",
     tagline: "When a Pokémon takes on a second form.",
     intro:
-      "The slabbing line built around Mega-era artwork — cards where the printed scene already feels too big for the border. We extend the spotlight past the edge so the Mega gets the room it always wanted.",
+      "The slabbing line built around Mega-era artwork. Cards where the printed scene already feels too big for the border. We extend the spotlight past the edge so the Mega gets the room it always wanted.",
     about: [
-      "Mega Evolution introduced cards with some of the most dynamic art in the entire game — full-art Megas, alternate-art Megas, EX prints where the Pokémon explodes off the border.",
-      "These are the cards that started the slabbing conversation. They photograph beautifully and they collect a passionate audience that often doesn't care about a 10 — they care about presentation.",
+      "Mega Evolution introduced cards with some of the most dynamic art in the entire game. Full-art Megas, alternate-art Megas, EX prints where the Pokémon explodes off the border.",
+      "These are the cards that started the slabbing conversation. They photograph beautifully and they collect a passionate audience that often doesn't care about a 10. They care about presentation.",
       "Each Slablabs surround for this line is keyed to a specific Mega card. The printed artwork extends the existing scene outward into the slab, so the card and the slab read as one continuous piece.",
     ],
     era: "Mega-era",
@@ -37,11 +37,11 @@ export const SET_CONTENT: Record<string, SetContent> = {
     slug: "scarlet-violet",
     tagline: "The current era. Paldea, Terastal, today's hottest pulls.",
     intro:
-      "The active generation. Scarlet & Violet sets are what's actually opening in card shops right now — chase cards from this era cost what they cost because they're being pulled today.",
+      "The active generation. Scarlet & Violet sets are what's actually opening in card shops right now. Chase cards from this era cost what they cost because they're being pulled today.",
     about: [
       "Scarlet & Violet shifted the design language: cleaner full-arts, more illustration rares, and Terastal cards with that iridescent gem treatment that screams to be displayed.",
-      "Played condition is normal in this era — these cards are getting handled and traded. Which means a lot of S&V cards never crack a high grade, but they're still the cards everyone wants on display.",
-      "Slablabs surrounds for S&V kits lean into the Terastal gem aesthetic where applicable — gradient washes and angular bleeds that complement the modern card frame.",
+      "Played condition is normal in this era. These cards are getting handled and traded. Which means a lot of S&V cards never crack a high grade, but they're still the cards everyone wants on display.",
+      "Slablabs surrounds for S&V kits lean into the Terastal gem aesthetic where applicable. Gradient washes and angular bleeds that complement the modern card frame.",
     ],
     era: "S&V era",
     year: "2023 – now",
@@ -56,11 +56,11 @@ export const SET_CONTENT: Record<string, SetContent> = {
     slug: "sword-and-shield",
     tagline: "Six years of releases that built the modern collector market.",
     intro:
-      "Evolving Skies, Silver Tempest, Brilliant Stars, Lost Origin — the Sword & Shield generation is a goldmine for slabbing because so much of its alt-art belongs on a wall.",
+      "Evolving Skies, Silver Tempest, Brilliant Stars, Lost Origin. The Sword & Shield generation is a goldmine for slabbing because so much of its alt-art belongs on a wall.",
     about: [
-      "Sword & Shield is the era that minted modern Pokémon as a serious collectible — Umbreon VMAX, Lugia VSTAR, Rayquaza VMAX, the cards that hit secondary-market prices nobody expected.",
+      "Sword & Shield is the era that minted modern Pokémon as a serious collectible. Umbreon VMAX, Lugia VSTAR, Rayquaza VMAX, the cards that hit secondary-market prices nobody expected.",
       "It's also the era where most of the cards have already been played. A 7-grade Umbreon VMAX is still a $200+ card, and we think it still deserves to be displayed like one.",
-      "Surrounds for this line lean into the storybook-style alt-art moments S&S did so well — landscape extensions, character close-ups, scene completions.",
+      "Surrounds for this line lean into the storybook-style alt-art moments S&S did so well. Landscape extensions, character close-ups, scene completions.",
     ],
     era: "Sword & Shield",
     year: "2020 – 2023",
@@ -74,13 +74,13 @@ export const SET_CONTENT: Record<string, SetContent> = {
   "black-star-promos": {
     slug: "black-star-promos",
     tagline:
-      "The promo line — event drops, movie tie-ins, and cards you can't pull from a pack.",
+      "The promo line. Event drops, movie tie-ins, and cards you can't pull from a pack.",
     intro:
-      "Black Star Promos are the cards that live outside the main sets — movie giveaways, McDonald's collabs, Pokémon Center exclusives, prerelease drops. The cards collectors hunt for years because they only existed in a moment.",
+      "Black Star Promos are the cards that live outside the main sets. Movie giveaways, McDonald's collabs, Pokémon Center exclusives, prerelease drops. The cards collectors hunt for years because they only existed in a moment.",
     about: [
-      "The promo line has run since the WOTC era — the Ancient Mew movie giveaway, the Pikachu Illustrator (still the most expensive Pokémon card ever printed), the entire history of cards that bypassed the booster format.",
-      "What unites them is exclusivity. A Black Star Promo wasn't pulled from a pack — it was earned, won, gifted, or chased. Which is exactly why they tend to be the cards collectors want displayed loudest.",
-      "Surrounds for this line lean into the gold-on-black promo aesthetic — the star symbol, the foil border, the prerelease stamps — extended outward so the slab carries the same energy as the card.",
+      "The promo line has run since the WOTC era. The Ancient Mew movie giveaway, the Pikachu Illustrator (still the most expensive Pokémon card ever printed), the entire history of cards that bypassed the booster format.",
+      "What unites them is exclusivity. A Black Star Promo wasn't pulled from a pack. It was earned, won, gifted, or chased. Which is exactly why they tend to be the cards collectors want displayed loudest.",
+      "Surrounds for this line lean into the gold-on-black promo aesthetic. The star symbol, the foil border, the prerelease stamps. Extended outward so the slab carries the same energy as the card.",
     ],
     era: "Promo line",
     year: "2002 – now",

@@ -76,7 +76,7 @@ export default function CheckoutSuccessPage() {
       </div>
 
       <Container className="relative grid items-center gap-10 py-14 md:grid-cols-[1.1fr_1fr] md:gap-16 md:py-24">
-        {/* LEFT — Big celebration */}
+        {/* LEFT. Big celebration */}
         <div className="flex flex-col gap-6 md:gap-8">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-success/40 bg-success/15 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-success">
             <Check className="size-3.5" strokeWidth={3} />
@@ -90,7 +90,7 @@ export default function CheckoutSuccessPage() {
           </h1>
 
           <p className="max-w-md text-base leading-relaxed text-white/85 md:text-lg">
-            Thanks for the order. Your kit is on the press — we&apos;ll email
+            Thanks for the order. Your kit is on the press. We&apos;ll email
             you the second it ships.
           </p>
 
@@ -100,7 +100,7 @@ export default function CheckoutSuccessPage() {
                 Order
               </span>
               <p className="mt-1 font-display text-2xl tracking-tight">
-                {orderNumber ?? "—"}
+                {orderNumber ?? "–"}
               </p>
             </div>
             <div className="border border-white/15 bg-white/5 p-4">
@@ -128,7 +128,7 @@ export default function CheckoutSuccessPage() {
           </div>
         </div>
 
-        {/* RIGHT — next steps */}
+        {/* RIGHT. Next steps */}
         <div className="flex flex-col gap-4">
           <div className="rounded-2xl border-2 border-white bg-text p-6 md:p-7">
             <div className="mb-4 flex items-center justify-between">
@@ -171,7 +171,7 @@ export default function CheckoutSuccessPage() {
             <Sparkles className="mt-0.5 size-4 shrink-0 text-orange" strokeWidth={2.4} />
             <p className="text-white/90">
               <strong>Reminder:</strong> your card is{" "}
-              <strong>not included</strong>. Have it ready — kit slots straight
+              <strong>not included</strong>. Have it ready. Kit slots straight
               over the top.
             </p>
           </div>

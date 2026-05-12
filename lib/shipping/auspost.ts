@@ -1,23 +1,23 @@
-// Australia Post — MyPost Business API integration.
+// Australia Post. MyPost Business API integration.
 //
 // To wire up real label generation:
 //   1. Sign up at https://www.auspost.com.au/mypost-business
-//   2. Apply for API access — https://developers.auspost.com.au/apis
+//   2. Apply for API access. Https://developers.auspost.com.au/apis
 //   3. Set env vars:
-//        AUSPOST_API_KEY            — your MyPost Business API key
-//        AUSPOST_ACCOUNT_NUMBER     — your MyPost Business account number
-//        AUSPOST_SENDER_NAME        — name shown on the from-address
-//        AUSPOST_SENDER_STREET      — sender street address
-//        AUSPOST_SENDER_SUBURB      — sender suburb
-//        AUSPOST_SENDER_STATE       — sender state (e.g. "VIC")
-//        AUSPOST_SENDER_POSTCODE    — sender postcode
+//        AUSPOST_API_KEY            : your MyPost Business API key
+//        AUSPOST_ACCOUNT_NUMBER     : your MyPost Business account number
+//        AUSPOST_SENDER_NAME        : name shown on the from-address
+//        AUSPOST_SENDER_STREET      : sender street address
+//        AUSPOST_SENDER_SUBURB      : sender suburb
+//        AUSPOST_SENDER_STATE       : sender state (e.g. "VIC")
+//        AUSPOST_SENDER_POSTCODE    : sender postcode
 //   4. Replace the body of `createShipment` below with a call to
 //        POST https://digitalapi.auspost.com.au/shipping/v1/shipments
 //      Documentation: https://developers.auspost.com.au/apis/pacpcs-shipping
 //
 // Until real keys are set, `createShipment` returns the tracking number that
 // the admin typed manually plus the standard AusPost tracking URL. No label
-// is generated — the admin is expected to paste a label they printed
+// is generated. The admin is expected to paste a label they printed
 // elsewhere (e.g. directly from the MyPost Business portal).
 
 import type { CarrierAdapter } from "./index";
@@ -36,7 +36,7 @@ export const auspost: CarrierAdapter = {
       const trackingNumber = input.manualTrackingNumber?.trim();
       if (!trackingNumber) {
         throw new Error(
-          "AusPost API not configured — enter the tracking number manually.",
+          "AusPost API not configured. Enter the tracking number manually.",
         );
       }
       return {
@@ -69,7 +69,7 @@ export const auspost: CarrierAdapter = {
     //   };
 
     throw new Error(
-      "AusPost integration not implemented yet — wire createShipment in lib/shipping/auspost.ts.",
+      "AusPost integration not implemented yet. Wire createShipment in lib/shipping/auspost.ts.",
     );
   },
 };

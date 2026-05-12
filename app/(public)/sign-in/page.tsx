@@ -40,7 +40,7 @@ export default function SignInPage() {
       <ConfettiField />
 
       <Container className="relative grid items-center gap-12 py-14 md:grid-cols-2 md:gap-20 md:py-20">
-        {/* LEFT — pitch */}
+        {/* LEFT. Pitch */}
         <div className="flex flex-col gap-6">
           <div className="rounded-2xl border-2 border-white bg-text px-6 py-4 self-start">
             <Image
@@ -89,7 +89,7 @@ export default function SignInPage() {
           </ul>
         </div>
 
-        {/* RIGHT — form */}
+        {/* RIGHT. Form */}
         <div className="rounded-2xl border-2 border-white bg-white p-6 text-text shadow-[8px_8px_0_rgba(255,106,0,0.4)] md:p-8">
           {sent ? (
             <div className="flex flex-col items-center gap-4 py-6 text-center">

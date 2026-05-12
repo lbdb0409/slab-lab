@@ -114,7 +114,7 @@ export default async function OrderDetailPage({ params }: Props) {
           </div>
         </AdminCard>
 
-        {/* SHIPPING — visible once order is paid */}
+        {/* SHIPPING. Visible once order is paid */}
         {(order.status === "paid" ||
           order.status === "shipped" ||
           order.status === "delivered") && (
@@ -312,7 +312,7 @@ export default async function OrderDetailPage({ params }: Props) {
                   </div>
                   <p>{order.customer.name}</p>
                   <p className="text-text-soft">
-                    {order.shippingCity ?? "—"}
+                    {order.shippingCity ?? "–"}
                     {order.shippingState ? `, ${order.shippingState}` : ""}
                   </p>
                   <p className="text-text-soft">Australia</p>

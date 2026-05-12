@@ -139,7 +139,7 @@ export default function CheckoutPage() {
                   </p>
                   <p className="mt-2 text-xs text-muted">
                     Card, Apple Pay, Google Pay, and Afterpay wire in here.
-                    Hosted by Stripe — no card details touch this site.
+                    Hosted by Stripe. No card details touch this site.
                   </p>
                 </div>
               </FormSection>
@@ -153,7 +153,7 @@ export default function CheckoutPage() {
                   Back to bag
                 </Link>
                 <button type="button" className="btn-orange" disabled>
-                  Place order — coming soon
+                  Place order. Coming soon
                 </button>
               </div>
             </form>
@@ -219,7 +219,7 @@ export default function CheckoutPage() {
                   />
                   <span>
                     Slab kits include the surround &amp; case only. Your card is
-                    not included — you supply it from your own collection.
+                    not included. You supply it from your own collection.
                   </span>
                 </div>
               </div>

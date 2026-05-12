@@ -23,7 +23,7 @@ export function Header() {
 
   return (
     <>
-      {/* BAND 1 — promo */}
+      {/* BAND 1. Promo */}
       <div className="bg-text text-white">
         <Container className="flex items-center justify-center gap-6 py-2 text-[11px] font-bold uppercase tracking-[0.14em]">
           <span className="text-yellow">Free Australia shipping over $99</span>
@@ -34,7 +34,7 @@ export function Header() {
         </Container>
       </div>
 
-      {/* BAND 2 — logo + big search + icons — DARK so logo reads */}
+      {/* BAND 2. Logo + big search + icons. DARK so logo reads */}
       <div className="border-b-2 border-white/10 bg-text text-white">
         <Container className="flex h-[88px] items-center gap-4 md:gap-8">
           <Link href="/" aria-label="Slablabs" className="group inline-flex shrink-0 items-center">
@@ -48,7 +48,7 @@ export function Header() {
             />
           </Link>
 
-          {/* Mega search — white pill on dark band */}
+          {/* Mega search. White pill on dark band */}
           <form
             role="search"
             action="/search"
@@ -101,7 +101,7 @@ export function Header() {
         </Container>
       </div>
 
-      {/* BAND 3 — nav row with sets mega menu (white, sticky) */}
+      {/* BAND 3. Nav row with sets mega menu (white, sticky) */}
       <div className="sticky top-0 z-50 border-b border-line bg-white">
         <Container className="hidden h-[48px] items-center justify-center gap-1 lg:flex">
           {NAV.map((item) => {

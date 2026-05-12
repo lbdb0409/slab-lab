@@ -62,7 +62,7 @@ export default async function AdminDashboard() {
         title="Dashboard"
         body={
           noActivity
-            ? "No orders yet — KPIs and charts will populate once Stripe Checkout is wired up."
+            ? "No orders yet. KPIs and charts will populate once Stripe Checkout is wired up."
             : "Last 30 days of trading activity."
         }
         actions={
@@ -257,7 +257,7 @@ export default async function AdminDashboard() {
                             {order.customerName}
                           </span>
                           <span className="text-xs text-muted">
-                            {order.shippingCity ?? "—"}
+                            {order.shippingCity ?? "–"}
                             {order.shippingState
                               ? `, ${order.shippingState}`
                               : ""}

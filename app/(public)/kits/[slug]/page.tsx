@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!product) return { title: "Kit not found" };
   const priceLabel = `$${(product.priceCents / 100).toFixed(0)} AUD`;
   const title = `${product.card} · ${product.setName} slab kit`;
-  const description = `Custom-printed display slab for ${product.card} from ${product.setName}. Surround + case only — your card is not included. ${
+  const description = `Custom-printed display slab for ${product.card} from ${product.setName}. Surround + case only. Your card is not included. ${
     product.status === "live" ? `Available now from ${priceLabel}.` : "Coming soon."
   }`;
   return {
@@ -121,7 +121,7 @@ export default async function KitPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: `${product.card} slab kit`,
-    description: `Custom-printed display slab for ${product.card} from ${product.setName}. Surround and case only — card not included.`,
+    description: `Custom-printed display slab for ${product.card} from ${product.setName}. Surround and case only. Card not included.`,
     sku: `SL-${product.number}`,
     mpn: product.slug,
     image: [`${SITE_URL}${imageUrl}`],
@@ -271,14 +271,14 @@ export default async function KitPage({ params }: Props) {
 
               <p className="max-w-lg text-base leading-relaxed text-text-soft md:text-lg">
                 {product.description ||
-                  `Custom-printed display slab built around ${product.card}. The artwork extends past the card border so the slab itself becomes part of the piece — you supply your own card and snap it together at home.`}
+                  `Custom-printed display slab built around ${product.card}. The artwork extends past the card border so the slab itself becomes part of the piece. You supply your own card and snap it together at home.`}
               </p>
 
               <div className="grid grid-cols-3 gap-4 border-y-2 border-text py-4">
                 <div className="flex flex-col gap-1">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-muted">Price</span>
                   <span className="font-display text-3xl leading-none">
-                    {isLive ? `$${priceDollar}` : "—"}
+                    {isLive ? `$${priceDollar}` : "–"}
                     <span className="text-base text-muted"> AUD</span>
                   </span>
                 </div>
@@ -358,7 +358,7 @@ export default async function KitPage({ params }: Props) {
             </h2>
             <p className="max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
               Slab kits ship with the printed surround and the slab case. Your card is{" "}
-              <strong>not</strong> included — you supply it from your own collection.
+              <strong>not</strong> included. You supply it from your own collection.
             </p>
           </div>
 
@@ -456,7 +456,7 @@ export default async function KitPage({ params }: Props) {
               n="03"
               Icon={Sparkles}
               title="Snap & display"
-              body="Click the slab case shut. Put it on the shelf, the wall, the desk — anywhere."
+              body="Click the slab case shut. Put it on the shelf, the wall, the desk. Anywhere."
               color="text-lime-deep"
               bg="bg-mint-tint"
             />
@@ -523,7 +523,7 @@ export default async function KitPage({ params }: Props) {
             <p className="text-sm leading-relaxed text-text-soft">
               This kit includes the <strong>custom-printed surround</strong> and{" "}
               <strong>slab case only</strong>. Your {product.card} card is{" "}
-              <strong>not included</strong> — you supply it from your own collection. Slab kits are
+              <strong>not included</strong>. You supply it from your own collection. Slab kits are
               display products, not graded authentications.
             </p>
           </div>

@@ -122,7 +122,7 @@ export default async function AdminCustomersPage({ searchParams }: Props) {
                         </Link>
                       </td>
                       <td className="px-5 py-3 text-text-soft">
-                        {c.city ?? "—"}
+                        {c.city ?? "–"}
                         {c.state ? `, ${c.state}` : ""}
                       </td>
                       <td className="px-5 py-3 text-right font-bold tabular-nums">
@@ -132,7 +132,7 @@ export default async function AdminCustomersPage({ searchParams }: Props) {
                         {formatCents(c.totalSpentCents)}
                       </td>
                       <td className="px-5 py-3 text-right text-xs text-muted">
-                        {c.lastOrderAt ? formatRelative(c.lastOrderAt) : "—"}
+                        {c.lastOrderAt ? formatRelative(c.lastOrderAt) : "–"}
                       </td>
                     </tr>
                   ))}

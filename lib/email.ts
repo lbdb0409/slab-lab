@@ -36,7 +36,7 @@ export async function sendEmail(args: SendArgs): Promise<{
   const client = getClient();
   if (!client) {
     console.warn(
-      `[email] RESEND_API_KEY not set — skipping send to ${Array.isArray(args.to) ? args.to.join(", ") : args.to}`,
+      `[email] RESEND_API_KEY not set. Skipping send to ${Array.isArray(args.to) ? args.to.join(", ") : args.to}`,
     );
     return { ok: true, skipped: true };
   }

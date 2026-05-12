@@ -130,7 +130,7 @@ export default function ShippingPage() {
                 Packed flat. <span className="text-cyan-deep">Tracked.</span>
               </h2>
               <p className="text-base leading-relaxed text-text-soft">
-                Slab kits ship flat-packed in a rigid mailer — surround sheet
+                Slab kits ship flat-packed in a rigid mailer. Surround sheet
                 on top, snap-seal case below, microfibre wipe tucked
                 alongside. Australia Post Tracked is the default. You&apos;ll
                 get a tracking link by email the moment we hand it off.
@@ -167,7 +167,7 @@ export default function ShippingPage() {
               <span className="text-yellow">final sale.</span>
             </h2>
             <p className="max-w-lg text-base leading-relaxed text-white/80">
-              No change-of-mind returns — every kit is printed for the
+              No change-of-mind returns. Every kit is printed for the
               specific card you ordered. But defects, courier damage, and
               wrong-item shipments are all replaced free of charge.
             </p>
