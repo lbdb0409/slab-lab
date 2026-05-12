@@ -19,6 +19,12 @@ const SETS_SEED = [
     logo: "/brand/sets/sword-and-shield.png",
     position: 3,
   },
+  {
+    slug: "black-star-promos",
+    name: "Black Star Promos",
+    logo: "/brand/sets/promo.webp",
+    position: 4,
+  },
 ];
 
 let ensured = false;

@@ -35,4 +35,9 @@ export const EXPANSIONS: Expansion[] = [
     name: "Sword and Shield",
     logo: "/brand/sets/sword-and-shield.png",
   },
+  {
+    slug: "black-star-promos",
+    name: "Black Star Promos",
+    logo: "/brand/sets/promo.webp",
+  },
 ];
