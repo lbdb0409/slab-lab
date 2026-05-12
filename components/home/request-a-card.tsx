@@ -15,7 +15,10 @@ export function RequestACard() {
   const [state, action, pending] = useActionState(requestCard, INITIAL);
 
   return (
-    <section className="relative overflow-hidden border-b border-line bg-purple text-white">
+    <section
+      id="request"
+      className="relative overflow-hidden border-b border-line bg-purple text-white"
+    >
       <Octagon className="pointer-events-none absolute -left-12 -top-12 size-44 rotate-12 text-white/10 md:size-56" />
       <Octagon className="pointer-events-none absolute -right-14 -bottom-14 size-48 -rotate-12 text-white/10 md:size-64" />
 

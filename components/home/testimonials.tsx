@@ -1,12 +1,18 @@
+import Image from "next/image";
 import { Quote, Star } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
 import { Octagon } from "@/components/ui/decorations";
 
+// REPLACE WITH REAL REVIEWS WHEN YOU HAVE THEM.
+// To add a photo, set `avatar` to a path under /public, e.g. "/brand/reviews/liam.jpg".
+// Without `avatar`, the card renders the initials from `author` on a tinted octagon.
 type Review = {
   body: string;
   author: string;
+  handle?: string;
   location: string;
+  avatar?: string;
   tone: "yellow" | "magenta" | "cyan" | "lime";
 };
 
@@ -14,39 +20,48 @@ const REVIEWS: Review[] = [
   {
     body:
       "Pulled a Charizard ex and didn't want to send it to PSA. Slab kit arrived, snapped it together in under a minute, and now it sits on the shelf looking better than half my graded cards.",
-    author: "Liam · @liamsslabs",
+    author: "Liam",
+    handle: "@liamsslabs",
     location: "Brisbane, QLD",
     tone: "yellow",
   },
   {
     body:
       "The custom surround art is the thing — the slab looks like part of the card. Nothing else on the market does this. My binder cards finally have a real display option.",
-    author: "Mia · @hardcellophane",
+    author: "Mia",
+    handle: "@hardcellophane",
     location: "Melbourne, VIC",
     tone: "magenta",
   },
   {
     body:
       "Bought three. Build quality is genuinely good — the case is clear, no warping, the print on the surround is crisp. For the price I'd expected worse.",
-    author: "James · @jpullsem",
+    author: "James",
+    handle: "@jpullsem",
     location: "Sydney, NSW",
     tone: "cyan",
   },
 ];
 
 const TONE_BG: Record<Review["tone"], string> = {
-  yellow: "bg-yellow",
-  magenta: "bg-magenta",
-  cyan: "bg-cyan",
-  lime: "bg-lime",
+  yellow: "bg-yellow text-text",
+  magenta: "bg-magenta text-white",
+  cyan: "bg-cyan text-text",
+  lime: "bg-lime text-text",
 };
 
-const TONE_TEXT: Record<Review["tone"], string> = {
-  yellow: "text-text",
-  magenta: "text-white",
-  cyan: "text-text",
-  lime: "text-text",
-};
+const OCTAGON_CLIP =
+  "polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%)";
+
+function initialsFrom(name: string) {
+  return name
+    .split(/\s+/)
+    .map((p) => p[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
 
 export function Testimonials() {
   return (
@@ -68,13 +83,13 @@ export function Testimonials() {
         <div className="grid gap-4 md:grid-cols-3 md:gap-5">
           {REVIEWS.map((r) => (
             <article
-              key={r.author}
+              key={r.author + r.body.slice(0, 12)}
               className="relative flex flex-col gap-5 overflow-hidden border-2 border-text bg-white p-6 transition-transform duration-300 hover:-translate-y-1 md:p-7"
             >
               <span
                 aria-hidden
-                className={`absolute -right-4 -top-4 inline-flex size-16 rotate-12 items-center justify-center ${TONE_BG[r.tone]} ${TONE_TEXT[r.tone]}`}
-                style={{ clipPath: "polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%)" }}
+                className={`absolute -right-4 -top-4 inline-flex size-16 rotate-12 items-center justify-center ${TONE_BG[r.tone]}`}
+                style={{ clipPath: OCTAGON_CLIP }}
               >
                 <Quote className="size-5" strokeWidth={2.4} />
               </span>
@@ -84,18 +99,57 @@ export function Testimonials() {
                   <Star key={i} className="size-4 fill-orange" strokeWidth={0} />
                 ))}
               </div>
+
               <p className="text-[15px] leading-relaxed text-text">&ldquo;{r.body}&rdquo;</p>
-              <div className="mt-auto flex flex-col gap-0.5 border-t border-line pt-4">
-                <span className="text-sm font-bold uppercase tracking-wide text-text">
-                  {r.author}
-                </span>
-                <span className="text-[11px] uppercase tracking-wider text-muted">
-                  {r.location}
-                </span>
+
+              <div className="mt-auto flex items-center gap-3 border-t border-line pt-4">
+                {r.avatar ? (
+                  <div className="relative size-10 shrink-0 overflow-hidden rounded-full border-2 border-text">
+                    <Image
+                      src={r.avatar}
+                      alt={r.author}
+                      fill
+                      sizes="40px"
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <span
+                    aria-hidden
+                    className={`inline-flex size-10 shrink-0 items-center justify-center font-display text-sm leading-none ${TONE_BG[r.tone]}`}
+                    style={{ clipPath: OCTAGON_CLIP }}
+                  >
+                    {initialsFrom(r.author)}
+                  </span>
+                )}
+                <div className="flex min-w-0 flex-col gap-0.5">
+                  <span className="truncate text-sm font-bold uppercase tracking-wide text-text">
+                    {r.author}
+                    {r.handle ? (
+                      <span className="ml-1.5 text-[11px] font-medium normal-case text-muted">
+                        {r.handle}
+                      </span>
+                    ) : null}
+                  </span>
+                  <span className="text-[11px] uppercase tracking-wider text-muted">
+                    {r.location}
+                  </span>
+                </div>
               </div>
             </article>
           ))}
         </div>
+
+        <p className="mt-10 text-center text-xs uppercase tracking-[0.2em] text-muted">
+          Bought a kit? Email{" "}
+          <a
+            href="mailto:slablabsoz@gmail.com"
+            className="font-bold text-text underline-offset-4 hover:text-orange hover:underline"
+          >
+            slablabsoz@gmail.com
+          </a>{" "}
+          and we&apos;ll feature your build.
+        </p>
       </Container>
     </section>
   );
