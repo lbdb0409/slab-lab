@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/container";
 import { KitCard } from "@/components/kits/kit-card";
 import { SortMenu } from "@/components/shop/sort-menu";
 import { SetChips } from "@/components/shop/set-chips";
+import { ExpansionFilter } from "@/components/shop/expansion-filter";
 import { JsonLd, SITE_URL } from "@/components/seo/json-ld";
 import { EXPANSIONS } from "@/data/kits";
 import { SET_CONTENT } from "@/data/set-content";
@@ -18,7 +19,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/shop" },
 };
 
-type SearchParams = { set?: string; status?: string; sort?: string };
+type SearchParams = {
+  set?: string;
+  expansion?: string;
+  status?: string;
+  sort?: string;
+};
 
 function applyFilters(
   kits: ProductForCard[],
@@ -26,6 +32,9 @@ function applyFilters(
 ): ProductForCard[] {
   let result = kits;
   if (params.set) result = result.filter((k) => k.setSlug === params.set);
+  if (params.expansion) {
+    result = result.filter((k) => k.expansion === params.expansion);
+  }
   if (params.status === "live") {
     result = result.filter((k) => k.status === "live" && (k.stock ?? 0) > 0);
   } else if (params.status === "soon") {
@@ -99,7 +108,17 @@ export default async function ShopPage({
   const setLabel = setMeta?.name ?? null;
 
   const activeStatus = params.status;
-  const hasFilter = Boolean(params.set || activeStatus);
+  const activeExpansion = params.expansion;
+  const hasFilter = Boolean(params.set || activeExpansion || activeStatus);
+
+  // Build the expansion dropdown options. If an era is selected, narrow the
+  // options to expansions in that era. Sorted alphabetically.
+  const expansionPool = params.set
+    ? allKits.filter((k) => k.setSlug === params.set)
+    : allKits;
+  const expansionOptions = Array.from(
+    new Set(expansionPool.map((k) => k.expansion).filter(Boolean) as string[]),
+  ).sort((a, b) => a.localeCompare(b));
 
   const headerTitle = setLabel ?? "Slab kits.";
   const eyebrow = setLabel ?? "All slabs";
@@ -185,6 +204,11 @@ export default async function ShopPage({
             </span>
           </span>
           <div className="flex flex-wrap items-center gap-3">
+            <ExpansionFilter
+              params={params}
+              options={expansionOptions}
+              current={activeExpansion}
+            />
             <AvailabilityPills current={activeStatus} params={params} />
             <SortMenu searchParams={params} />
           </div>
@@ -198,8 +222,14 @@ export default async function ShopPage({
             </span>
             {params.set && (
               <FilterChip
-                label={`Set: ${setLabel}`}
+                label={`Era: ${setLabel}`}
                 clearHref={buildHref(params, "set")}
+              />
+            )}
+            {activeExpansion && (
+              <FilterChip
+                label={`Set: ${activeExpansion}`}
+                clearHref={buildHref(params, "expansion")}
               />
             )}
             {activeStatus && (
