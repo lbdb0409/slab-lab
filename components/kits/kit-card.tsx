@@ -52,11 +52,8 @@ export function KitCard({
   })();
 
   return (
-    <Link
-      href={isLive ? `/kits/${kit.slug}` : "#"}
-      aria-disabled={!isLive}
-      className={cn("group block", !isLive && "pointer-events-none")}
-    >
+    <Link href={`/kits/${kit.slug}`} className="group block">
+
       <div
         className={cn(
           "relative aspect-[5/7] overflow-hidden border-2 border-text transition-transform duration-300",

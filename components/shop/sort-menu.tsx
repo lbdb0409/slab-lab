@@ -8,6 +8,7 @@ type SearchParams = { set?: string; status?: string; sort?: string };
 const SORTS = [
   { value: "newest", label: "Newest" },
   { value: "oldest", label: "Oldest" },
+  { value: "set", label: "By set" },
   { value: "price-low", label: "Price: low to high" },
   { value: "price-high", label: "Price: high to low" },
   { value: "live-first", label: "In stock first" },

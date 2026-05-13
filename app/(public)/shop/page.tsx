@@ -42,6 +42,17 @@ function applyFilters(
     case "price-high":
       sorted.sort((a, b) => b.priceCents - a.priceCents);
       break;
+    case "set":
+      sorted.sort((a, b) => {
+        const eraCmp = a.set.localeCompare(b.set);
+        if (eraCmp !== 0) return eraCmp;
+        const aExp = a.expansion ?? "";
+        const bExp = b.expansion ?? "";
+        const expCmp = aExp.localeCompare(bExp);
+        if (expCmp !== 0) return expCmp;
+        return a.card.localeCompare(b.card);
+      });
+      break;
     case "live-first":
       sorted.sort((a, b) => {
         const aLive = a.status === "live" ? 0 : 1;
