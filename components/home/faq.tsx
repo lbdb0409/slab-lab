@@ -1,43 +1,38 @@
 import Link from "next/link";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { ArrowRight, ChevronDown, HelpCircle } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
 import { Octagon } from "@/components/ui/decorations";
 
 type QA = { q: string; a: string };
 
+// Curated subset for the home page. The canonical FAQ lives at /support with
+// FAQPage JSON-LD attached. Keep this list to before-you-buy questions —
+// detailed post-purchase / policy questions belong on /support.
 const FAQS: QA[] = [
   {
     q: "Does my card come in the kit?",
     a: "No. Slablabs ships the surround and case only. You supply the card from your own collection and slot it in at home. We never handle your card.",
   },
   {
-    q: "What card sizes fit?",
-    a: "Standard trading-card size (~63 × 88 mm), sleeved or unsleeved. Each kit is sized to fit the card it's designed for. Oversized or jumbo promo cards aren't supported yet.",
+    q: "Is this a grading service?",
+    a: "No. Slablabs is a display-product studio, not a graded-slab company. If you want a grade, send to PSA / BGS / CGC. If you want display, snap your card into a Slablab.",
   },
   {
-    q: "Is this a grading service?",
-    a: "No. Slablabs is a display-product studio, not a graded-slab company. Our cases aren't tamper-proof and carry no grading authority. If you want a grade, send to PSA / BGS / CGC. If you want display, snap your card into a Slablab.",
+    q: "What card sizes fit?",
+    a: "Standard trading-card size (63 × 88 mm), sleeved or unsleeved. Each kit is sized to fit the specific card it was designed for. Oversized or jumbo promo cards aren't supported yet.",
   },
   {
     q: "How long does assembly take?",
-    a: "Around 60 seconds. The surround clicks into the case, your card slides into the surround, the case snaps shut. Step-by-step instructions ship in every kit. There's also a build guide on the site.",
+    a: "Around 60 seconds. The card slides into the surround, the case snaps shut. No tools required.",
   },
   {
     q: "Will the case damage or scratch my card?",
-    a: "No. The interior of the surround is smooth and the case uses optical-grade PET with anti-static lining. If you're cautious, slide the card in sleeved.",
-  },
-  {
-    q: "What if I damage the kit during assembly?",
-    a: "Email us and we'll send a replacement surround at cost. We've designed the snap to be forgiving. Most first-time builds go fine.",
-  },
-  {
-    q: "Are you affiliated with The Pokémon Company / Nintendo?",
-    a: "No. Slablabs is an independent Australian studio. We're not affiliated with The Pokémon Company, Nintendo, Bandai, Wizards of the Coast, or Disney/Ravensburger. All trademarks belong to their respective owners.",
+    a: "No. The interior of the surround is smooth and the case uses optical-grade PET with anti-static lining. If you're being cautious, slide the card in sleeved.",
   },
   {
     q: "Where do you ship?",
-    a: "Australia only for now. Free standard shipping on orders over $99. 3–5 business days nationwide. International shipping is on the roadmap.",
+    a: "Australia only for now. Free standard shipping on orders over $99, 3 to 5 business days nationwide. International is on the roadmap.",
   },
 ];
 
@@ -57,13 +52,15 @@ export function FAQ() {
             Before you <span className="text-cyan-deep">slab.</span>
           </h2>
           <p className="text-sm leading-relaxed text-text-soft md:text-base">
-            Quick answers to the questions we get most. Still stuck?{" "}
+            The questions we get most before someone buys. For order, return,
+            and account questions head to{" "}
             <Link
-              href="/contact"
+              href="/support"
               className="font-bold text-text underline-offset-4 hover:text-orange hover:underline"
             >
-              Get in touch.
+              support
             </Link>
+            .
           </p>
         </div>
 
@@ -92,6 +89,14 @@ export function FAQ() {
               </div>
             </details>
           ))}
+
+          <Link
+            href="/support"
+            className="mt-2 inline-flex items-center justify-between gap-3 rounded-md border-2 border-text bg-cream px-5 py-4 text-sm font-bold uppercase tracking-wide text-text transition-colors hover:bg-orange hover:text-white md:px-6 md:py-5"
+          >
+            <span>See all questions in support</span>
+            <ArrowRight className="size-4" strokeWidth={2.6} />
+          </Link>
         </div>
       </Container>
     </section>
