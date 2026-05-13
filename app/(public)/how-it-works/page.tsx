@@ -478,25 +478,21 @@ function Plus() {
   );
 }
 
-const OCTAGON_CLIP =
-  "polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%)";
-
 function SurroundIllustration() {
+  // Slab surround: a rectangular printed frame slightly larger than the card,
+  // with a card-sized rectangular cutout in the middle. Real product is a
+  // standard card-slab shape, not the octagonal logo motif.
   return (
-    <div className="relative size-[80%]">
-      <div
-        className="absolute inset-0 bg-orange"
-        style={{ clipPath: OCTAGON_CLIP }}
-      />
-      <div
-        className="absolute inset-[14%] bg-cream"
-        style={{ clipPath: OCTAGON_CLIP }}
-      />
-      <div className="absolute inset-[24%] flex items-center justify-center text-center">
+    <div className="relative flex h-[80%] w-[64%] items-center justify-center rounded-md bg-orange p-[14%] shadow-[4px_4px_0_rgba(10,10,10,0.18)]">
+      <div className="relative flex h-full w-full items-center justify-center rounded-sm bg-cream">
         <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-orange">
-          Card<br />slot
+          Card
+          <br />
+          slot
         </span>
       </div>
+      <span className="absolute -left-1 top-1/2 h-10 w-1 -translate-y-1/2 rounded-r-sm bg-orange/70" aria-hidden />
+      <span className="absolute -right-1 top-1/2 h-10 w-1 -translate-y-1/2 rounded-l-sm bg-orange/70" aria-hidden />
     </div>
   );
 }
@@ -518,22 +514,15 @@ function CardIllustration() {
 }
 
 function CaseIllustration() {
+  // Slab case: rectangular shell with rounded corners, faint inner ridge that
+  // hints at the snap-seal joint. Card slab shape, not the brand octagon.
   return (
-    <div className="relative size-[80%]">
-      <div
-        className="absolute inset-0 border-2 border-cyan-deep bg-white"
-        style={{ clipPath: OCTAGON_CLIP }}
-      />
-      <div className="absolute inset-[8%] flex items-center justify-center">
-        <Octagon
-          className="size-full text-cyan-deep/40"
-        />
-      </div>
-      <div className="absolute inset-x-0 bottom-[10%] flex justify-center">
-        <span className="rounded-full bg-cyan-deep/15 px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider text-cyan-deep">
-          Snap-seal
-        </span>
-      </div>
+    <div className="relative flex h-[82%] w-[66%] items-center justify-center rounded-lg border-2 border-cyan-deep bg-white shadow-[4px_4px_0_rgba(0,184,224,0.25)]">
+      <div className="absolute inset-[6%] rounded-md border border-dashed border-cyan-deep/40" aria-hidden />
+      <span aria-hidden className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-cyan-deep/30" />
+      <span className="absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full bg-cyan-deep/15 px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider text-cyan-deep">
+        Snap-seal
+      </span>
     </div>
   );
 }

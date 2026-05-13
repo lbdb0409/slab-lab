@@ -149,20 +149,21 @@ function PlaceholderTile({
   accent: string;
   setName: string;
 }) {
+  // Coming-soon placeholder: outline of the actual slab shape (rectangular
+  // with rounded corners), not the brand octagon.
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-4 text-center">
-      <svg
-        viewBox="0 0 100 100"
-        className={cn("size-16 opacity-50", accent)}
+    <div
+      className={cn(
+        "absolute inset-0 flex flex-col items-center justify-center gap-3 px-4 text-center",
+        accent,
+      )}
+    >
+      <div
         aria-hidden
+        className="relative flex h-20 w-14 items-center justify-center rounded-md border-2 border-current opacity-50"
       >
-        <polygon
-          points="29.3,0 70.7,0 100,29.3 100,70.7 70.7,100 29.3,100 0,70.7 0,29.3"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.6"
-        />
-      </svg>
+        <div className="h-14 w-10 rounded-sm border border-dashed border-current opacity-70" />
+      </div>
       <span
         className={cn(
           "font-display text-xs uppercase leading-tight tracking-wider opacity-70",
