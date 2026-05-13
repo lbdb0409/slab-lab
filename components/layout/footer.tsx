@@ -132,17 +132,12 @@ export function Footer() {
               </span>
             ))}
           </div>
-          <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-wider text-text-soft">
-            <Link href="https://instagram.com" className="hover:text-orange">Instagram</Link>
-            <Link href="https://tiktok.com" className="hover:text-orange">TikTok</Link>
-            <Link href="https://youtube.com" className="hover:text-orange">YouTube</Link>
-          </div>
         </Container>
       </div>
 
       <div className="border-t border-line">
         <Container className="flex flex-col items-start justify-between gap-3 py-4 text-xs text-muted sm:flex-row sm:items-center">
-          <span>© {new Date().getFullYear()} Slablabs Pty Ltd · ABN 00 000 000 000</span>
+          <span>© {new Date().getFullYear()} Slablabs · Independent Australian studio</span>
           <ul className="flex items-center gap-4">
             {LEGAL.map((l) => (
               <li key={l.href}>

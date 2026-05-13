@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, Search, User } from "lucide-react";
+import { Search, User } from "lucide-react";
 import { useState } from "react";
 
 import { Container } from "@/components/ui/container";
@@ -15,6 +15,7 @@ const NAV = [
   { href: "/shop", label: "Sets", hasMega: true },
   { href: "/how-it-works", label: "How it works" },
   { href: "/build-guide", label: "Build guide" },
+  { href: "/about", label: "About" },
   { href: "/support", label: "Support" },
 ];
 
@@ -80,20 +81,12 @@ export function Header() {
               <Search className="size-5" strokeWidth={2.4} />
             </button>
             <Link
-              href="/sign-in"
+              href="/account"
               aria-label="Account"
               className="hidden flex-col items-center justify-center px-2 text-white transition-colors hover:text-yellow md:inline-flex"
             >
               <User className="size-5" strokeWidth={2.4} />
               <span className="mt-0.5 text-[9px] font-bold uppercase tracking-wider">Account</span>
-            </Link>
-            <Link
-              href="/wishlist"
-              aria-label="Wishlist"
-              className="hidden flex-col items-center justify-center px-2 text-white transition-colors hover:text-magenta md:inline-flex"
-            >
-              <Heart className="size-5" strokeWidth={2.4} />
-              <span className="mt-0.5 text-[9px] font-bold uppercase tracking-wider">Wishlist</span>
             </Link>
             <CartButton />
             <MobileMenu />

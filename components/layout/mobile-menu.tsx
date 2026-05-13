@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronRight, Heart, Menu, User, X } from "lucide-react";
+import { ChevronRight, Menu, User, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { EXPANSIONS } from "@/data/kits";
@@ -142,24 +142,14 @@ export function MobileMenu() {
                   <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-magenta">
                     You
                   </span>
-                  <div className="mt-3 grid grid-cols-2 gap-2">
-                    <Link
-                      href="/sign-in"
-                      onClick={() => setOpen(false)}
-                      className="flex items-center gap-2 border border-white/15 bg-white/5 px-4 py-3 text-xs font-bold uppercase tracking-wider hover:border-orange hover:text-orange"
-                    >
-                      <User className="size-4" strokeWidth={2.4} />
-                      Account
-                    </Link>
-                    <Link
-                      href="/wishlist"
-                      onClick={() => setOpen(false)}
-                      className="flex items-center gap-2 border border-white/15 bg-white/5 px-4 py-3 text-xs font-bold uppercase tracking-wider hover:border-magenta hover:text-magenta"
-                    >
-                      <Heart className="size-4" strokeWidth={2.4} />
-                      Wishlist
-                    </Link>
-                  </div>
+                  <Link
+                    href="/account"
+                    onClick={() => setOpen(false)}
+                    className="mt-3 flex items-center gap-2 border border-white/15 bg-white/5 px-4 py-3 text-xs font-bold uppercase tracking-wider hover:border-orange hover:text-orange"
+                  >
+                    <User className="size-4" strokeWidth={2.4} />
+                    Account
+                  </Link>
                 </div>
               </div>
 

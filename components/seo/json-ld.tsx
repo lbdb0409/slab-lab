@@ -7,13 +7,14 @@ export function JsonLd({ data }: { data: object | object[] }) {
   );
 }
 
-export const SITE_URL = "https://slablabs.com.au";
+// Production domain is slablab.com.au (singular). The brand is "Slablabs"
+// (plural) — but the URL is the singular form.
+export const SITE_URL = "https://slablab.com.au";
 
 export const ORGANIZATION_JSONLD = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Slablabs",
-  legalName: "Slablabs Pty Ltd",
   url: SITE_URL,
   logo: `${SITE_URL}/brand/logo.png`,
   description:
@@ -22,11 +23,6 @@ export const ORGANIZATION_JSONLD = {
     "@type": "PostalAddress",
     addressCountry: "AU",
   },
-  sameAs: [
-    "https://instagram.com/slablabs",
-    "https://tiktok.com/@slablabs",
-    "https://youtube.com/@slablabs",
-  ],
 } as const;
 
 export const WEBSITE_JSONLD = {

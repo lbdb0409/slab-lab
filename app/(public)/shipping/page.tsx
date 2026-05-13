@@ -15,7 +15,7 @@ import { PageHeader } from "@/components/ui/page-header";
 export const metadata: Metadata = {
   title: "Shipping",
   description:
-    "Free Australia shipping over $99, 3–5 day standard delivery. Tracked. Made-to-order kits ship from Melbourne.",
+    "Free Australia shipping over $99, 3–5 day standard delivery. Tracked, dispatched within Australia.",
   alternates: { canonical: "/shipping" },
 };
 

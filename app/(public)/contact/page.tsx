@@ -158,10 +158,10 @@ export default function ContactPage() {
               </h3>
               <p className="mt-2 text-sm text-text-soft">
                 <Link
-                  href="mailto:hello@slablabs.com.au"
+                  href="mailto:slablabsoz@gmail.com"
                   className="font-bold text-text underline-offset-4 hover:text-orange hover:underline"
                 >
-                  hello@slablabs.com.au
+                  slablabsoz@gmail.com
                 </Link>
               </p>
             </div>
@@ -172,32 +172,10 @@ export default function ContactPage() {
               <h3 className="mt-3 font-display text-xl uppercase leading-tight">
                 Socials
               </h3>
-              <ul className="mt-2 flex flex-col gap-1 text-sm">
-                <li>
-                  <Link
-                    href="https://instagram.com"
-                    className="font-bold text-text underline-offset-4 hover:text-orange hover:underline"
-                  >
-                    Instagram @slablabs
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://tiktok.com"
-                    className="font-bold text-text underline-offset-4 hover:text-orange hover:underline"
-                  >
-                    TikTok @slablabs
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://youtube.com"
-                    className="font-bold text-text underline-offset-4 hover:text-orange hover:underline"
-                  >
-                    YouTube @slablabs
-                  </Link>
-                </li>
-              </ul>
+              <p className="mt-2 text-sm leading-relaxed text-text-soft">
+                Slablabs socials go live with the first batch. Until then,
+                email is the fastest way to reach a human.
+              </p>
             </div>
             <div className="border-2 border-text bg-mint-tint p-6 md:p-8">
               <span className="inline-flex size-10 items-center justify-center rounded-full bg-white text-lime-deep">

@@ -7,7 +7,8 @@ import { PageHeader } from "@/components/ui/page-header";
 
 export const metadata: Metadata = {
   title: "Wishlist",
-  description: "Slabs you've saved to come back to.",
+  description: "Save kits to come back to. Coming with customer accounts.",
+  robots: { index: false, follow: true },
 };
 
 export default function WishlistPage() {
@@ -20,32 +21,39 @@ export default function WishlistPage() {
         eyebrowColor="magenta"
         title={
           <>
-            Your <span className="text-magenta">wishlist.</span>
+            Wishlist <span className="text-magenta">coming soon.</span>
           </>
         }
-        body="Slabs you've tapped the heart on. Saved here so you can come back when you're ready."
+        body="Saving slabs to come back to lands with customer accounts. For now, the kits don't go anywhere — bookmark a set page or drop us a request."
         bg="pink"
       />
 
       <Container className="py-14 md:py-20">
-        <div className="flex flex-col items-center justify-center gap-5 border-2 border-line bg-bg-soft px-6 py-20 text-center">
-          <div className="inline-flex size-20 items-center justify-center rounded-full bg-pink-tint text-magenta">
-            <Heart className="size-9" strokeWidth={2} />
-          </div>
-          <h2 className="font-display text-4xl uppercase leading-tight">
-            Wishlist is empty.
+        <div className="mx-auto flex max-w-xl flex-col items-center gap-5 border-2 border-text bg-white p-10 text-center">
+          <span className="inline-flex size-16 items-center justify-center rounded-full bg-magenta/10 text-magenta">
+            <Heart className="size-7" strokeWidth={2.2} />
+          </span>
+          <h2 className="font-display text-3xl uppercase leading-tight tracking-tight">
+            We&apos;re wiring this up alongside accounts.
           </h2>
-          <p className="max-w-sm text-base text-muted">
-            Tap the heart on any slab kit to save it. Your wishlist syncs across
-            devices when you&apos;re signed in.
+          <p className="max-w-md text-sm text-text-soft">
+            Once accounts are live, you&apos;ll be able to heart any kit and
+            come back to it. Until then the inventory isn&apos;t big enough to
+            get lost in.
           </p>
-          <div className="mt-2 flex flex-wrap items-center gap-3">
-            <Link href="/shop" className="btn-orange">
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-2 rounded-full bg-orange px-5 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-orange-deep"
+            >
               Browse slabs
               <ArrowRight className="size-4" strokeWidth={2.6} />
             </Link>
-            <Link href="/sign-in" className="btn-ghost">
-              Sign in to sync
+            <Link
+              href="/#request"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-text bg-white px-5 py-3 text-sm font-bold uppercase tracking-wider text-text hover:bg-text hover:text-white"
+            >
+              Request a slab
             </Link>
           </div>
         </div>

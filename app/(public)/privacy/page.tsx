@@ -151,10 +151,10 @@ export default function PrivacyPage() {
           <p>
             To exercise any of these, email{" "}
             <Link
-              href="mailto:hello@slablabs.com.au"
+              href="mailto:slablabsoz@gmail.com"
               className="font-bold text-text underline-offset-4 hover:text-orange hover:underline"
             >
-              hello@slablabs.com.au
+              slablabsoz@gmail.com
             </Link>{" "}
             with the subject line &quot;Privacy request&quot;.
           </p>
@@ -199,10 +199,10 @@ export default function PrivacyPage() {
           <p>
             Privacy questions or requests:{" "}
             <Link
-              href="mailto:hello@slablabs.com.au"
+              href="mailto:slablabsoz@gmail.com"
               className="font-bold text-text underline-offset-4 hover:text-orange hover:underline"
             >
-              hello@slablabs.com.au
+              slablabsoz@gmail.com
             </Link>
             .
           </p>

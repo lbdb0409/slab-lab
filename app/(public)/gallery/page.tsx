@@ -50,7 +50,7 @@ export default function GalleryPage() {
               </h2>
             </div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-muted">
-              Tagged @slablabs
+              Sent by customers
             </span>
           </div>
 
@@ -121,9 +121,9 @@ export default function GalleryPage() {
               <span className="text-yellow">on the wall.</span>
             </h2>
             <p className="max-w-md text-base leading-relaxed text-white/80 md:text-lg">
-              Slabbed something you&apos;re proud of? Tag{" "}
-              <strong>@slablabs</strong> on Instagram, TikTok, or YouTube. Or
-              send us a photo directly. We feature builds here every month.
+              Slabbed something you&apos;re proud of? Email us a photo and
+              we&apos;ll feature your build here. Socials launch alongside the
+              first batch — for now, the inbox is the fastest path.
             </p>
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
@@ -133,12 +133,12 @@ export default function GalleryPage() {
                 <Upload className="size-4" strokeWidth={2.6} />
                 Send your photo
               </Link>
-              <Link
-                href="https://instagram.com"
+              <a
+                href="mailto:slablabsoz@gmail.com"
                 className="text-sm font-bold uppercase tracking-wider text-white/80 hover:text-yellow"
               >
-                @slablabs →
-              </Link>
+                slablabsoz@gmail.com →
+              </a>
             </div>
           </div>
 

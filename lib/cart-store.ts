@@ -24,8 +24,6 @@ type CartState = {
   closeDrawer: () => void;
 };
 
-export const PRICE_PER_KIT_LABEL = "$149";
-
 export const useCart = create<CartState>()(
   persist(
     (set, get) => ({

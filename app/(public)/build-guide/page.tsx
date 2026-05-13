@@ -112,7 +112,7 @@ const STEPS: Step[] = [
     checklist: [
       "Stand it up, lay it flat, or mount",
       "Keep out of direct sun long-term",
-      "Tag @slablabs to be featured in the gallery",
+      "Email us a photo and we'll feature it in the gallery",
     ],
     Diagram: DisplayDiagram,
   },

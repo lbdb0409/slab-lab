@@ -140,7 +140,7 @@ function shell(args: { preheader: string; body: string }): string {
               ${offsetCard(header() + args.body + footer())}
             </td></tr>
             <tr><td style="padding:18px 8px 0;text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:${MUTED};">
-              Sent from Slablabs · Melbourne, Australia
+              Sent from Slablabs · Australia
             </td></tr>
           </table>
         </td>

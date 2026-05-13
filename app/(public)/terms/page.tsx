@@ -29,7 +29,7 @@ export default function TermsPage() {
             Terms of <span className="text-cyan-deep">Service.</span>
           </>
         }
-        body="The rules that govern using slablabs.com.au and buying Slablabs slab kits. Plain English where we can, lawyer-speak only where we must."
+        body="The rules that govern using slablab.com.au and buying Slablabs slab kits. Plain English where we can, lawyer-speak only where we must."
         bg="sky"
       />
 
@@ -37,9 +37,9 @@ export default function TermsPage() {
         <LegalSection n="01" title="Welcome">
           <p>
             These Terms of Service (&quot;Terms&quot;) govern your access to
-            and use of the website at slablabs.com.au (the &quot;Site&quot;)
-            and any products, services, or content provided by Slablabs Pty
-            Ltd (&quot;Slablabs&quot;, &quot;we&quot;, &quot;us&quot;).
+            and use of the website at slablab.com.au (the &quot;Site&quot;)
+            and any products, services, or content provided by Slablabs
+            (&quot;Slablabs&quot;, &quot;we&quot;, &quot;us&quot;).
           </p>
           <p>
             By browsing the Site, creating an account, or placing an order you
@@ -217,10 +217,10 @@ export default function TermsPage() {
           <p>
             Questions about these Terms?{" "}
             <Link
-              href="mailto:hello@slablabs.com.au"
+              href="mailto:slablabsoz@gmail.com"
               className="font-bold text-text underline-offset-4 hover:text-orange hover:underline"
             >
-              hello@slablabs.com.au
+              slablabsoz@gmail.com
             </Link>
             .
           </p>

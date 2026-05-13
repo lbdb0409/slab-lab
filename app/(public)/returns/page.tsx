@@ -84,7 +84,7 @@ const CLAIM_STEPS = [
     n: "01",
     Icon: Mail,
     title: "Email us within 7 days",
-    body: "hello@slablabs.com.au with your order number in the subject line. Earlier is better. Couriers have tight claim windows.",
+    body: "slablabsoz@gmail.com with your order number in the subject line. Earlier is better. Couriers have tight claim windows.",
   },
   {
     n: "02",
@@ -313,7 +313,7 @@ export default function ReturnsPage() {
             <p className="text-sm text-muted">
               Have an issue?{" "}
               <Link
-                href="mailto:hello@slablabs.com.au"
+                href="mailto:slablabsoz@gmail.com"
                 className="font-bold text-text underline-offset-4 hover:text-orange hover:underline"
               >
                 Email support

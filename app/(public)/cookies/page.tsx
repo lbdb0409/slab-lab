@@ -177,10 +177,10 @@ export default function CookiesPage() {
           <p>
             Questions?{" "}
             <Link
-              href="mailto:hello@slablabs.com.au"
+              href="mailto:slablabsoz@gmail.com"
               className="font-bold text-text underline-offset-4 hover:text-orange hover:underline"
             >
-              hello@slablabs.com.au
+              slablabsoz@gmail.com
             </Link>
             .
           </p>
