@@ -213,6 +213,10 @@ export default function HowItWorksPage() {
               <CaseIllustration />
             </ExplodedPart>
           </div>
+
+          <p className="mt-8 text-center text-xs uppercase tracking-[0.18em] text-muted">
+            Also in the box: a microfibre wipe for cleaning your card before assembly.
+          </p>
         </Container>
       </section>
 

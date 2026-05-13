@@ -15,6 +15,7 @@ type Props = {
   title: ReactNode;
   body?: ReactNode;
   bg?: "cream" | "pink" | "sky" | "mint" | "lavender" | "gold" | "dark";
+  actions?: ReactNode;
 };
 
 const EYEBROW_COLOR = {
@@ -54,6 +55,7 @@ export function PageHeader({
   title,
   body,
   bg = "cream",
+  actions,
 }: Props) {
   const [octa1, octa2] = OCTAGON_TINTS[bg];
   return (
@@ -105,6 +107,9 @@ export function PageHeader({
             >
               {body}
             </p>
+          )}
+          {actions && (
+            <div className="mt-2 flex flex-wrap items-center gap-2">{actions}</div>
           )}
         </Container>
       </section>
