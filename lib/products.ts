@@ -10,6 +10,7 @@ export type ProductForCard = {
   card: string;
   set: string;
   setSlug: string;
+  expansion: string | null;
   number: string;
   status: "live" | "soon";
   badge: string;
@@ -25,6 +26,7 @@ function toCardShape(p: Product): ProductForCard {
     card: p.card,
     set: p.setName,
     setSlug: p.setSlug,
+    expansion: p.expansion ?? null,
     number: p.number,
     status: p.status,
     badge: p.badge,

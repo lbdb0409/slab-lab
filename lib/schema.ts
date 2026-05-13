@@ -25,13 +25,18 @@ export const products = pgTable("products", {
   setSlug: text("set_slug")
     .notNull()
     .references(() => sets.slug, { onDelete: "restrict" }),
+  // The specific TCG set / expansion this kit is for (e.g. "Silver Tempest",
+  // "Lost Origin"). setSlug above references the era-level set table; this
+  // field is the granular expansion name within that era. Nullable so old
+  // rows don't break.
+  expansion: text("expansion"),
   number: text("number").notNull(),
   status: text("status", { enum: ["live", "soon"] })
     .notNull()
     .default("soon"),
   badge: text("badge").notNull().default("Coming soon"),
   detail: text("detail").notNull().default("Coming soon"),
-  priceCents: integer("price_cents").notNull().default(14900),
+  priceCents: integer("price_cents").notNull().default(1500),
   stock: integer("stock").default(0),
   editionTotal: integer("edition_total").default(100),
   description: text("description").default(""),

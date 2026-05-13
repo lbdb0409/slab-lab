@@ -134,8 +134,10 @@ export function KitCard({
           </span>
         </div>
         <div className="flex items-center justify-between gap-2 text-[11px] uppercase tracking-wider text-muted">
-          <span>Slab only</span>
-          <span className={cn("font-bold", stockTone)}>{stockLabel}</span>
+          <span className="truncate">
+            {kit.expansion ? kit.expansion : "Slab only"}
+          </span>
+          <span className={cn("shrink-0 font-bold", stockTone)}>{stockLabel}</span>
         </div>
       </div>
     </Link>

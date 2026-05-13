@@ -19,6 +19,7 @@ const productSchema = z.object({
     .regex(slugRegex, "Slug can only contain lowercase letters, numbers, and dashes."),
   card: z.string().min(1).max(120),
   setSlug: z.string().min(1),
+  expansion: z.string().max(120).optional(),
   number: z.string().min(1).max(20),
   status: z.enum(["live", "soon"]),
   priceCents: z.number().int().min(0),
@@ -30,16 +31,18 @@ const productSchema = z.object({
 type ProductInput = z.infer<typeof productSchema>;
 
 function parseForm(formData: FormData): ProductInput {
+  const expansionRaw = String(formData.get("expansion") ?? "").trim();
   const raw = {
     slug: String(formData.get("slug") ?? "")
       .trim()
       .toLowerCase(),
     card: String(formData.get("card") ?? "").trim(),
     setSlug: String(formData.get("setSlug") ?? "").trim(),
+    expansion: expansionRaw || undefined,
     number: String(formData.get("number") ?? "").trim(),
     status: String(formData.get("status") ?? "soon") as "live" | "soon",
     priceCents:
-      Math.round(Number(formData.get("price") ?? 0) * 100) || 14900,
+      Math.round(Number(formData.get("price") ?? 0) * 100) || 1500,
     stock: Number(formData.get("stock") ?? 0) || 0,
     editionTotal: Number(formData.get("editionTotal") ?? 100) || 100,
     description: String(formData.get("description") ?? "").trim(),
@@ -91,6 +94,7 @@ export async function createProduct(formData: FormData) {
     card: input.card,
     setName: set.name,
     setSlug: set.slug,
+    expansion: input.expansion ?? null,
     number: input.number,
     status: input.status,
     priceCents: input.priceCents,
@@ -126,6 +130,7 @@ export async function updateProduct(slug: string, formData: FormData) {
       card: input.card,
       setName: set.name,
       setSlug: set.slug,
+      expansion: input.expansion ?? null,
       number: input.number,
       status: input.status,
       priceCents: input.priceCents,

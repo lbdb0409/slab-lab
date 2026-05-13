@@ -265,6 +265,14 @@ export default async function KitPage({ params }: Props) {
                 )}
               </div>
 
+              {product.expansion && (
+                <span
+                  className={`text-[11px] font-bold uppercase tracking-[0.18em] ${accentText}`}
+                >
+                  {product.setName} · {product.expansion}
+                </span>
+              )}
+
               <h1 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] uppercase leading-[0.92] tracking-tight">
                 {product.card}
               </h1>

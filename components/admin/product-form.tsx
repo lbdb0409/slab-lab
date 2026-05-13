@@ -23,6 +23,7 @@ type Props = {
     slug?: string;
     card?: string;
     setSlug?: string;
+    expansion?: string;
     number?: string;
     status?: "live" | "soon";
     priceCents?: number;
@@ -104,13 +105,20 @@ export function ProductForm({ mode, initial = {} }: Props) {
             />
             <SelectField
               name="setSlug"
-              label="Set / expansion"
+              label="Era"
               required
               defaultValue={initial.setSlug ?? ""}
               options={[
-                { value: "", label: "Pick a set…" },
+                { value: "", label: "Pick an era…" },
                 ...EXPANSIONS.map((e) => ({ value: e.slug, label: e.name })),
               ]}
+            />
+            <Field
+              name="expansion"
+              label="Expansion / specific set"
+              defaultValue={initial.expansion ?? ""}
+              placeholder="e.g. Silver Tempest"
+              hint="The exact TCG set the card is from."
             />
             <Field
               name="price"
@@ -118,9 +126,9 @@ export function ProductForm({ mode, initial = {} }: Props) {
               defaultValue={
                 initial.priceCents
                   ? (initial.priceCents / 100).toFixed(0)
-                  : "149"
+                  : "15"
               }
-              placeholder="149"
+              placeholder="15"
               mono
               required
             />

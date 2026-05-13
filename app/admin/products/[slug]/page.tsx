@@ -44,6 +44,7 @@ export default async function EditProductPage({ params }: Props) {
             slug: product.slug,
             card: product.card,
             setSlug: product.setSlug,
+            expansion: product.expansion ?? "",
             number: product.number,
             status: product.status,
             priceCents: product.priceCents,

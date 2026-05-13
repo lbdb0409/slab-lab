@@ -38,6 +38,7 @@ export default async function AdminProductsPage({ searchParams }: Props) {
         p.card,
         p.slug,
         p.setName,
+        p.expansion ?? "",
         p.number,
         `SL-${p.number}`,
       ]
@@ -210,7 +211,16 @@ export default async function AdminProductsPage({ searchParams }: Props) {
                             <p className="text-xs text-muted">{p.slug}</p>
                           </Link>
                         </td>
-                        <td className="px-5 py-3 text-text-soft">{p.setName}</td>
+                        <td className="px-5 py-3 text-text-soft">
+                          <div className="flex flex-col">
+                            <span>{p.setName}</span>
+                            {p.expansion && (
+                              <span className="text-xs text-muted">
+                                {p.expansion}
+                              </span>
+                            )}
+                          </div>
+                        </td>
                         <td className="px-5 py-3 font-mono text-xs">
                           SL-{p.number}
                         </td>

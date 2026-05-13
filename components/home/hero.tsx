@@ -114,7 +114,7 @@ export function Hero() {
                 Mega Gengar EX
               </span>
             </div>
-            <span className="text-sm font-bold tabular-nums text-orange">$149</span>
+            <span className="text-sm font-bold tabular-nums text-orange">$15</span>
           </div>
         </div>
       </Container>

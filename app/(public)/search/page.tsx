@@ -25,6 +25,7 @@ function searchKits(products: ProductForCard[], query: string) {
     return (
       p.card.toLowerCase().includes(q) ||
       p.set.toLowerCase().includes(q) ||
+      (p.expansion?.toLowerCase().includes(q) ?? false) ||
       p.slug.toLowerCase().includes(q) ||
       p.number.includes(q)
     );

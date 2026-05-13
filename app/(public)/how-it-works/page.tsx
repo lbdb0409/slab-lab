@@ -372,7 +372,7 @@ export default function HowItWorksPage() {
                 <span className="text-orange">you already own.</span>
               </h2>
               <p className="max-w-xl text-sm text-text-soft md:text-base">
-                Custom-printed surrounds from $149 AUD. Free shipping inside
+                Custom-printed surrounds from $15 AUD. Free shipping inside
                 Australia on orders over $99. Card not included.
               </p>
               <div className="mt-2 flex flex-wrap items-center gap-3">
@@ -412,7 +412,7 @@ export default function HowItWorksPage() {
                 Starting at
               </span>
               <p className="font-display text-5xl leading-none tracking-tight md:text-6xl">
-                $149
+                $15
               </p>
               <span className="mt-1 text-xs uppercase tracking-wider text-muted">
                 AUD · single-kit price
