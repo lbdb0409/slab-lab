@@ -47,7 +47,7 @@ export function Hero() {
             Custom slab kits · Pokémon TCG
           </span>
 
-          <h1 className="font-display text-[clamp(2.75rem,8.5vw,6.75rem)] uppercase leading-[0.9] tracking-tight">
+          <h1 className="font-display text-[clamp(3.25rem,11vw,8.5rem)] uppercase leading-[0.88] tracking-tight">
             <span className="block">Not every card</span>
             <span className="block">
               needs a{" "}
