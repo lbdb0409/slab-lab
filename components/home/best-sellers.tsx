@@ -49,7 +49,7 @@ export function BestSellers({ products }: { products: ProductForCard[] }) {
           </div>
           <Link
             href="/shop"
-            className="inline-flex items-center gap-1 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-text transition-colors hover:bg-lime hover:text-text"
+            className="inline-flex min-h-11 items-center gap-1 rounded-full bg-white px-4 py-2.5 text-xs md:min-h-0 md:py-2 font-bold uppercase tracking-wider text-text transition-colors hover:bg-lime hover:text-text"
           >
             Shop all <ArrowRight className="size-3.5" strokeWidth={2.6} />
           </Link>

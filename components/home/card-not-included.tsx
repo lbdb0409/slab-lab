@@ -31,7 +31,7 @@ export function CardNotIncluded() {
 
         {/* RIGHT. What's in the box */}
         <div className="relative">
-          <div className="grid grid-cols-2 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
             <Box
               tone="orange"
               label="In the kit"
@@ -75,7 +75,7 @@ function Box({
   const borderTone =
     tone === "orange" ? "border-orange/60 bg-orange/5" : "border-magenta/60 bg-magenta/5";
   return (
-    <div className={`flex flex-col gap-3 rounded-2xl border-2 p-4 md:p-5 ${borderTone}`}>
+    <div className={`flex flex-col gap-3 rounded-2xl border-2 p-3 sm:p-4 md:p-5 ${borderTone}`}>
       <span className={`text-[10px] font-bold uppercase tracking-[0.18em] ${accent}`}>
         {label}
       </span>

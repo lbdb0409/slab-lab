@@ -31,7 +31,7 @@ export function ShopByExpansion({ products }: { products: ProductForCard[] }) {
           </div>
           <Link
             href="/shop"
-            className="inline-flex items-center gap-1 rounded-full bg-text px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-magenta"
+            className="inline-flex min-h-11 items-center gap-1 rounded-full bg-text px-4 py-2.5 text-xs md:min-h-0 md:py-2 font-bold uppercase tracking-wider text-white transition-colors hover:bg-magenta"
           >
             See all sets <ArrowRight className="size-3.5" strokeWidth={2.6} />
           </Link>

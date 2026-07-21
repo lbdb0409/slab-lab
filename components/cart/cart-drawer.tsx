@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ShoppingBag, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -9,6 +10,7 @@ import {
   cartCount,
   cartSubtotalCents,
   formatPrice,
+  lineKey,
   useCart,
 } from "@/lib/cart-store";
 import { CartLine } from "./cart-line";
@@ -18,8 +20,25 @@ export function CartDrawer() {
   const open = useCart((s) => s.open);
   const items = useCart((s) => s.items);
   const closeDrawer = useCart((s) => s.closeDrawer);
+  const hydrate = useCart((s) => s.hydrate);
+  const checkoutUrl = useCart((s) => s.checkoutUrl);
+  const pathname = usePathname();
 
   useEffect(() => setMounted(true), []);
+
+  // The cart lives in Shopify behind an httpOnly cookie, so the client starts
+  // empty and has to ask for it. This is the single place it's loaded — the
+  // drawer renders once in the public layout, on every page.
+  useEffect(() => {
+    void hydrate();
+  }, [hydrate]);
+
+  // Close on route change. The per-link `onClick={closeDrawer}` handlers were
+  // previously swallowed by PackTransition (since removed); closing on the
+  // pathname is robust either way, including back/forward navigation.
+  useEffect(() => {
+    closeDrawer();
+  }, [pathname, closeDrawer]);
 
   useEffect(() => {
     if (!open) return;
@@ -80,7 +99,7 @@ export function CartDrawer() {
                 type="button"
                 onClick={closeDrawer}
                 aria-label="Close bag"
-                className="inline-flex size-9 items-center justify-center text-white transition-colors hover:text-orange"
+                className="-mr-2 inline-flex size-11 items-center justify-center text-white transition-colors hover:text-orange md:mr-0 md:size-9"
               >
                 <X className="size-5" strokeWidth={2.4} />
               </button>
@@ -89,10 +108,10 @@ export function CartDrawer() {
             {items.length === 0 ? (
               <EmptyState onClose={closeDrawer} />
             ) : (
-              <div className="flex-1 overflow-y-auto px-5">
+              <div className="flex-1 overflow-y-auto overscroll-contain px-5">
                 {items.map((item) => (
                   <CartLine
-                    key={item.slug}
+                    key={lineKey(item.slug, item.language)}
                     item={item}
                     onLinkClick={closeDrawer}
                   />
@@ -105,7 +124,7 @@ export function CartDrawer() {
             )}
 
             {items.length > 0 && (
-              <div className="border-t-2 border-text bg-bg-soft px-5 py-5">
+              <div className="border-t-2 border-text bg-bg-soft px-5 pt-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
                 <div className="flex items-center justify-between text-sm">
                   <span className="font-bold uppercase tracking-wider text-muted">
                     Shipping
@@ -122,14 +141,15 @@ export function CartDrawer() {
                     {formatPrice(subtotal)}
                   </span>
                 </div>
-                <Link
-                  href="/checkout"
-                  onClick={closeDrawer}
+                <a
+                  href={checkoutUrl || "/cart"}
                   className="btn-orange mt-4 w-full"
+                  // Leaves the app for Shopify's hosted checkout, so this is a
+                  // real navigation rather than a client-side route change.
                 >
                   Checkout
                   <ArrowRight className="size-4" strokeWidth={2.6} />
-                </Link>
+                </a>
                 <div className="mt-3 flex items-center justify-between text-xs">
                   <Link
                     href="/cart"

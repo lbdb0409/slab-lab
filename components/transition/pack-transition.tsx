@@ -261,7 +261,7 @@ export function PackTransition() {
                     src="/brand/logo.png"
                     alt="Slablabs"
                     width={240}
-                    height={60}
+                    height={120}
                     priority
                     className="h-14 w-auto"
                   />

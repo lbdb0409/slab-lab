@@ -35,15 +35,17 @@ export function Header() {
         </Container>
       </div>
 
-      {/* BAND 2. Logo + big search + icons. DARK so logo reads */}
-      <div className="border-b-2 border-white/10 bg-text text-white">
-        <Container className="flex h-[88px] items-center gap-4 md:gap-8">
+      {/* BAND 2. Logo + big search + icons. DARK so logo reads.
+          Sticks below md, where band 3 is hidden and this is the only way
+          back to navigation without scrolling to the top of the page. */}
+      <div className="border-b-2 border-white/10 bg-text text-white max-md:sticky max-md:top-0 max-md:z-40">
+        <Container className="flex h-[88px] items-center gap-4 max-md:h-[68px] md:gap-8">
           <Link href="/" aria-label="Slablabs" className="group inline-flex shrink-0 items-center">
             <Image
               src="/brand/logo.png"
               alt="Slablabs"
               width={220}
-              height={56}
+              height={110}
               priority
               className="h-11 w-auto transition-transform duration-200 group-hover:scale-105 md:h-14"
             />
@@ -73,13 +75,13 @@ export function Header() {
           </form>
 
           <div className="ml-auto flex items-center gap-1">
-            <button
-              type="button"
+            <Link
+              href="/search"
               aria-label="Search"
-              className="inline-flex size-10 items-center justify-center text-white transition-colors hover:text-orange md:hidden"
+              className="inline-flex size-11 items-center justify-center text-white transition-colors hover:text-orange md:hidden"
             >
               <Search className="size-5" strokeWidth={2.4} />
-            </button>
+            </Link>
             <Link
               href="/account"
               aria-label="Account"
@@ -94,8 +96,10 @@ export function Header() {
         </Container>
       </div>
 
-      {/* BAND 3. Nav row with sets mega menu (white, sticky) */}
-      <div className="sticky top-0 z-50 border-b border-line bg-white">
+      {/* BAND 3. Nav row with sets mega menu (white, sticky).
+          Below md the inner row is hidden, so `sticky` would pin a bare 1px
+          border across the top of every page — hence max-md:static. */}
+      <div className="sticky top-0 z-50 border-b border-line bg-white max-md:static max-md:border-b-0">
         <Container className="hidden h-[48px] items-center justify-center gap-1 lg:flex">
           {NAV.map((item) => {
             if (item.hasMega) {

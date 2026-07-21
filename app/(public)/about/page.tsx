@@ -133,7 +133,7 @@ export default function AboutPage() {
                 № 001 · Mega Gengar EX
               </span>
             </div>
-            <div className="absolute -bottom-3 left-4 right-4 grid grid-cols-3 gap-px border-2 border-text bg-text">
+            <div className="absolute -bottom-3 left-4 right-4 grid grid-cols-3 gap-px border-2 border-text bg-text max-sm:left-2 max-sm:right-2">
               {STATS.slice(0, 3).map((s) => (
                 <div
                   key={s.label}
@@ -257,7 +257,7 @@ Slablabs
             {STATS.map((s) => (
               <div
                 key={s.label}
-                className="flex flex-col items-start gap-2 bg-text p-6 md:p-8"
+                className="flex flex-col items-start gap-2 bg-text p-4 md:p-8"
               >
                 <dt className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/55">
                   {s.label}

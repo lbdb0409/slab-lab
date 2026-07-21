@@ -47,7 +47,7 @@ export function Hero() {
             Custom slab kits · Pokémon TCG
           </span>
 
-          <h1 className="font-display text-[clamp(3.25rem,11vw,8.5rem)] uppercase leading-[0.88] tracking-tight">
+          <h1 className="font-display text-[clamp(2.5rem,11vw,8.5rem)] uppercase leading-[0.88] tracking-tight">
             <span className="block">Not every card</span>
             <span className="block">
               needs a{" "}
@@ -78,7 +78,7 @@ export function Hero() {
             </Link>
             <Link
               href="/how-it-works"
-              className="text-sm font-bold uppercase tracking-wider text-cyan underline-offset-4 transition-colors hover:text-yellow hover:underline"
+              className="max-md:inline-flex max-md:min-h-11 max-md:items-center text-sm font-bold uppercase tracking-wider text-cyan underline-offset-4 transition-colors hover:text-yellow hover:underline"
             >
               How it works →
             </Link>
@@ -114,7 +114,7 @@ export function Hero() {
                 Mega Gengar EX
               </span>
             </div>
-            <span className="text-sm font-bold tabular-nums text-orange">$15</span>
+            <span className="text-sm font-bold tabular-nums text-orange">$20</span>
           </div>
         </div>
       </Container>

@@ -34,14 +34,14 @@ export function ExpansionFilter({
   if (options.length === 0) return null;
 
   return (
-    <label className="inline-flex items-center gap-2">
+    <label className="flex w-full items-center gap-2 md:inline-flex md:w-auto">
       <span className="text-xs font-bold uppercase tracking-wider text-muted">
         Set
       </span>
       <select
         value={current ?? ""}
         onChange={onChange}
-        className="max-w-[180px] truncate border border-line bg-white px-3 py-2 text-sm font-bold uppercase tracking-wider focus:border-text focus:outline-none"
+        className="w-full min-w-0 truncate border border-line bg-white px-3 py-2.5 text-base font-bold max-md:h-11 md:w-auto md:max-w-[180px] md:py-2 md:text-sm uppercase tracking-wider focus:border-text focus:outline-none"
       >
         <option value="">All sets</option>
         {options.map((opt) => (

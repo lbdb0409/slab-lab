@@ -94,7 +94,7 @@ export default function CheckoutSuccessPage() {
             you the second it ships.
           </p>
 
-          <div className="grid max-w-md grid-cols-2 gap-3">
+          <div className="grid max-w-md grid-cols-1 gap-3 sm:grid-cols-2">
             <div className="border border-white/15 bg-white/5 p-4">
               <span className="text-[10px] font-bold uppercase tracking-widest text-yellow">
                 Order
@@ -146,7 +146,7 @@ export default function CheckoutSuccessPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
             <NextStep
               Icon={Mail}
               title="Email"

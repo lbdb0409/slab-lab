@@ -6,7 +6,7 @@ import { Octagon, ConfettiField } from "@/components/ui/decorations";
 
 export default function NotFound() {
   return (
-    <section className="relative flex min-h-[calc(100vh-200px)] items-center overflow-hidden bg-text text-white">
+    <section className="relative flex min-h-[calc(100dvh-200px)] items-center overflow-hidden bg-text text-white">
       <div
         aria-hidden
         className="absolute inset-0"
@@ -40,7 +40,7 @@ export default function NotFound() {
           Error 404
         </span>
 
-        <h1 className="font-display text-[clamp(4rem,16vw,12rem)] uppercase leading-[0.88] tracking-tight">
+        <h1 className="font-display text-[clamp(3rem,16vw,12rem)] uppercase leading-[0.88] tracking-tight">
           PACK
           <br />
           <span className="text-orange">NOT FOUND.</span>
@@ -75,7 +75,7 @@ export default function NotFound() {
             <Link
               key={l.href}
               href={l.href}
-              className="group flex items-center justify-between border border-white/20 bg-white/5 px-4 py-3 text-xs font-bold uppercase tracking-wider text-white/80 transition-colors hover:border-yellow hover:text-yellow"
+              className="group flex items-center justify-between border border-white/20 bg-white/5 px-4 py-3 text-xs font-bold uppercase tracking-wider text-white/80 transition-colors hover:border-yellow hover:text-yellow max-md:min-h-11"
             >
               {l.label}
               <ArrowRight

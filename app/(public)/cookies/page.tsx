@@ -25,16 +25,11 @@ type Row = {
 
 const COOKIES: Row[] = [
   {
-    name: "slablabs-cart-v1",
-    type: "Essential (localStorage)",
-    purpose: "Keeps the items you've added to your bag",
-    duration: "Until you clear browser storage",
-  },
-  {
-    name: "slablabs-intro-v1",
-    type: "Functional (localStorage)",
-    purpose: "Remembers whether you've seen the pack-opening intro",
-    duration: "Until you clear browser storage",
+    name: "slablabs_cart_id",
+    type: "Essential (cookie)",
+    purpose:
+      "Links your browser to your bag, which is held by Shopify. Set as httpOnly, so it can't be read by scripts on this site.",
+    duration: "30 days",
   },
   {
     name: "next-auth.session-token",
@@ -85,7 +80,32 @@ export default function CookiesPage() {
             We keep it minimal. Three categories. And we use zero advertising
             or social-tracking cookies on this site.
           </p>
-          <div className="my-4 overflow-x-auto">
+          {/* Below md the same data renders as stacked cards. The table's
+              min-content width exceeds a phone's 327px — `next-auth.session-token`
+              alone is a ~152px unbreakable mono token — so a 4-column table
+              could only ever be a sideways swipe with no scroll affordance. */}
+          <ul className="my-4 flex flex-col gap-3 md:hidden">
+            {COOKIES.map((c) => (
+              <li key={c.name} className="border border-line bg-bg-soft p-3">
+                <p className="break-all font-mono text-xs font-bold">{c.name}</p>
+                <dl className="mt-2 flex flex-col gap-1 text-xs">
+                  <div className="flex gap-2">
+                    <dt className="shrink-0 font-bold uppercase tracking-wider text-muted">Type</dt>
+                    <dd>{c.type}</dd>
+                  </div>
+                  <div className="flex gap-2">
+                    <dt className="shrink-0 font-bold uppercase tracking-wider text-muted">Purpose</dt>
+                    <dd>{c.purpose}</dd>
+                  </div>
+                  <div className="flex gap-2">
+                    <dt className="shrink-0 font-bold uppercase tracking-wider text-muted">Duration</dt>
+                    <dd>{c.duration}</dd>
+                  </div>
+                </dl>
+              </li>
+            ))}
+          </ul>
+          <div className="my-4 hidden overflow-x-auto md:block">
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="border-b-2 border-text text-left">
@@ -126,19 +146,7 @@ export default function CookiesPage() {
           </p>
         </LegalSection>
 
-        <LegalSection n="04" title="Functional storage">
-          <p>
-            The pack-opening intro flag is one piece of functional storage.
-            we use it to remember whether you&apos;ve seen the intro so it
-            doesn&apos;t replay every visit. You can clear this manually any
-            time:
-          </p>
-          <pre className="my-3 overflow-x-auto rounded-md bg-bg-soft p-3 text-xs">
-            {`localStorage.removeItem("slablabs-intro-v1")`}
-          </pre>
-        </LegalSection>
-
-        <LegalSection n="05" title="What we don't use">
+        <LegalSection n="04" title="What we don't use">
           <p>The site does not set:</p>
           <ul className="ml-5 list-disc space-y-1.5 marker:text-orange">
             <li>Cross-site tracking cookies for advertising</li>
@@ -147,7 +155,7 @@ export default function CookiesPage() {
           </ul>
         </LegalSection>
 
-        <LegalSection n="06" title="Managing cookies">
+        <LegalSection n="05" title="Managing cookies">
           <p>
             Every modern browser lets you view, manage, and clear cookies and
             local storage. Doing so will sign you out and empty your bag, but
@@ -166,14 +174,14 @@ export default function CookiesPage() {
           </p>
         </LegalSection>
 
-        <LegalSection n="07" title="Updates">
+        <LegalSection n="06" title="Updates">
           <p>
             If we add or remove cookies we&apos;ll update this page. The
             last-updated date at the top reflects the most recent change.
           </p>
         </LegalSection>
 
-        <LegalSection n="08" title="Contact">
+        <LegalSection n="07" title="Contact">
           <p>
             Questions?{" "}
             <Link

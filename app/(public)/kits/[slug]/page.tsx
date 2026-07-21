@@ -171,16 +171,16 @@ export default async function KitPage({ params }: Props) {
       <JsonLd data={[productJsonLd, breadcrumbJsonLd]} />
 
       <div className="border-b border-line bg-bg-soft">
-        <Container className="flex items-center gap-1.5 py-3 text-xs font-bold uppercase tracking-wider text-muted">
-          <Link href="/" className="hover:text-orange">
+        <Container className="flex flex-wrap items-center gap-x-1.5 gap-y-1 py-3 text-xs font-bold uppercase tracking-wider text-muted">
+          <Link href="/" className="inline-flex items-center hover:text-orange max-md:min-h-11">
             Home
           </Link>
           <ChevronRight className="size-3" strokeWidth={2.6} />
-          <Link href="/shop" className="hover:text-orange">
+          <Link href="/shop" className="inline-flex items-center hover:text-orange max-md:min-h-11">
             Shop
           </Link>
           <ChevronRight className="size-3" strokeWidth={2.6} />
-          <Link href={`/shop?set=${product.setSlug}`} className="hover:text-orange">
+          <Link href={`/shop?set=${product.setSlug}`} className="inline-flex items-center hover:text-orange max-md:min-h-11">
             {product.setName}
           </Link>
           <ChevronRight className="size-3" strokeWidth={2.6} />
@@ -203,7 +203,7 @@ export default async function KitPage({ params }: Props) {
                   background: `radial-gradient(60% 60% at 50% 50%, ${glow} 0%, transparent 70%)`,
                 }}
               />
-              <div className="relative aspect-[3/4] overflow-hidden border-2 border-text bg-white">
+              <div className="relative aspect-[4/5] overflow-hidden border-2 border-text bg-white sm:aspect-[3/4]">
                 <Image
                   src={imageUrl}
                   alt={`Slablabs ${product.card} expanded-art display slab`}
@@ -227,7 +227,7 @@ export default async function KitPage({ params }: Props) {
                   </span>
                 )}
               </div>
-              <div className="mt-3 grid grid-cols-4 gap-2">
+              <div className="mt-3 hidden grid-cols-4 gap-2 md:grid">
                 <div className="relative aspect-square overflow-hidden border-2 border-text bg-white">
                   <Image src={imageUrl} alt="" fill sizes="100px" className="object-cover" />
                 </div>
@@ -282,7 +282,7 @@ export default async function KitPage({ params }: Props) {
                   `Custom-printed display slab built around ${product.card}. The artwork extends past the card border so the slab itself becomes part of the piece. You supply your own card and snap it together at home.`}
               </p>
 
-              <div className="grid grid-cols-3 gap-4 border-y-2 border-text py-4">
+              <div className="grid grid-cols-2 gap-x-4 gap-y-3 border-y-2 border-text py-4 sm:grid-cols-3 sm:gap-4">
                 <div className="flex flex-col gap-1">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-muted">Price</span>
                   <span className="font-display text-3xl leading-none">
@@ -312,6 +312,10 @@ export default async function KitPage({ params }: Props) {
                 priceCents={product.priceCents}
                 imageUrl={imageUrl}
                 isLive={isLive}
+                stockEn={product.stockEn ?? null}
+                stockJp={product.stockJp ?? null}
+                variantIdEn={product.variantIdEn}
+                variantIdJp={product.variantIdJp}
               />
 
               <div className="grid grid-cols-2 gap-x-4 gap-y-2 pt-1 text-xs text-muted sm:grid-cols-4">
@@ -414,7 +418,7 @@ export default async function KitPage({ params }: Props) {
             </h2>
           </div>
 
-          <dl className="grid grid-cols-2 gap-x-6 gap-y-6 border-t-2 border-text pt-8 md:grid-cols-4 md:gap-y-8">
+          <dl className="grid grid-cols-1 gap-x-6 gap-y-5 border-t-2 border-text pt-8 sm:grid-cols-2 sm:gap-y-6 md:grid-cols-4 md:gap-y-8">
             <SpecRow label="Holds" value="1 standard TCG card" />
             <SpecRow label="Slab material" value="Optical-grade PET" />
             <SpecRow label="Dimensions" value="130 × 185 × 8 mm" />
@@ -504,7 +508,7 @@ export default async function KitPage({ params }: Props) {
               </div>
               <Link
                 href={`/shop?set=${product.setSlug}`}
-                className="inline-flex items-center gap-1 rounded-full bg-text px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-orange"
+                className="inline-flex items-center gap-1 max-md:min-h-11 rounded-full bg-text px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-orange"
               >
                 See all
                 <ArrowRight className="size-3.5" strokeWidth={2.6} />

@@ -11,6 +11,7 @@ import {
   cartCount,
   cartSubtotalCents,
   formatPrice,
+  lineKey,
   useCart,
 } from "@/lib/cart-store";
 
@@ -18,6 +19,7 @@ export default function CartPage() {
   const [mounted, setMounted] = useState(false);
   const items = useCart((s) => s.items);
   const clear = useCart((s) => s.clear);
+  const checkoutUrl = useCart((s) => s.checkoutUrl);
 
   useEffect(() => setMounted(true), []);
 
@@ -31,8 +33,8 @@ export default function CartPage() {
     <>
       {/* Breadcrumb */}
       <div className="border-b border-line bg-bg-soft">
-        <Container className="flex items-center gap-1.5 py-3 text-xs font-bold uppercase tracking-wider text-muted">
-          <Link href="/" className="hover:text-orange">
+        <Container className="flex flex-wrap items-center gap-x-1.5 gap-y-1 py-3 text-xs font-bold uppercase tracking-wider text-muted">
+          <Link href="/" className="inline-flex items-center hover:text-orange max-md:min-h-11">
             Home
           </Link>
           <ChevronRight className="size-3" strokeWidth={2.6} />
@@ -99,7 +101,7 @@ export default function CartPage() {
                 </button>
               </div>
               {validItems.map((item) => (
-                <CartLine key={item.slug} item={item} variant="page" />
+                <CartLine key={lineKey(item.slug, item.language)} item={item} variant="page" />
               ))}
               <p className="mt-4 text-xs text-muted">
                 Slab kits include the surround + case only.{" "}
@@ -149,10 +151,10 @@ export default function CartPage() {
                   </span>
                 </div>
 
-                <Link href="/checkout" className="btn-orange w-full">
+                <a href={checkoutUrl || "#"} className="btn-orange w-full">
                   Checkout
                   <ArrowRight className="size-4" strokeWidth={2.6} />
-                </Link>
+                </a>
 
                 <p className="text-center text-[11px] text-muted">
                   Tax included where applicable · Card not handled by Slablabs
@@ -168,11 +170,11 @@ export default function CartPage() {
                   <input
                     type="text"
                     placeholder="Enter code"
-                    className="flex-1 bg-transparent px-3 py-2.5 text-sm placeholder:text-muted focus:outline-none"
+                    className="w-full min-w-0 flex-1 bg-transparent px-3 py-3.5 text-base placeholder:text-muted focus:outline-none md:py-2.5 md:text-sm"
                   />
                   <button
                     type="button"
-                    className="bg-text px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-orange"
+                    className="shrink-0 bg-text px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-white md:py-2.5 hover:bg-orange"
                   >
                     Apply
                   </button>

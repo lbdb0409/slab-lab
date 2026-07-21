@@ -29,7 +29,7 @@ export default function WishlistPage() {
       />
 
       <Container className="py-14 md:py-20">
-        <div className="mx-auto flex max-w-xl flex-col items-center gap-5 border-2 border-text bg-white p-10 text-center">
+        <div className="mx-auto flex max-w-xl flex-col items-center gap-5 border-2 border-text bg-white p-6 text-center sm:p-10">
           <span className="inline-flex size-16 items-center justify-center rounded-full bg-magenta/10 text-magenta">
             <Heart className="size-7" strokeWidth={2.2} />
           </span>

@@ -50,7 +50,7 @@ export function Newsletter() {
           </div>
         ) : (
           <form action={action} className="flex flex-col gap-3">
-            <div className="flex flex-col items-stretch rounded-full border-2 border-white bg-white/10 backdrop-blur-sm transition-colors focus-within:bg-white/20 sm:flex-row sm:items-center">
+            <div className="flex flex-col items-stretch rounded-3xl border-2 border-white bg-white/10 backdrop-blur-sm transition-colors focus-within:bg-white/20 sm:flex-row sm:items-center sm:rounded-full">
               <input
                 type="email"
                 name="email"

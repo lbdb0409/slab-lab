@@ -98,7 +98,7 @@ export default async function ComingSoonPage({
                 src="/brand/logo.png"
                 alt="Slablabs"
                 width={160}
-                height={40}
+                height={80}
                 className="h-9 w-auto md:h-11"
                 priority
               />
@@ -195,7 +195,7 @@ export default async function ComingSoonPage({
                       src="/brand/logo.png"
                       alt="Slablabs"
                       width={320}
-                      height={80}
+                      height={160}
                       className="h-auto w-[80%] object-contain"
                       priority
                     />
@@ -208,7 +208,7 @@ export default async function ComingSoonPage({
               </div>
             </div>
 
-            <div className="mt-6 grid grid-cols-3 gap-3 text-center text-xs">
+            <div className="mt-6 grid grid-cols-1 gap-2 text-center text-xs sm:grid-cols-3 sm:gap-3">
               <Stat label="Self-assembly" value="60s" />
               <Stat label="Card stays" value="Home" />
               <Stat label="Ships" value="3–5d AU" />
@@ -332,7 +332,7 @@ export default async function ComingSoonPage({
                 autoComplete="off"
                 placeholder="Password"
                 aria-label="Staff password"
-                className="w-full max-w-xs rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs text-white placeholder:text-white/40 focus:border-orange focus:outline-none sm:w-64"
+                className="w-full max-w-xs rounded-full border border-white/15 bg-white/5 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-orange focus:outline-none sm:w-64 md:py-2 md:text-xs"
               />
               <button
                 type="submit"

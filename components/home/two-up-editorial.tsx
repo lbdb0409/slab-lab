@@ -42,7 +42,7 @@ export function TwoUpEditorial() {
           {/* Build guide. Diagrammatic / typographic */}
           <Link
             href="/build-guide"
-            className="group relative flex aspect-[4/3] flex-col justify-between overflow-hidden border-2 border-cyan/40 bg-text p-7 transition-transform duration-300 hover:-translate-y-1 md:p-9"
+            className="group relative flex min-h-[300px] flex-col justify-between overflow-hidden border-2 border-cyan/40 bg-text p-7 md:aspect-[4/3] md:min-h-0 transition-transform duration-300 hover:-translate-y-1 md:p-9"
             style={{
               backgroundImage:
                 "linear-gradient(135deg, rgba(139,62,255,0.55) 0%, rgba(0,184,224,0.55) 100%), radial-gradient(40% 50% at 80% 20%, rgba(0,184,224,0.5) 0%, transparent 60%)",
@@ -77,7 +77,7 @@ export function TwoUpEditorial() {
           {/* Gallery. Photo card */}
           <Link
             href="/gallery"
-            className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden border-2 border-white/20 p-6 text-white md:p-8"
+            className="group relative flex min-h-[300px] flex-col justify-end overflow-hidden border-2 border-white/20 p-6 text-white md:aspect-[4/3] md:min-h-0 md:p-8"
           >
             <Image
               src="/brand/slab-mockup.png"

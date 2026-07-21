@@ -11,6 +11,13 @@ import { getSetBySlug } from "@/lib/sets";
 
 const slugRegex = /^[a-z0-9-]+$/;
 
+function optionalInt(v: FormDataEntryValue | null): number | null {
+  const s = String(v ?? "").trim();
+  if (s === "") return null;
+  const n = Number(s);
+  return Number.isFinite(n) && n >= 0 ? Math.round(n) : null;
+}
+
 const productSchema = z.object({
   slug: z
     .string()
@@ -23,6 +30,11 @@ const productSchema = z.object({
   number: z.string().min(1).max(20),
   status: z.enum(["live", "soon"]),
   priceCents: z.number().int().min(0),
+  // Blank means "this printing is not produced", which is distinct from 0
+  // ("produced but sold out") — the PDP uses that difference to decide
+  // whether to offer the language at all.
+  stockEn: z.number().int().min(0).nullable().default(null),
+  stockJp: z.number().int().min(0).nullable().default(null),
   stock: z.number().int().min(0).default(0),
   editionTotal: z.number().int().min(1).default(100),
   description: z.string().max(2000).default(""),
@@ -42,12 +54,18 @@ function parseForm(formData: FormData): ProductInput {
     number: String(formData.get("number") ?? "").trim(),
     status: String(formData.get("status") ?? "soon") as "live" | "soon",
     priceCents:
-      Math.round(Number(formData.get("price") ?? 0) * 100) || 1500,
-    stock: Number(formData.get("stock") ?? 0) || 0,
+      Math.round(Number(formData.get("price") ?? 0) * 100) || 2000,
+    stockEn: optionalInt(formData.get("stockEn")),
+    stockJp: optionalInt(formData.get("stockJp")),
+    stock: 0, // replaced below; always derived from the two languages
     editionTotal: Number(formData.get("editionTotal") ?? 100) || 100,
     description: String(formData.get("description") ?? "").trim(),
   };
-  return productSchema.parse(raw);
+  const parsed = productSchema.parse(raw);
+  // Single write path for the aggregate, so `stock` can never drift from
+  // the per-language numbers the PDP actually sells against.
+  parsed.stock = (parsed.stockEn ?? 0) + (parsed.stockJp ?? 0);
+  return parsed;
 }
 
 function buildDetailAndBadge(input: ProductInput) {
@@ -135,6 +153,8 @@ export async function updateProduct(slug: string, formData: FormData) {
       status: input.status,
       priceCents: input.priceCents,
       stock: input.stock,
+      stockEn: input.stockEn,
+      stockJp: input.stockJp,
       editionTotal: input.editionTotal,
       description: input.description,
       badge,

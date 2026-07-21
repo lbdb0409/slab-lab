@@ -18,7 +18,7 @@ export function CartButton() {
       type="button"
       onClick={openDrawer}
       aria-label="Open bag"
-      className="relative inline-flex flex-col items-center justify-center px-2 text-white transition-colors hover:text-orange"
+      className="relative inline-flex min-h-11 min-w-11 flex-col items-center justify-center px-2 text-white transition-colors hover:text-orange"
     >
       <span className="relative">
         <ShoppingBag className="size-5" strokeWidth={2.4} />

@@ -73,7 +73,7 @@ export default function ContactPage() {
                     type="text"
                     required
                     placeholder="Ash Ketchum"
-                    className="rounded-full border border-line bg-white px-4 py-3 text-sm placeholder:text-muted focus:border-text focus:outline-none"
+                    className="rounded-full border border-line bg-white px-4 py-3 text-base placeholder:text-muted focus:border-text focus:outline-none md:text-sm"
                   />
                 </label>
 
@@ -85,7 +85,7 @@ export default function ContactPage() {
                     type="email"
                     required
                     placeholder="you@trainer.com"
-                    className="rounded-full border border-line bg-white px-4 py-3 text-sm placeholder:text-muted focus:border-text focus:outline-none"
+                    className="rounded-full border border-line bg-white px-4 py-3 text-base placeholder:text-muted focus:border-text focus:outline-none md:text-sm"
                   />
                 </label>
 
@@ -94,7 +94,7 @@ export default function ContactPage() {
                     What&apos;s it about?
                   </span>
                   <select
-                    className="rounded-full border border-line bg-white px-4 py-3 text-sm focus:border-text focus:outline-none"
+                    className="rounded-full border border-line bg-white px-4 py-3 text-base focus:border-text focus:outline-none md:text-sm"
                     defaultValue=""
                   >
                     <option value="" disabled>
@@ -118,7 +118,7 @@ export default function ContactPage() {
                   <input
                     type="text"
                     placeholder="e.g. SL-1234"
-                    className="rounded-full border border-line bg-white px-4 py-3 text-sm placeholder:text-muted focus:border-text focus:outline-none"
+                    className="rounded-full border border-line bg-white px-4 py-3 text-base placeholder:text-muted focus:border-text focus:outline-none md:text-sm"
                   />
                 </label>
 
@@ -130,7 +130,7 @@ export default function ContactPage() {
                     rows={5}
                     required
                     placeholder="What's going on?"
-                    className="rounded-2xl border border-line bg-white px-4 py-3 text-sm placeholder:text-muted focus:border-text focus:outline-none"
+                    className="rounded-2xl border border-line bg-white px-4 py-3 text-base placeholder:text-muted focus:border-text focus:outline-none md:text-sm"
                   />
                 </label>
 

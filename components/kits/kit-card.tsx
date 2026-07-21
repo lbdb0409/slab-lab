@@ -61,7 +61,7 @@ export function KitCard({
           "group-hover:[transform:translateY(-4px)_rotate(-1deg)]",
         )}
       >
-        <div className="absolute left-2.5 top-2.5 z-10 flex flex-wrap gap-1.5">
+        <div className="absolute left-2.5 right-2.5 top-2.5 z-10 flex flex-wrap gap-1.5">
           {soldOut && (
             <span className="pill rounded-full bg-text text-white">
               Sold out
@@ -99,14 +99,14 @@ export function KitCard({
             src="/brand/slab-mockup.png"
             alt={kit.card}
             fill
-            sizes="(min-width: 1024px) 280px, (min-width: 640px) 33vw, 75vw"
+            sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 45vw"
             className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
           />
         ) : (
           <PlaceholderTile accent={accent} setName={kit.set} />
         )}
 
-        <span className="pointer-events-none absolute -bottom-4 -right-4 font-display text-7xl leading-none text-white/60 mix-blend-overlay">
+        <span className="pointer-events-none absolute -bottom-4 -right-4 font-display text-5xl leading-none text-white/60 mix-blend-overlay sm:text-7xl">
           {kit.number}
         </span>
       </div>

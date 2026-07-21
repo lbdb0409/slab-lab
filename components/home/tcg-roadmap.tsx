@@ -91,7 +91,7 @@ export function TCGRoadmap() {
             >
               <div
                 className={cn(
-                  "relative flex flex-1 items-center justify-center p-6",
+                  "relative flex flex-1 items-center justify-center p-3 sm:p-4 md:p-6",
                   tcg.status === "soon" && "opacity-90",
                 )}
               >

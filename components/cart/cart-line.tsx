@@ -7,6 +7,7 @@ import { Minus, Plus, X } from "lucide-react";
 import {
   useCart,
   formatPrice,
+  LANGUAGE_LABEL,
   type CartItem,
 } from "@/lib/cart-store";
 import { cn } from "@/lib/utils";
@@ -69,16 +70,18 @@ export function CartLine({ item, variant = "drawer", onLinkClick }: Props) {
           </Link>
           <button
             type="button"
-            onClick={() => remove(item.slug)}
+            onClick={() => remove(item.id)}
             aria-label="Remove from bag"
-            className="inline-flex size-7 shrink-0 items-center justify-center text-muted transition-colors hover:text-orange"
+            className="-mr-2 inline-flex size-11 shrink-0 items-center justify-center text-muted transition-colors hover:text-orange md:mr-0 md:size-7"
           >
             <X className="size-4" strokeWidth={2.4} />
           </button>
         </div>
 
-        <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-muted">
+        <div className="flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-muted">
           <span>{item.set}</span>
+          <span aria-hidden>·</span>
+          <span className="text-text">{LANGUAGE_LABEL[item.language]}</span>
         </div>
 
         <p className="text-[11px] uppercase tracking-wider text-muted">
@@ -89,20 +92,20 @@ export function CartLine({ item, variant = "drawer", onLinkClick }: Props) {
           <div className="inline-flex items-center border border-line">
             <button
               type="button"
-              onClick={() => setQty(item.slug, item.quantity - 1)}
+              onClick={() => setQty(item.id, item.quantity - 1)}
               aria-label="Decrease quantity"
-              className="inline-flex size-8 items-center justify-center hover:bg-tint"
+              className="inline-flex size-11 items-center justify-center hover:bg-tint md:size-8"
             >
               <Minus className="size-3.5" strokeWidth={2.4} />
             </button>
-            <span className="w-8 text-center text-sm font-bold tabular-nums">
+            <span className="w-11 text-center text-sm font-bold tabular-nums md:w-8">
               {item.quantity}
             </span>
             <button
               type="button"
-              onClick={() => setQty(item.slug, item.quantity + 1)}
+              onClick={() => setQty(item.id, item.quantity + 1)}
               aria-label="Increase quantity"
-              className="inline-flex size-8 items-center justify-center hover:bg-tint"
+              className="inline-flex size-11 items-center justify-center hover:bg-tint md:size-8"
             >
               <Plus className="size-3.5" strokeWidth={2.4} />
             </button>

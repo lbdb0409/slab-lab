@@ -34,7 +34,7 @@ export function SubscribeForm() {
           placeholder="you@trainer.com"
           autoComplete="email"
           aria-label="Email address"
-          className="min-w-0 flex-1 bg-transparent px-3 py-3 text-sm text-text placeholder:text-muted focus:outline-none"
+          className="min-w-0 flex-1 bg-transparent px-3 py-3 text-base text-text placeholder:text-muted focus:outline-none md:text-sm"
         />
         <button
           type="submit"

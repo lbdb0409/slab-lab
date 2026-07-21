@@ -77,12 +77,12 @@ export default async function SetLandingPage({ params }: Props) {
       <JsonLd data={breadcrumbJsonLd} />
 
       <div className="border-b border-line bg-bg-soft">
-        <Container className="flex items-center gap-1.5 py-3 text-xs font-bold uppercase tracking-wider text-muted">
-          <Link href="/" className="hover:text-orange">
+        <Container className="flex flex-wrap items-center gap-x-1.5 gap-y-1 py-3 text-xs font-bold uppercase tracking-wider text-muted">
+          <Link href="/" className="inline-flex items-center hover:text-orange max-md:min-h-11">
             Home
           </Link>
           <span className="text-line-strong">›</span>
-          <Link href="/shop" className="hover:text-orange">
+          <Link href="/shop" className="inline-flex items-center hover:text-orange max-md:min-h-11">
             Sets
           </Link>
           <span className="text-line-strong">›</span>
@@ -124,7 +124,7 @@ export default async function SetLandingPage({ params }: Props) {
               {content.intro}
             </p>
 
-            <div className="grid max-w-md grid-cols-3 gap-3">
+            <div className="grid max-w-md grid-cols-3 gap-2 sm:gap-3">
               <Stat label="Available now" value={String(liveCount)} accent={content.accent} />
               <Stat label="Coming soon" value={String(soonCount)} accent="#ffffff" />
               <Stat label="Era" value={content.year} accent="#ffffff" />
@@ -160,7 +160,7 @@ export default async function SetLandingPage({ params }: Props) {
               ) : (
                 <h2 className="text-center font-display text-4xl uppercase text-text">{set.name}</h2>
               )}
-              <div className="mt-6 flex items-center justify-between border-t border-line pt-4 text-text">
+              <div className="mt-6 flex items-center justify-between gap-3 border-t border-line pt-4 text-text">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-muted">
                     Signature kit
@@ -205,7 +205,7 @@ export default async function SetLandingPage({ params }: Props) {
             </div>
             <Link
               href={`/shop?set=${set.slug}`}
-              className="inline-flex items-center gap-1 rounded-full bg-text px-4 py-2 text-xs font-bold uppercase tracking-wider text-white hover:bg-orange"
+              className="inline-flex items-center gap-1 rounded-full bg-text px-4 py-2 text-xs font-bold uppercase tracking-wider text-white hover:bg-orange max-md:min-h-11"
             >
               Shop with filters
               <ArrowRight className="size-3.5" strokeWidth={2.6} />
@@ -222,7 +222,7 @@ export default async function SetLandingPage({ params }: Props) {
               </p>
             </div>
           ) : (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5">
               {kits.map((kit) => (
                 <KitCard key={kit.slug} kit={kit} />
               ))}
@@ -257,7 +257,7 @@ export default async function SetLandingPage({ params }: Props) {
             </dl>
             <Link
               href={`/shop?set=${set.slug}`}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-text px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-orange"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-text px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-orange max-md:min-h-11"
             >
               Browse this set
               <ArrowRight className="size-3.5" strokeWidth={2.6} />
@@ -282,7 +282,7 @@ export default async function SetLandingPage({ params }: Props) {
                 <Link
                   key={s.slug}
                   href={`/sets/${s.slug}`}
-                  className="group relative flex aspect-[5/2] flex-col justify-end overflow-hidden border-2 border-text p-6 text-white transition-transform duration-300 hover:-translate-y-1 md:p-8"
+                  className="group relative flex min-h-[150px] flex-col justify-end overflow-hidden border-2 border-text p-6 sm:aspect-[5/2] sm:min-h-0 text-white transition-transform duration-300 hover:-translate-y-1 md:p-8"
                   style={{ background: c.bg }}
                 >
                   <Octagon className="pointer-events-none absolute -right-10 -top-10 size-36 rotate-12 text-white/15 md:size-48" />
@@ -306,7 +306,7 @@ export default async function SetLandingPage({ params }: Props) {
 
 function Stat({ label, value, accent }: { label: string; value: string; accent: string }) {
   return (
-    <div className="border border-white/20 bg-white/5 p-3 backdrop-blur-sm">
+    <div className="border border-white/20 bg-white/5 p-2 backdrop-blur-sm sm:p-3">
       <span className="text-[9px] font-bold uppercase tracking-widest text-white/60">{label}</span>
       <p className="mt-1 font-display text-xl leading-none tabular-nums" style={{ color: accent }}>
         {value}

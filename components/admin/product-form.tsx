@@ -28,6 +28,8 @@ type Props = {
     status?: "live" | "soon";
     priceCents?: number;
     stock?: number;
+    stockEn?: number | null;
+    stockJp?: number | null;
     editionTotal?: number;
     description?: string;
   };
@@ -126,9 +128,9 @@ export function ProductForm({ mode, initial = {} }: Props) {
               defaultValue={
                 initial.priceCents
                   ? (initial.priceCents / 100).toFixed(0)
-                  : "15"
+                  : "20"
               }
-              placeholder="15"
+              placeholder="20"
               mono
               required
             />
@@ -235,14 +237,24 @@ export function ProductForm({ mode, initial = {} }: Props) {
         <AdminCard>
           <AdminCardHeader title="Inventory" />
           <div className="flex flex-col gap-3 p-5">
-            <Field
-              name="stock"
-              label="Stock on hand"
-              defaultValue={initial.stock != null ? String(initial.stock) : "0"}
-              placeholder="76"
-              mono
-              hint="Pieces still available to sell"
-            />
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Field
+                name="stockEn"
+                label="English stock"
+                defaultValue={initial.stockEn != null ? String(initial.stockEn) : ""}
+                placeholder="10"
+                mono
+                hint="Blank = no English printing"
+              />
+              <Field
+                name="stockJp"
+                label="Japanese stock"
+                defaultValue={initial.stockJp != null ? String(initial.stockJp) : ""}
+                placeholder="7"
+                mono
+                hint="Blank = no Japanese printing"
+              />
+            </div>
             <p className="text-xs text-muted">
               Stock decrements automatically when paid orders come in (once
               Stripe is wired). Edition size sits on the product itself.

@@ -144,7 +144,7 @@ export function Testimonials() {
           Bought a kit? Email{" "}
           <a
             href="mailto:slablabsoz@gmail.com"
-            className="font-bold text-text underline-offset-4 hover:text-orange hover:underline"
+            className="inline-block py-1 font-bold normal-case tracking-normal text-text underline-offset-4 hover:text-orange hover:underline md:py-0 md:uppercase md:tracking-[0.2em]"
           >
             slablabsoz@gmail.com
           </a>{" "}

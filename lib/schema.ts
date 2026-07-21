@@ -36,8 +36,16 @@ export const products = pgTable("products", {
     .default("soon"),
   badge: text("badge").notNull().default("Coming soon"),
   detail: text("detail").notNull().default("Coming soon"),
-  priceCents: integer("price_cents").notNull().default(1500),
+  priceCents: integer("price_cents").notNull().default(2000),
+  // Aggregate stock across languages. Kept as the single field the shop grid,
+  // kit card, and admin list read, and always written as
+  // coalesce(stockEn,0) + coalesce(stockJp,0) — never edited directly.
   stock: integer("stock").default(0),
+  // Per-language stock. NULL means that language is not produced for this
+  // card, which is how the PDP decides whether to offer the choice at all.
+  // ~90% of designs exist in both; the manufacturing PO is the source of truth.
+  stockEn: integer("stock_en"),
+  stockJp: integer("stock_jp"),
   editionTotal: integer("edition_total").default(100),
   description: text("description").default(""),
   imageUrl: text("image_url").default("/brand/slab-mockup.png"),

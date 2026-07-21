@@ -42,7 +42,7 @@ export default function GalleryPage() {
       {/* GALLERY GRID. Placeholder while we collect real submissions */}
       <section className="border-b border-line bg-white">
         <Container className="py-14 md:py-20">
-          <div className="mb-8 flex items-end justify-between gap-4 md:mb-10">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4 md:mb-10">
             <div className="flex flex-col gap-2">
               <span className="eyebrow text-cyan-deep">Featured builds</span>
               <h2 className="section-h2">
@@ -135,7 +135,7 @@ export default function GalleryPage() {
               </Link>
               <a
                 href="mailto:slablabsoz@gmail.com"
-                className="text-sm font-bold uppercase tracking-wider text-white/80 hover:text-yellow"
+                className="inline-flex items-center text-sm font-bold uppercase tracking-wider text-white/80 hover:text-yellow max-md:min-h-11"
               >
                 slablabsoz@gmail.com →
               </a>

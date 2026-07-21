@@ -16,8 +16,8 @@ export function BrandBand() {
               src="/brand/logo.png"
               alt="Slablabs"
               width={400}
-              height={100}
-              className="h-16 w-auto md:h-24"
+              height={200}
+              className="h-12 w-auto max-w-full sm:h-16 md:h-24"
               priority
             />
           </div>

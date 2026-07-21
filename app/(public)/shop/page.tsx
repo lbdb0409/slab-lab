@@ -161,12 +161,12 @@ export default async function ShopPage({
 
       {/* Breadcrumb */}
       <div className="bg-bg-soft">
-        <Container className="flex items-center gap-1.5 py-3 text-xs font-bold uppercase tracking-wider text-muted">
-          <Link href="/" className="hover:text-orange">
+        <Container className="flex flex-wrap items-center gap-x-1.5 gap-y-1 py-3 text-xs font-bold uppercase tracking-wider text-muted">
+          <Link href="/" className="inline-flex items-center hover:text-orange max-md:min-h-11">
             Home
           </Link>
           <ChevronRight className="size-3" strokeWidth={2.6} />
-          <Link href="/shop" className="hover:text-orange">
+          <Link href="/shop" className="inline-flex items-center hover:text-orange max-md:min-h-11">
             Shop
           </Link>
           {setLabel && (
@@ -203,7 +203,7 @@ export default async function ShopPage({
               {filtered.length === 1 ? "kit" : "kits"}
             </span>
           </span>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="grid w-full grid-cols-2 gap-2 md:flex md:w-auto md:flex-wrap md:items-center md:gap-3">
             <ExpansionFilter
               params={params}
               options={expansionOptions}
@@ -250,7 +250,7 @@ export default async function ShopPage({
         {filtered.length === 0 ? (
           <EmptyState />
         ) : (
-          <div className="grid gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-5">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-8 lg:grid-cols-3 lg:gap-x-5">
             {filtered.map((kit, i) => (
               <div key={kit.slug}>
                 <KitCard kit={kit} />
@@ -299,7 +299,7 @@ function AvailabilityPills({
     { value: "soon", label: "Coming soon" },
   ];
   return (
-    <div className="flex items-center gap-1.5">
+    <div className="col-span-2 flex items-center gap-1.5 md:col-span-1">
       {options.map((o) => {
         const active = (current ?? "") === o.value;
         const next: Record<string, string> = {};
@@ -315,7 +315,7 @@ function AvailabilityPills({
             href={href}
             scroll={false}
             className={cn(
-              "rounded-full border px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider transition-colors",
+              "inline-flex items-center rounded-full border px-3 py-2.5 text-[11px] font-bold uppercase tracking-wider transition-colors max-md:min-h-11 md:py-1.5",
               active
                 ? "border-text bg-text text-white"
                 : "border-line text-text hover:border-text",
@@ -343,7 +343,7 @@ function FilterChip({
         href={clearHref}
         scroll={false}
         aria-label={`Remove ${label}`}
-        className="inline-flex size-4 items-center justify-center rounded-full text-muted hover:bg-text hover:text-white"
+        className="relative inline-flex size-4 items-center justify-center rounded-full text-muted after:absolute after:-inset-3 after:content-[''] hover:bg-text hover:text-white md:after:hidden"
       >
         <X className="size-3" strokeWidth={2.6} />
       </Link>

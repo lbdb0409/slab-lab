@@ -189,7 +189,7 @@ export default function BuildGuidePage() {
             <PrintButton />
             <Link
               href="/how-it-works"
-              className="inline-flex items-center gap-2 rounded-md border border-line bg-white px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-text hover:border-text print:hidden"
+              className="inline-flex min-h-11 items-center gap-2 rounded-md border border-line bg-white px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-text hover:border-text print:hidden md:min-h-0"
             >
               <ArrowLeft className="size-3.5" strokeWidth={2.4} />
               First time? How it works
@@ -309,7 +309,7 @@ export default function BuildGuidePage() {
                     </div>
 
                     {/* Diagram */}
-                    <div className="flex aspect-square w-full max-w-[180px] items-center justify-center rounded-md border-2 border-text bg-white p-4 md:mx-auto">
+                    <div className="mx-auto flex aspect-square w-full max-w-[180px] items-center justify-center rounded-md border-2 border-text bg-white p-4">
                       <s.Diagram />
                     </div>
                   </div>

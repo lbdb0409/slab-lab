@@ -85,7 +85,7 @@ export default function AccountSettingsPage() {
             </Section>
 
             <Section title="Danger zone" danger>
-              <button className="inline-flex items-center gap-2 rounded-md border border-danger/40 bg-danger/5 px-4 py-2 text-xs font-bold uppercase tracking-wider text-danger hover:bg-danger hover:text-white">
+              <button className="inline-flex items-center gap-2 rounded-md border border-danger/40 bg-danger/5 px-4 py-3 text-xs font-bold uppercase tracking-wider text-danger max-md:min-h-11 md:py-2 hover:bg-danger hover:text-white">
                 <Trash2 className="size-3.5" strokeWidth={2.6} />
                 Delete account
               </button>
@@ -145,7 +145,7 @@ function Field({
       <input
         type={type}
         defaultValue={defaultValue}
-        className="rounded-md border border-line bg-white px-3 py-2.5 text-sm focus:border-text focus:outline-none"
+        className="rounded-md border border-line bg-white px-3 py-3 text-base focus:border-text focus:outline-none md:py-2.5 md:text-sm"
       />
     </label>
   );
@@ -153,7 +153,7 @@ function Field({
 
 function Save() {
   return (
-    <button className="mt-2 inline-flex w-fit items-center gap-2 rounded-md bg-text px-4 py-2 text-xs font-bold uppercase tracking-wider text-white hover:bg-orange">
+    <button className="mt-2 inline-flex w-fit items-center gap-2 rounded-md bg-text px-4 py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-orange max-md:min-h-11 md:py-2">
       Save changes
     </button>
   );
@@ -177,7 +177,7 @@ function Toggle({
       <input
         type="checkbox"
         defaultChecked={defaultChecked}
-        className="size-5 accent-orange"
+        className="size-6 accent-orange md:size-5"
       />
     </label>
   );

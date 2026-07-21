@@ -22,7 +22,7 @@ export function RequestACard() {
       <Octagon className="pointer-events-none absolute -left-12 -top-12 size-44 rotate-12 text-white/10 md:size-56" />
       <Octagon className="pointer-events-none absolute -right-14 -bottom-14 size-48 -rotate-12 text-white/10 md:size-64" />
 
-      <Container className="relative grid items-start gap-10 py-16 md:grid-cols-[1.15fr_1fr] md:gap-16 md:py-24">
+      <Container className="relative grid items-start gap-10 py-14 md:grid-cols-[1.15fr_1fr] md:gap-16 md:py-24">
         {/* LEFT. Explainer */}
         <div className="flex flex-col gap-6">
           <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-yellow backdrop-blur-sm">
@@ -114,7 +114,7 @@ export function RequestACard() {
                   name="notes"
                   rows={3}
                   placeholder="Anything we should know?"
-                  className="rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm placeholder:text-white/30 focus:border-yellow focus:bg-white/10 focus:outline-none"
+                  className="rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-base placeholder:text-white/30 md:text-sm focus:border-yellow focus:bg-white/10 focus:outline-none"
                 />
               </label>
 
@@ -166,7 +166,7 @@ function Field({
         name={name}
         required={required}
         placeholder={placeholder}
-        className="rounded-full border border-white/15 bg-white/5 px-4 py-3 text-sm placeholder:text-white/30 focus:border-yellow focus:bg-white/10 focus:outline-none"
+        className="rounded-full border border-white/15 bg-white/5 px-4 py-3 text-base placeholder:text-white/30 md:text-sm focus:border-yellow focus:bg-white/10 focus:outline-none"
       />
     </label>
   );

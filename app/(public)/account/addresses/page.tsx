@@ -43,7 +43,7 @@ export default function AccountAddressesPage() {
               </p>
               <button
                 type="button"
-                className="mt-2 inline-flex items-center gap-2 rounded-md border border-line bg-bg-soft px-4 py-2 text-xs font-bold uppercase tracking-wider text-muted"
+                className="mt-2 inline-flex items-center gap-2 rounded-md border border-line bg-bg-soft px-4 py-2 text-xs font-bold uppercase tracking-wider text-muted max-md:min-h-11"
                 disabled
               >
                 <Plus className="size-3.5" strokeWidth={2.6} />

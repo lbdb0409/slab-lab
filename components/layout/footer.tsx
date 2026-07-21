@@ -36,7 +36,7 @@ export function Footer() {
               src="/brand/logo.png"
               alt="Slablabs"
               width={200}
-              height={52}
+              height={100}
               className="h-10 w-auto"
             />
           </div>
@@ -138,10 +138,17 @@ export function Footer() {
       <div className="border-t border-line">
         <Container className="flex flex-col items-start justify-between gap-3 py-4 text-xs text-muted sm:flex-row sm:items-center">
           <span>© {new Date().getFullYear()} Slablabs · Independent Australian studio</span>
-          <ul className="flex items-center gap-4">
+          <ul className="flex flex-wrap items-center gap-x-4">
             {LEGAL.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="hover:text-orange">{l.label}</Link>
+                {/* ~16px tall as bare text; the min-h only applies below sm,
+                    where these are the sole footer nav targets. */}
+                <Link
+                  href={l.href}
+                  className="inline-flex items-center hover:text-orange max-sm:min-h-11"
+                >
+                  {l.label}
+                </Link>
               </li>
             ))}
           </ul>

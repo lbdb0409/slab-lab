@@ -61,8 +61,8 @@ export function PageHeader({
   return (
     <>
       <div className="border-b border-line bg-bg-soft">
-        <Container className="flex items-center gap-1.5 py-3 text-xs font-bold uppercase tracking-wider text-muted">
-          <Link href="/" className="hover:text-orange">
+        <Container className="flex flex-wrap items-center gap-x-1.5 gap-y-1 py-3 text-xs font-bold uppercase tracking-wider text-muted">
+          <Link href="/" className="inline-flex items-center hover:text-orange max-md:min-h-11">
             Home
           </Link>
           {crumbs.map((c, i) => (
@@ -71,7 +71,7 @@ export function PageHeader({
               {i === crumbs.length - 1 ? (
                 <span className="text-text">{c.label}</span>
               ) : (
-                <Link href={c.href} className="hover:text-orange">
+                <Link href={c.href} className="inline-flex items-center hover:text-orange max-md:min-h-11">
                   {c.label}
                 </Link>
               )}

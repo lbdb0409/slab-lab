@@ -47,7 +47,7 @@ export function Carousel({
     <div className={cn("relative", className)} aria-label={ariaLabel}>
       <div
         ref={scrollerRef}
-        className="scrollbar-hide flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2"
+        className="scrollbar-hide flex snap-x snap-mandatory gap-4 scroll-pl-6 overflow-x-auto scroll-smooth pb-2 md:scroll-pl-0"
       >
         {children}
       </div>

@@ -351,7 +351,7 @@ export default function HowItWorksPage() {
               </p>
               <Link
                 href="/build-guide"
-                className="mt-1 inline-flex w-fit items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-orange hover:underline"
+                className="mt-1 inline-flex w-fit items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-orange hover:underline max-md:min-h-11"
               >
                 Read the detailed build guide
                 <ArrowRight className="size-3.5" strokeWidth={2.6} />
@@ -372,7 +372,7 @@ export default function HowItWorksPage() {
                 <span className="text-orange">you already own.</span>
               </h2>
               <p className="max-w-xl text-sm text-text-soft md:text-base">
-                Custom-printed surrounds from $15 AUD. Free shipping inside
+                Custom-printed surrounds from $20 AUD. Free shipping inside
                 Australia on orders over $99. Card not included.
               </p>
               <div className="mt-2 flex flex-wrap items-center gap-3">
@@ -412,7 +412,7 @@ export default function HowItWorksPage() {
                 Starting at
               </span>
               <p className="font-display text-5xl leading-none tracking-tight md:text-6xl">
-                $15
+                $20
               </p>
               <span className="mt-1 text-xs uppercase tracking-wider text-muted">
                 AUD · single-kit price
@@ -449,7 +449,7 @@ function ExplodedPart({
   return (
     <div className="flex flex-col gap-3">
       <div
-        className={`relative flex aspect-[4/5] items-center justify-center overflow-hidden border-2 border-text bg-white ${
+        className={`relative flex aspect-[16/10] items-center justify-center overflow-hidden border-2 border-text bg-white md:aspect-[4/5] ${
           striped ? "[background-image:repeating-linear-gradient(45deg,#0a0a0a0a_0_8px,transparent_8px_16px)]" : ""
         }`}
       >
@@ -476,7 +476,7 @@ function ExplodedPart({
 
 function Plus() {
   return (
-    <div className="hidden items-center justify-center md:flex">
+    <div className="flex items-center justify-center md:flex">
       <span className="font-display text-3xl text-line-strong">+</span>
     </div>
   );

@@ -96,12 +96,11 @@ export default async function SearchPage({ searchParams }: Props) {
             name="q"
             defaultValue={query}
             placeholder="Search by Pokémon set, card, or kit number…"
-            autoFocus={!query}
-            className="w-full bg-transparent px-4 py-4 text-base placeholder:text-muted focus:outline-none"
+            className="w-full min-w-0 bg-transparent px-4 py-4 text-base placeholder:text-muted focus:outline-none"
           />
           <button
             type="submit"
-            className="m-1 rounded-full bg-text px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-orange"
+            className="m-1 inline-flex shrink-0 items-center rounded-full bg-text px-4 py-3 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-orange max-md:min-h-11 md:px-6"
           >
             Search
           </button>
@@ -118,7 +117,7 @@ export default async function SearchPage({ searchParams }: Props) {
                   <Link
                     key={s}
                     href={`/search?q=${encodeURIComponent(s)}`}
-                    className="rounded-full border border-line bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-text transition-colors hover:border-text hover:bg-text hover:text-white"
+                    className="inline-flex items-center rounded-full border border-line bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-text transition-colors hover:border-text hover:bg-text hover:text-white max-md:min-h-11"
                   >
                     {s}
                   </Link>
@@ -185,7 +184,7 @@ export default async function SearchPage({ searchParams }: Props) {
                   Kits
                   <span className="text-sm text-muted">{kits.length}</span>
                 </h2>
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-5">
                   {kits.map((kit) => (
                     <KitCard key={kit.slug} kit={kit} />
                   ))}
